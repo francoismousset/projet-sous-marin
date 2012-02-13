@@ -14,7 +14,6 @@
 #define _3964R_H_
 
 #include <avr/io.h>
-#include <util/delay.h>
 #include "usart.h"
 #include "timer1.h"
 

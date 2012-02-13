@@ -10,6 +10,9 @@
  *																*
  ****************************************************************/
 
+
+//FUSE : ne pas programmer WDTON !!!
+ 
 #include "watchdog.h"
 
 volatile unsigned int timeout = TIMEOUT_RESET;
