@@ -178,7 +178,7 @@ int main(void)
 			putchar_usart(0x0a);
 		}
 
-		//Execution de la commande moteur
+		//Execusion de la commande moteur
 		//Moteur 1
 		if((commande_mot == 'M') || (commande_mot =='m'))
 		{

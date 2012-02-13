@@ -68,7 +68,7 @@ void init_motor_driver(void)
 // 	OU
 //	while((fc12 != FALSE) || (fc22 != FALSE)); //A décommenter en reel !
 
-	while(fc22 != FALSE); //Fin de course Moteur 'M' vidage ballast
+	//while(fc22 != FALSE); //Fin de course Moteur 'M' vidage ballast
 	//Désactivation des interruptions
 //	cli();
 
