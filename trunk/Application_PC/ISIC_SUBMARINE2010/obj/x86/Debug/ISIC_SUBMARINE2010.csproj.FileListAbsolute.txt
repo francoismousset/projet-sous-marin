@@ -1,0 +1,189 @@
+C:\Users\J-F\Documents\MA2_2010\isicsubmarine\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe
+C:\Users\J-F\Documents\MA2_2010\isicsubmarine\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.pdb
+C:\Users\J-F\Documents\MA2_2010\isicsubmarine\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\J-F\Documents\MA2_2010\isicsubmarine\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormMain.resources
+C:\Users\J-F\Documents\MA2_2010\isicsubmarine\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam.resources
+C:\Users\J-F\Documents\MA2_2010\isicsubmarine\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.Properties.Resources.resources
+C:\Users\J-F\Documents\MA2_2010\isicsubmarine\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\J-F\Documents\MA2_2010\isicsubmarine\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\J-F\Documents\MA2_2010\isicsubmarine\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.exe
+C:\Users\J-F\Documents\MA2_2010\isicsubmarine\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.pdb
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.exe
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.pdb
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.pdb
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormMain.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.Properties.Resources.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormConsole.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormApropos.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletRS232.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010 - 100429\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.exe
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010 - 100429\ISIC_SUBMARINE2010\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010 - 100429\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormApropos.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010 - 100429\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormConsole.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010 - 100429\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormGraph.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010 - 100429\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormMain.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010 - 100429\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010 - 100429\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletRS232.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010 - 100429\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormRemote.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010 - 100429\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.Properties.Resources.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010 - 100429\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010 - 100429\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010 - 100429\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010 - 100429\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.pdb
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010 - 100429\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.pdb
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormAide.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormGraphiques.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormTelecommande.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletGeneral.resources
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.exe
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.pdb
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.pdb
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormAide.resources
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormApropos.resources
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormConsole.resources
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormGraphiques.resources
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormMain.resources
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam.resources
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletGeneral.resources
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletRS232.resources
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormTelecommande.resources
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\obj\x86\Debug\isic_submarine_com.FormPortCom.resources
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.Properties.Resources.resources
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Documents\cours\men_2\projets\sous-marin\master2\info\isicsubmarine\ISIC_SUBMARINE2010 - 100518_aprem\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\isic_submarine_com.FormPortCom.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ZedGraph.dll
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ZedGraph.xml
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\de\ZedGraph.resources.dll
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\es\ZedGraph.resources.dll
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\fr\ZedGraph.resources.dll
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\hu\ZedGraph.resources.dll
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\it\ZedGraph.resources.dll
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ja\ZedGraph.resources.dll
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\pt\ZedGraph.resources.dll
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ru\ZedGraph.resources.dll
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\sk\ZedGraph.resources.dll
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\sv\ZedGraph.resources.dll
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\tr\ZedGraph.resources.dll
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\zh-cn\ZedGraph.resources.dll
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\zh-tw\ZedGraph.resources.dll
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletGraphiques.resources
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe.config
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\BDSousMarin.sdf
+D:\ISIC\MASTER2\Info\ProjetsVS\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletBD.resources
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe.config
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.exe
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.pdb
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletBD.resources
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletGeneral.resources
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletGraphiques.resources
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletRS232.resources
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\isic_submarine_com.FormPortCom.resources
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.Properties.Resources.resources
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource-ResGen.read.6.tlog
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormAide.resources
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormConsole.resources
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormGraphiques.resources
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormMain.resources
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam.resources
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormTelecommande.resources
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.pdb
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ZedGraph.xml
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\de\ZedGraph.resources.dll
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\es\ZedGraph.resources.dll
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\fr\ZedGraph.resources.dll
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\hu\ZedGraph.resources.dll
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\it\ZedGraph.resources.dll
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ja\ZedGraph.resources.dll
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\pt\ZedGraph.resources.dll
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ru\ZedGraph.resources.dll
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\sk\ZedGraph.resources.dll
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\sv\ZedGraph.resources.dll
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\tr\ZedGraph.resources.dll
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormApropos.resources
+C:\Documents and Settings\Administrator\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\BDSousMarin.sdf
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe.config
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.exe
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.pdb
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\BDSousMarin.sdf
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.pdb
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormAide.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormApropos.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormConsole.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormGraphiques.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormMain.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletBD.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletGeneral.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletGraphiques.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletRS232.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormTelecommande.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\isic_submarine_com.FormPortCom.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.Properties.Resources.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe.config
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.exe
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.pdb
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\BDSousMarin.sdf
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.pdb
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormAide.resources
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormApropos.resources
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormConsole.resources
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormGraphiques.resources
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormMain.resources
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam.resources
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletBD.resources
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletGeneral.resources
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletGraphiques.resources
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletRS232.resources
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormTelecommande.resources
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\isic_submarine_com.FormPortCom.resources
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.Properties.Resources.resources
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Frédéric\Bureau\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.write.1.tlog
+J:\SM\11mai2011\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe.config
+J:\SM\11mai2011\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.exe
+J:\SM\11mai2011\ISIC_SUBMARINE2010\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.pdb
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe.config
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.exe
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.pdb
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\BDSousMarin.sdf
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.pdb
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\ZedGraph.dll
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormAide.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormApropos.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormConsole.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormGraphiques.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormMain.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletBD.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletGeneral.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletGraphiques.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletRS232.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormTelecommande.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\isic_submarine_com.FormPortCom.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.Properties.Resources.resources
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Guillaume\Desktop\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.write.1.tlog
