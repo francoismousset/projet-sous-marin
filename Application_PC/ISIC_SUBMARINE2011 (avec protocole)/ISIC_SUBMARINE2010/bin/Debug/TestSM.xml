@@ -9,22 +9,22 @@
       <hauteur>400</hauteur>
     </GENERAL>
     <FORM_REMOTE>
-      <POS_X>15</POS_X>
-      <POS_Y>243</POS_Y>
+      <POS_X>79</POS_X>
+      <POS_Y>42</POS_Y>
       <W>700</W>
       <H>640</H>
     </FORM_REMOTE>
     <FORM_GRAPH>
-      <POS_X>733</POS_X>
-      <POS_Y>30</POS_Y>
+      <POS_X>1009</POS_X>
+      <POS_Y>24</POS_Y>
       <W>700</W>
       <H>418</H>
     </FORM_GRAPH>
     <FORM_CONSOLE>
-      <POS_X>722</POS_X>
-      <POS_Y>497</POS_Y>
+      <POS_X>989</POS_X>
+      <POS_Y>517</POS_Y>
       <W>699</W>
-      <H>349</H>
+      <H>352</H>
     </FORM_CONSOLE>
   </IG>
   <RS232>
