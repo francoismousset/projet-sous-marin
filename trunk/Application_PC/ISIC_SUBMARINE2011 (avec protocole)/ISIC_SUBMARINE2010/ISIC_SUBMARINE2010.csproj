@@ -54,6 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.Transactions" />
@@ -71,6 +72,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BD.cs" />
+    <Compile Include="BDSousMarin.cs">
+      <DependentUpon>BDSousMarin.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BDSousMarin.Designer.cs">
       <DependentUpon>BDSousMarin.xsd</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -83,7 +87,6 @@
     </Compile>
     <Compile Include="BO_Graphes.cs" />
     <Compile Include="BO_Param.cs" />
-    <Compile Include="3964r.cs" />
     <Compile Include="FormAide.cs">
       <SubType>Form</SubType>
     </Compile>

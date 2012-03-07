@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlServerCe;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace ISIC_SUBMARINE2010
 {
@@ -13,22 +14,30 @@ namespace ISIC_SUBMARINE2010
 
         public BD()
         {
-            connection = new SqlCeConnection(ConnectString());
+            //connection = new SqlCeConnection(ConnectString());
+            connection = new SqlCeConnection(ConfigurationManager.ConnectionStrings["ISIC_SUBMARINE2010.Properties.Settings.BDSousMarinConnectionString"].ConnectionString + "; Password=" + "password");
         }
 
         // fonctions pour la connexion
 
         public void connexion()
         {
-            //ConnectString();
-            connection.Open();
+            try
+            {
+                connection.Open();
+            }
+            catch 
+            {
+                Console.WriteLine("Exception connexion !!!");
+            }
         }
 
         private string ConnectString()
         {
             string connectionString;
             //string fileName = "BDSousMarin.sdf";
-            string fileName = "C:\\Users\\Guillaume\\Desktop\\ISIC_SUBMARINE2011 (avec protocole)\\ISIC_SUBMARINE2010\\bin\\Debug\\BDSousMarin.sdf";
+            string fileName = "C:\\Documents and Settings\\Chris\\Mes documents\\Projet_Sous-marin\\Application_PC\\ISIC_SUBMARINE2011 (avec protocole)\\ISIC_SUBMARINE2010\\bin\\Debug";
+            //string fileName = "C:\\Users\\Guillaume\\Desktop\\ISIC_SUBMARINE2011 (avec protocole)\\ISIC_SUBMARINE2010\\bin\\Debug\\BDSousMarin.sdf";
             //string fileName = "C:\\Documents and Settings\\Frédéric\\Bureau\\ISIC_SUBMARINE2010\\ISIC_SUBMARINE2010\\bin\\Debug\\BDSousMarin.sdf";
             string password = "password";
             connectionString = string.Format("DataSource=\"{0}\"; Password='{1}'", fileName, password);
