@@ -15,6 +15,7 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <util/delay.h>
 #include "timer0.h"
 
 #define TRUE  0
