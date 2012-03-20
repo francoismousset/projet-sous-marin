@@ -20,7 +20,7 @@
 //Durée de fonctionnement maximum du sous-marin en minute
 //Lorsque la durée de fonctionnement a expiré, 
 //on reset le programme et le sous-marin remonte automatiquement
-#define LIFETIME_MIN	30	//D'après les tests pour 30min désiré, on est plus proche des 33min en réel
+#define LIFETIME_MIN	10	//D'après les tests pour 30min désiré, on est plus proche des 33min en réel
 #define TIMEOUT_RESET	((LIFETIME_MIN * 60) /8) -1
 
 void init_watchdog(void);
