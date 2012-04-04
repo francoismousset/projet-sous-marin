@@ -52,15 +52,11 @@ void init_motor_driver(void)
 	init_io();
 	init_pwm();
 
-	//Moteur 1 = Déplacement du ballast
-	//Moteur 2 = Remplissage ballast
-
 	//Vide les ballasts à l'allumage ou après perte d'alimentation
 	enable_motor1(TRUE);
 	enable_motor2(TRUE);
-	rotation_motor1(COUNTERCLOCKWISE);		//Déplacement ballast vers Alim
-	//rotation_motor2(COUNTERCLOCKWISE);	//Remplissage ballast
-	rotation_motor2(CLOCKWISE);				//Vidage ballast
+	rotation_motor1(COUNTERCLOCKWISE);
+	rotation_motor2(COUNTERCLOCKWISE);
 	set_speed_motor1(255);
 	set_speed_motor2(255);
 
@@ -76,31 +72,8 @@ void init_motor_driver(void)
 	//Désactivation des interruptions
 //	cli();
 
-	_delay_ms(10000);
-	_delay_ms(10000);
-
-	set_speed_motor1(0);
-	rotation_motor1(CLOCKWISE);	//Déplacement ballast vers Foxboard
-	_delay_ms(1000);
-	set_speed_motor1(255);
-
-	_delay_ms(7700);
-	enable_motor1(FALSE);
-
-	_delay_ms(10000);
-	_delay_ms(10000);
-	_delay_ms(10000);
-	_delay_ms(10000);
-	_delay_ms(10000);
-	_delay_ms(10000);
-	_delay_ms(10000);
-	_delay_ms(10000);
-	_delay_ms(10000);
-	_delay_ms(10000);
-	_delay_ms(5000);
-
-
 	//Désactivation de la sortie des moteurs
+	enable_motor1(FALSE);
 	enable_motor2(FALSE);
 
 	//Mise à 0 de la vitesse des moteurs
