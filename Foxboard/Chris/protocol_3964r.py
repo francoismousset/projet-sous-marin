@@ -9,6 +9,12 @@ Created on 2 avr. 2012
 if __name__ == '__main__':
     pass
 
+#debug = True
+debug = False
+
+#Nombre d'essai pour l'envoi de la trame
+nbr_error = 5
+
 def get_data_3964r(serial, timeout):
     STX = chr(0x02)
     ETX = chr(0x03)
@@ -19,26 +25,29 @@ def get_data_3964r(serial, timeout):
     serial.flushInput
     c = serial.read()
     if c == STX:
-        print ""
-        print "Receiving frame 3964r"
-        print("RX <- STX")
+        print "\nReceiving frame 3964r"
+        if debug == True :
+            print("RX <- STX")
         bcc = STX
         serial.flushOutput
         serial.write(DLE)
-        print("TX -> DLE")
+        if debug == True :
+            print("TX -> DLE")
 
         c = ''
         c = serial.read()
         if c != '':
             data1 = c
             bcc = (ord(bcc))^(ord(data1))
-            print("RX <- Data 1 : " + str(data1))
+            if debug == True :
+                print("RX <- Data 1 : " + str(data1))
             c = ''
             c = serial.read()
             if c != '':
                 data2 = c
                 bcc = (ord(chr(bcc)))^(ord(data2))
-                print("RX <- Data 2 : " + str(ord(data2)))
+                if debug == True :
+                    print("RX <- Data 2 : " + str(ord(data2)))
                 
                 c = ''
                 c = serial.read()
@@ -50,14 +59,16 @@ def get_data_3964r(serial, timeout):
 
                     data3 = c
                     bcc = (ord(chr(bcc)))^(ord(data3))
-                    print("RX <- Data 3 : " + str(ord(data3)))
+                    if debug == True :
+                        print("RX <- Data 3 : " + str(ord(data3)))
                     
                     c = ''
                     c = serial.read()
                     if c != '':
                         dle = c
                         if dle == DLE:
-                            print("RX <- DLE")
+                            if debug == True :
+                                print("RX <- DLE")
                             bcc = (ord(chr(bcc)))^(ord(dle))
                             
                             c = ''
@@ -65,66 +76,89 @@ def get_data_3964r(serial, timeout):
                             if c != '':
                                 etx = c
                                 if etx == ETX:
-                                    print("RX <- ETX")
+                                    if debug == True :
+                                        print("RX <- ETX")
                                     bcc = (ord(chr(bcc)))^(ord(etx))
                                     
                                     c = ''
                                     c = serial.read()
                                     if c != '':
                                         bcc_rx = c
-                                        print("RX <- BCC : " + str(ord(bcc_rx)))
+                                        if debug == True :
+                                            print("RX <- BCC : " + str(ord(bcc_rx)))
                                         
                                         if bcc == ord(bcc_rx):
                                             serial.flushOutput
                                             serial.write(DLE)
-                                            print("TX -> DLE")
-                                            print("Correct BCC")
-                                            print("Reception OK !")
+                                            if debug == True :
+                                                print("TX -> DLE")
+                                                print("Correct BCC")
+                                            print("Frame 3964r reception [OK]")
                                             tab_data = [data1, data2, data3]
                                             return tab_data
                                         else:
                                             serial.flushOutput
                                             serial.write(NAK)
-                                            print("TX -> NAK (Incorrect BCC)")                             
+                                            print("Error timeout [Incorrect BCC]")
+                                            if debug == True :
+                                                print("TX -> NAK")
+           
                                     else:
-                                        print("Timeout Error")
                                         serial.flushOutput
                                         serial.write(NAK)
-                                        print("TX -> NAK")
+                                        print("Error timeout [BCC not received]")
+                                        if debug == True :
+                                            print("TX -> NAK")
+
                                 else:
-                                    print("RX <- not ETX")
                                     serial.flushOutput
                                     serial.write(NAK)
-                                    print("TX -> NAK")
+                                    print("Error [Byte received is not ETX]")
+                                    if debug == True :
+                                        print("TX -> NAK")
+
                             else:
                                 serial.flusOutput
                                 serial.write(NAK)
-                                print("TX -> NAK")
+                                print("Error timeout [ETX not received]")
+                                if debug == True :
+                                    print("TX -> NAK")
+
                         else:
-                            print("RX <- not DLE")
                             serial.flushOutput
                             serial.write(NAK)
-                            print("TX -> NAK")
+                            print("Error [Byte received is not DLE]")
+                            if debug == True :
+                                print("TX -> NAK")
+                                
                     else:
-                        print("Timeout Error")
                         serial.flushOutput
                         serial.write(NAK)
-                        print("TX -> NAK")
+                        print("Error timeout [DLE not received]")
+                        if debug == True :
+                            print("TX -> NAK")
+
                 else:
-                    print("Timeout Error")
                     serial.flushOutput
                     serial.write(NAK)
-                    print("TX -> NAK")
+                    print("Error timeout [Data3 not received]")
+                    if debug == True :
+                        print("TX -> NAK")
+
             else:
-                print("Timeout Error")
                 serial.flushOutput
                 serial.write(NAK)
-                print("TX -> NAK")
+                print("Error timeout [Data2 not received]")
+                if debug == True :
+                    print("TX -> NAK")
+
         else:
-            print("Timeout Error")
             serial.flushOutput
             serial.write(NAK)
-            print("TX -> NAK")
+            print("Error timeout [Data1 not received]")
+            if debug == True :
+                print("TX -> NAK")
+
 
 def send_data_3964r(serial, timeout, data1, data2, data3):
     STX = chr(0x02)
@@ -135,23 +169,26 @@ def send_data_3964r(serial, timeout, data1, data2, data3):
     
     error = 0
     flag_error = True
-    while((error != 5) and (flag_error == True)):
+    while((error != nbr_error) and (flag_error == True)):
         flag_error = False
-        print ""
-        print "Transmitting frame 3964r"
+        
+        print "\nTransmitting frame 3964r"
         serial.flushInput()
         serial.flushOutput()
         serial.write(STX)
-        print("TX -> STX")
+        if debug == True :
+            print("TX -> STX")
         
         c = ''
         serial.timeout = timeout
         c = serial.read()
         if c == DLE:
-            print("RX <- DLE")
+            if debug == True :
+                print("RX <- DLE")
             serial.flushOutput()
             serial.write(data1)
-            print("TX -> Data1 : " + str(data1))
+            if debug == True :
+                print("TX -> Data1 : " + str(data1))
             
             c = ''
             serial.timeout = 0
@@ -159,13 +196,15 @@ def send_data_3964r(serial, timeout, data1, data2, data3):
             if c == '':
                 serial.flushOutput()
                 serial.write(data2)
-                print("TX -> Data2 : " + str(ord(data2)))
+                if debug == True :
+                    print("TX -> Data2 : " + str(ord(data2)))
                 
                 c = serial.read()
                 if c == '':
                     serial.flushOutput()
                     serial.write(data3)
-                    print("TX -> Data3 : " + str(ord(data3)))
+                    if debug == True :
+                        print("TX -> Data3 : " + str(ord(data3)))
                     
                     c = serial.read()
                     if c == '':
@@ -173,74 +212,88 @@ def send_data_3964r(serial, timeout, data1, data2, data3):
                             bcc = bcc ^ ord(DLE)
                             serial.flushOutput()
                             serial.write(data3)
-                            print("TX -> DLE (x2)")
+                            if debug == True :
+                                print("TX -> DLE (x2)")
                         
                         c = serial.read()
                         if c == '':
                             serial.flushOutput()
                             serial.write(DLE)
-                            print("TX -> DLE")
+                            if debug == True :
+                                print("TX -> DLE")
                             
                             if c == '':
                                 serial.flushOutput()
                                 serial.write(ETX)
-                                print("TX -> ETX")
+                                if debug == True :
+                                    print("TX -> ETX")
                                 
                                 if c == '':
                                     serial.flushOutput()
                                     serial.write(chr(bcc))
-                                    print("TX -> BCC : " + str(bcc))
+                                    if debug == True :
+                                        print("TX -> BCC : " + str(bcc))
                                     
                                     serial.timeout = timeout
                                     c = serial.read()
                                     if c == '':
-                                        print("No response")
+                                        print("Error timeout [DLE not received]")
                                         error = error + 1
                                         flag_error = True
                                     elif c == DLE:
-                                        print("RX <- DLE")
-                                        print("Transmission OK !")
+                                        if debug == True :
+                                            print("RX <- DLE")
+                                        print("Frame 3964r transmission [OK]")
                                     else:
-                                        print("RX <- not DLE")
-                                        print("Transmission error !")
+                                        if debug == True :
+                                            print("RX <- not DLE")
+                                        print("Error [Byte received is not DLE]")
                                         error = error + 1
                                         flag_error = True
                                 else:
-                                    print("RX <- data")
-                                    print("Disrupted communication !")
+                                    if debug == True :
+                                        print("RX <- data")
+                                    print("Error #1 [Disrupted communication]")
                                     error = error + 1
                                     flag_error = True
                             else:
-                                print("RX <- data")
-                                print("Disrupted communication !")
+                                if debug == True :
+                                    print("RX <- data")
+                                print("Error #2 [Disrupted communication]")
                                 error = error + 1
                                 flag_error = True
                         else:
-                            print("RX <- data")
-                            print("Disrupted communication !")
+                            if debug == True :
+                                print("RX <- data")
+                            print("Error #3 [Disrupted communication]")
                             error = error + 1
                             flag_error = True
                     else:
-                        print("RX <- data")
-                        print("Disrupted communication !")
+                        if debug == True :
+                            print("RX <- data")
+                        print("Error #4 [Disrupted communication]")
                         error = error + 1
                         flag_error = True
                 else:
-                    print("RX <- data")
-                    print("Disrupted communication !")
+                    if debug == True :
+                        print("RX <- data")
+                    print("Error #5 [Disrupted communication]")
                     error = error + 1
                     flag_error = True
             else:
-                print("RX <- data")
-                print("Disrupted communication !")
+                if debug == True :
+                    print("RX <- data")
+                print("Error #6 [Disrupted communication]")
                 error = error + 1
                 flag_error = True
         elif c == '':
-            print("No response")
+            if debug == True :
+                print("Error timeout [DLE not received]")
             error = error + 1
             flag_error = True
         else:
-            print("RX <- not DLE")
-            print("Transmission error !")
+            if debug == True :
+                print("RX <- not DLE")
+            print("Error [Byte received is not DLE]")
             error = error + 1
             flag_error = True
