@@ -23,11 +23,10 @@ class MotorInterface(threading.Thread):
         '''
         threading.Thread.__init__(self)
         self.motorComPort = comPort3964r
-        self._Frequency = 200
+        self._Frequency = 1000
         
     def run(self):
         while(1):
-            print "Motor Interface"
             if motorCommand.empty() == False:
                 tab_data = motorCommand.get()
                 self.motorComPort.send_data_3964r(self.motorComPort.timeout, tab_data[0], tab_data[1], tab_data[2])

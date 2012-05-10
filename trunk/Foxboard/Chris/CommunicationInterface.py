@@ -6,74 +6,77 @@ Created on 10 avr. 2012
 @author: Compère Christopher
 '''
 
-#import serial
-#from protocol_3964r import get_data_3964r, send_data_3964r
 from SerialComPort3964r import SerialComPort3964r
-from SensorInterface import *
-from MotorInterface import *
-from PitchRegulation import *
-from DivingRegulation import *
-from LoggingDB import *
+from SensorInterface import SensorInterface
+from MotorInterface import MotorInterface
+from PitchRegulation import PitchRegulation
+from DivingRegulation import DivingRegulation
+from LoggingDB import LoggingDB
+from USCmdWatcher import USCmdWatcher
+from BluetoothCmdWatcher import BluetoothCmdWatcher
 
-import time
-
-debug = True
-#debug = False
+#debug = True
+debug = False
 
 Timeout_US = 0.5
-Timeout_Motor = 0.025
-Timeout_Sensor = 0.025
-
-Frequency = 10
+Timeout_Motor = 0.05
+Timeout_Sensor = 0.1
+Timeout_Bluetooth = 0.5
 
 if debug == True :
-    CompPort_US = SerialComPort3964r(port = 'COM3',
-                                     baudrate = 9600,
-                                     timeout = Timeout_US,
-                                     debug = False)
+    ComPort_US = SerialComPort3964r(port = 'COM2',
+                                    baudrate = 9600,
+                                    timeout = Timeout_US,
+                                    debug = True)
+
+    ComPort_Bluetooth = SerialComPort3964r(port = 'COM6',
+                                        baudrate = 9600,
+                                        timeout = Timeout_Bluetooth,
+                                        debug = True)
     
-    ComPort_Motor = SerialComPort3964r(port = 'COM2',
+    ComPort_Motor = SerialComPort3964r(port = 'COM4',
                                        baudrate = 9600,
                                        timeout = Timeout_Motor,
                                        debug = False)
     
-    ComPort_Sensor = SerialComPort3964r(port = 'COM1',
+    ComPort_Sensor = SerialComPort3964r(port = 'COM8',
                                         baudrate = 9600,
                                         timeout = Timeout_Sensor,
-                                        debug = False)
-    
+                                        debug = True)
+
 else:
     ComPort_US = SerialComPort3964r(port = '/dev/rfcomm0',
-                                    baudrate = 300,
+                                    baudrate = 9600,
                                     timeout = Timeout_US,
-                                    debug = False)
+                                    debug = True)
+
+    ComPort_Bluetooth = SerialComPort3964r(port = '/dev/ttyS4',
+                                        baudrate = 9600,
+                                        timeout = Timeout_Bluetooth,
+                                        debug = True)
 
     ComPort_Motor = SerialComPort3964r(port = '/dev/ttyS2',
                                        baudrate = 9600,
                                        timeout = Timeout_Motor,
-                                       debug = False)
+                                       debug = True)
 
     ComPort_Sensor = SerialComPort3964r(port = '/dev/ttyS3',
                                         baudrate = 9600,
                                         timeout = Timeout_Sensor,
-                                        debug = False)
+                                        debug = True)
 
 threadMotor = MotorInterface(ComPort_Motor)
+threadUSWatcher = USCmdWatcher(ComPort_US)
+threadBluetoothWatcher = BluetoothCmdWatcher(ComPort_Bluetooth)
 threadSensor = SensorInterface(ComPort_Sensor)
 threadPitchRegulation = PitchRegulation()
 threadDivingRegulation = DivingRegulation()
 threadLoggingDB = LoggingDB()
 
 threadMotor.start()
+threadUSWatcher.start()
+threadBluetoothWatcher.start()
 threadSensor.start()
-threadPitchRegulation.start()
-threadDivingRegulation.start()
-threadLoggingDB.start()
-
-while(1):  
-    tab_data = CompPort_US.get_data_3964r(Timeout_US)
-    if tab_data != None:
-        if((tab_data[0] == 'M') or (tab_data[0] == 'K')):
-            motorCommand.put(tab_data)
-    print "Com US"
-    time.sleep(1./Frequency)
+#threadPitchRegulation.start()
+#threadDivingRegulation.start()
+#threadLoggingDB.start()

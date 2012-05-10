@@ -5,6 +5,7 @@ Created on 1 mai 2012
 
 @author: Compère Christopher
 '''
+
 import threading
 import Queue
 import time
@@ -23,7 +24,7 @@ class PitchRegulation(threading.Thread):
         '''
         threading.Thread.__init__(self)
         self._EnableRegulation = True
-        self._Frequency = 50
+        self._Frequency = 500
         
     def run(self):
         while(1):
