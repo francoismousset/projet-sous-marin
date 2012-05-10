@@ -6,8 +6,8 @@
 * Title 		 : Gestion du capteur de température TI TMP175
 * Author 		 : Michaël Brogniaux - Copyright (C) 2011
 * Created		 : 18/03/2012
-* Last revised	 : 18/03/2012
-* Version		 : 1.0
+* Last revised	 : 09/05/2012
+* Version		 : 1.1
 * Compliler		 : AVR Studio 4.18.716 - WinAVR-20100110
 * MCU			 : Atmel ATmega88
 *
@@ -17,6 +17,7 @@
 #include "I2Cmaster.h"
 #include "main.h"
 #include "TMP175.h"
+#include "3964r.h"
 
 /*********************************************************************/
 // FUNCTION: char initTMP175(unsigned char addr_mode)
@@ -45,31 +46,30 @@ unsigned char initTMP175(unsigned char addr_mode)
 /*********************************************************************/
 // FUNCTION: get_TMP175_Devices(unsigned char addr_mode, char *listTemp)
 // PURPOSE: Aquérir la T° d'un TMP175 dont l'adresse I2C est spécifiée
-void get_TMP175_Devices(unsigned char addr_mode, char *listTemp)
+unsigned char get_TMP175_Devices(unsigned char addr_mode, char *listTemp)
 {
-    i2c_start_wait(addr_mode+I2C_WRITE);    	// Start avec adresse capteur + write bit
-												// Et attend que le bus soit libéré
-    i2c_write(TEMP_REG);  						// Envoyer commande "Read Temperature"
-	i2c_rep_start(addr_mode+I2C_READ);        	// Repeated start avec adresse capteur + write bit
-
-	if(addr_mode == ADD1_TMP175)		// Si il s'agit du capteur de T° n°1
+	unsigned char ret;
+	
+	ret = i2c_start(addr_mode+I2C_WRITE);       // Start avec adresse capteur + write bit
+	i2c_stop();
+	
+	if (!ret)
 	{
+		i2c_start_wait(addr_mode+I2C_WRITE);    	// Start avec adresse capteur + write bit
+												// Et attend que le bus soit libéré
+    	i2c_write(TEMP_REG);  						// Envoyer commande "Read Temperature"
+		i2c_rep_start(addr_mode+I2C_READ);        	// Repeated start avec adresse capteur + write bit
+
 		listTemp[0] = i2c_readAck();	// Sauvegarder les bits de poids fort + Acknowledge
 		listTemp[1] = i2c_readNak();	// Sauvegarder les bits de poids faible + Not acknowledge
-	}
-	else if (addr_mode == ADD2_TMP175)  // Si il s'agit du capteur de T° n°2
-	{
-		listTemp[2] = i2c_readAck();	// Sauvegarder les bits de poids fort + Acknowledge
-		listTemp[3] = i2c_readNak();	// Sauvegarder les bits de poids faible + Not acknowledge
-	}
-	else if (addr_mode == ADD3_TMP175)	// Si il s'agit du capteur de T° n°3
-	{
-		listTemp[4] = i2c_readAck();	// Sauvegarder les bits de poids fort + Acknowledge
-		listTemp[5] = i2c_readNak();	// Sauvegarder les bits de poids faible + Not acknowledge
+
+		i2c_stop();							// Fin de communication sur le bus I2C
 	}
 	else
-	{	
-		asm("nop"); 					// Ne rien faire en cas d'erreur
+	{
+		listTemp[0] = 0;
+		listTemp[1] = 0;
 	}
-    i2c_stop();							// Fin de communication sur le bus I2C
+	return ret ; 	
 }
+
