@@ -3,7 +3,7 @@
 '''
 Created on 1 mai 2012
 
-@author: Comp�re Christopher
+@author: Compère Christopher
 '''
 
 import threading
@@ -25,7 +25,7 @@ class DivingRegulation(threading.Thread):
         threading.Thread.__init__(self)
         self._EnableRegulation = True
         self._Depth = 0
-        self._Frequency = 50
+        self._Frequency = 500
         
     def run(self):
         while(1):

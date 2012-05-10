@@ -30,14 +30,15 @@ class SerialComPort3964r(serial.Serial):
         #Nombre d'essai pour l'envoi de la trame
         self.nbr_error = 5
         
-    def get_data_3964r(self, timeout):
+    def get_data_3964r(self, timeout_start, timeout):
     
-        self.timeout = timeout
+        self.timeout = timeout_start
         self.flushInput
         c = self.read()
+        self.timeout = timeout
         if c == self.STX:
-            print "\nReceiving frame 3964r"
             if self.debug == True :
+                print "\nReceiving frame 3964r"
                 print("RX <- STX")
             bcc = self.STX
             self.flushOutput
@@ -104,70 +105,70 @@ class SerialComPort3964r(serial.Serial):
                                                 if self.debug == True :
                                                     print("TX -> DLE")
                                                     print("Correct BCC")
-                                                print("Frame 3964r reception [OK]")
+                                                    print("Frame 3964r reception [OK]")
                                                 tab_data = [data1, data2, data3]
                                                 return tab_data
                                             else:
                                                 self.flushOutput
                                                 self.write(self.NAK)
-                                                print("Error timeout [Incorrect BCC]")
                                                 if self.debug == True :
+                                                    print("Error timeout [Incorrect BCC]")
                                                     print("TX -> NAK")
                
                                         else:
                                             self.flushOutput
                                             self.write(self.NAK)
-                                            print("Error timeout [BCC not received]")
                                             if self.debug == True :
+                                                print("Error timeout [BCC not received]")
                                                 print("TX -> NAK")
     
                                     else:
                                         self.flushOutput
                                         self.write(self.NAK)
-                                        print("Error [Byte received is not ETX]")
                                         if self.debug == True :
+                                            print("Error [Byte received is not ETX]")
                                             print("TX -> NAK")
     
                                 else:
                                     self.flusOutput
                                     self.write(self.NAK)
-                                    print("Error timeout [ETX not received]")
                                     if self.debug == True :
+                                        print("Error timeout [ETX not received]")
                                         print("TX -> NAK")
     
                             else:
                                 self.flushOutput
                                 self.write(self.NAK)
-                                print("Error [Byte received is not DLE]")
                                 if self.debug == True :
+                                    print("Error [Byte received is not DLE]")
                                     print("TX -> NAK")
                                     
                         else:
                             self.flushOutput
                             self.write(self.NAK)
-                            print("Error timeout [DLE not received]")
                             if self.debug == True :
+                                print("Error timeout [DLE not received]")
                                 print("TX -> NAK")
     
                     else:
                         self.flushOutput
                         self.write(self.NAK)
-                        print("Error timeout [Data3 not received]")
                         if self.debug == True :
+                            print("Error timeout [Data3 not received]")
                             print("TX -> NAK")
     
                 else:
                     self.flushOutput
                     self.write(self.NAK)
-                    print("Error timeout [Data2 not received]")
                     if self.debug == True :
+                        print("Error timeout [Data2 not received]")
                         print("TX -> NAK")
     
             else:
                 self.flushOutput
                 self.write(self.NAK)
-                print("Error timeout [Data1 not received]")
                 if self.debug == True :
+                    print("Error timeout [Data1 not received]")
                     print("TX -> NAK")
     
     
@@ -180,11 +181,11 @@ class SerialComPort3964r(serial.Serial):
         while((error != self.nbr_error) and (flag_error == True)):
             flag_error = False
             
-            print "\nTransmitting frame 3964r"
             self.flushInput()
             self.flushOutput()
             self.write(self.STX)
             if self.debug == True :
+                print "\nTransmitting frame 3964r"
                 print("TX -> STX")
             
             c = ''
@@ -245,63 +246,64 @@ class SerialComPort3964r(serial.Serial):
                                         self.timeout = timeout
                                         c = self.read()
                                         if c == '':
-                                            print("Error timeout [DLE 2 not received]")
+                                            if self.debug == True :
+                                                print("Error timeout [DLE 2 not received]")
                                             error = error + 1
                                             flag_error = True
                                         elif c == self.DLE:
                                             if self.debug == True :
                                                 print("RX <- DLE")
-                                            print("Frame 3964r transmission [OK]")
+                                                print("Frame 3964r transmission [OK]")
                                         else:
                                             if self.debug == True :
                                                 print("RX <- not DLE")
-                                            print("Error [Byte received is not DLE]")
+                                                print("Error [Byte received is not DLE]")
                                             error = error + 1
                                             flag_error = True
                                     else:
                                         if self.debug == True :
                                             print("RX <- data")
-                                        print("Error #1 [Disrupted communication]")
+                                            print("Error #1 [Disrupted communication]")
                                         error = error + 1
                                         flag_error = True
                                 else:
                                     if self.debug == True :
                                         print("RX <- data")
-                                    print("Error #2 [Disrupted communication]")
+                                        print("Error #2 [Disrupted communication]")
                                     error = error + 1
                                     flag_error = True
                             else:
                                 if self.debug == True :
                                     print("RX <- data")
-                                print("Error #3 [Disrupted communication]")
+                                    print("Error #3 [Disrupted communication]")
                                 error = error + 1
                                 flag_error = True
                         else:
                             if self.debug == True :
                                 print("RX <- data")
-                            print("Error #4 [Disrupted communication]")
+                                print("Error #4 [Disrupted communication]")
                             error = error + 1
                             flag_error = True
                     else:
                         if self.debug == True :
                             print("RX <- data")
-                        print("Error #5 [Disrupted communication]")
+                            print("Error #5 [Disrupted communication]")
                         error = error + 1
                         flag_error = True
                 else:
                     if self.debug == True :
                         print("RX <- data")
-                    print("Error #6 [Disrupted communication]")
+                        print("Error #6 [Disrupted communication]")
                     error = error + 1
                     flag_error = True
             elif c == '':
-                print("Error timeout [DLE 1 not received]")
+                if self.debug == True :
+                    print("Error timeout [DLE 1 not received]")
                 error = error + 1
                 flag_error = True
             else:
                 if self.debug == True :
                     print("RX <- not DLE")
-                print("Error [Byte received is not DLE]")
+                    print("Error [Byte received is not DLE]")
                 error = error + 1
                 flag_error = True
-        
