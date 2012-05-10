@@ -6,8 +6,8 @@
 * Title 		 : Gestion du capteur de température TI TMP175
 * Author 		 : Michaël Brogniaux - Copyright (C) 2011
 * Created		 : 18/03/2012
-* Last revised	 : 18/03/2012
-* Version		 : 1.0
+* Last revised	 : 09/05/2012
+* Version		 : 1.1
 * Compliler		 : AVR Studio 4.18.716 - WinAVR-20100110
 * MCU			 : Atmel ATmega88
 *
@@ -20,6 +20,7 @@
 #define ADD1_TMP175  	0x90      			// Device address of TMP175 n°1, 10010000
 #define ADD2_TMP175  	0x92      			// Device address of TMP175 n°2, 10010010
 #define ADD3_TMP175  	0x94      			// Device address of TMP175 n°3, 10010100
+#define ADD4_TMP175  	0x96      			// Device address of TMP175 n°4, 1001011x
 
 /***** TMP175 Pointer Register Byte *****/
 #define TEMP_REG    	 0b00000000         // Temperature register
@@ -54,7 +55,7 @@ unsigned char initTMP175(unsigned char addr_mode);
 /*********************************************************************/
 // FUNCTION: get_DS1631_Devices(unsigned char addr_mode, char *listTemp)
 // PURPOSE: Aquérir la T° d'un TMP175 dont l'adresse I2C est spécifiée
-void get_TMP175_Devices(unsigned char addr_mode, char *listTemp);
+unsigned char get_TMP175_Devices(unsigned char addr_mode, char *listTemp);
 
 
 #endif
