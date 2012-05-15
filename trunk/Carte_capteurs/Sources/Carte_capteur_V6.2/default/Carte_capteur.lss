@@ -1,0 +1,2673 @@
+
+Carte_capteur.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000006  00800100  00000c24  00000cb8  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000c24  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000003d  00800106  00800106  00000cbe  2**0
+                  ALLOC
+  3 .debug_aranges 00000160  00000000  00000000  00000cbe  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 00000603  00000000  00000000  00000e1e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000011bd  00000000  00000000  00001421  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000007f1  00000000  00000000  000025de  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00001309  00000000  00000000  00002dcf  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000310  00000000  00000000  000040d8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000622  00000000  00000000  000043e8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000064b  00000000  00000000  00004a0a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	19 c0       	rjmp	.+50     	; 0x34 <__ctors_end>
+   2:	33 c0       	rjmp	.+102    	; 0x6a <__bad_interrupt>
+   4:	32 c0       	rjmp	.+100    	; 0x6a <__bad_interrupt>
+   6:	31 c0       	rjmp	.+98     	; 0x6a <__bad_interrupt>
+   8:	30 c0       	rjmp	.+96     	; 0x6a <__bad_interrupt>
+   a:	2f c0       	rjmp	.+94     	; 0x6a <__bad_interrupt>
+   c:	cb c4       	rjmp	.+2454   	; 0x9a4 <__vector_6>
+   e:	2d c0       	rjmp	.+90     	; 0x6a <__bad_interrupt>
+  10:	2c c0       	rjmp	.+88     	; 0x6a <__bad_interrupt>
+  12:	2b c0       	rjmp	.+86     	; 0x6a <__bad_interrupt>
+  14:	2a c0       	rjmp	.+84     	; 0x6a <__bad_interrupt>
+  16:	58 c4       	rjmp	.+2224   	; 0x8c8 <__vector_11>
+  18:	28 c0       	rjmp	.+80     	; 0x6a <__bad_interrupt>
+  1a:	27 c0       	rjmp	.+78     	; 0x6a <__bad_interrupt>
+  1c:	26 c0       	rjmp	.+76     	; 0x6a <__bad_interrupt>
+  1e:	25 c0       	rjmp	.+74     	; 0x6a <__bad_interrupt>
+  20:	24 c0       	rjmp	.+72     	; 0x6a <__bad_interrupt>
+  22:	23 c0       	rjmp	.+70     	; 0x6a <__bad_interrupt>
+  24:	67 c2       	rjmp	.+1230   	; 0x4f4 <__vector_18>
+  26:	21 c0       	rjmp	.+66     	; 0x6a <__bad_interrupt>
+  28:	20 c0       	rjmp	.+64     	; 0x6a <__bad_interrupt>
+  2a:	1f c0       	rjmp	.+62     	; 0x6a <__bad_interrupt>
+  2c:	1e c0       	rjmp	.+60     	; 0x6a <__bad_interrupt>
+  2e:	1d c0       	rjmp	.+58     	; 0x6a <__bad_interrupt>
+  30:	1c c0       	rjmp	.+56     	; 0x6a <__bad_interrupt>
+  32:	1b c0       	rjmp	.+54     	; 0x6a <__bad_interrupt>
+
+00000034 <__ctors_end>:
+  34:	11 24       	eor	r1, r1
+  36:	1f be       	out	0x3f, r1	; 63
+  38:	cf ef       	ldi	r28, 0xFF	; 255
+  3a:	d4 e0       	ldi	r29, 0x04	; 4
+  3c:	de bf       	out	0x3e, r29	; 62
+  3e:	cd bf       	out	0x3d, r28	; 61
+
+00000040 <__do_copy_data>:
+  40:	11 e0       	ldi	r17, 0x01	; 1
+  42:	a0 e0       	ldi	r26, 0x00	; 0
+  44:	b1 e0       	ldi	r27, 0x01	; 1
+  46:	e4 e2       	ldi	r30, 0x24	; 36
+  48:	fc e0       	ldi	r31, 0x0C	; 12
+  4a:	02 c0       	rjmp	.+4      	; 0x50 <.do_copy_data_start>
+
+0000004c <.do_copy_data_loop>:
+  4c:	05 90       	lpm	r0, Z+
+  4e:	0d 92       	st	X+, r0
+
+00000050 <.do_copy_data_start>:
+  50:	a6 30       	cpi	r26, 0x06	; 6
+  52:	b1 07       	cpc	r27, r17
+  54:	d9 f7       	brne	.-10     	; 0x4c <.do_copy_data_loop>
+
+00000056 <__do_clear_bss>:
+  56:	11 e0       	ldi	r17, 0x01	; 1
+  58:	a6 e0       	ldi	r26, 0x06	; 6
+  5a:	b1 e0       	ldi	r27, 0x01	; 1
+  5c:	01 c0       	rjmp	.+2      	; 0x60 <.do_clear_bss_start>
+
+0000005e <.do_clear_bss_loop>:
+  5e:	1d 92       	st	X+, r1
+
+00000060 <.do_clear_bss_start>:
+  60:	a3 34       	cpi	r26, 0x43	; 67
+  62:	b1 07       	cpc	r27, r17
+  64:	e1 f7       	brne	.-8      	; 0x5e <.do_clear_bss_loop>
+  66:	76 d2       	rcall	.+1260   	; 0x554 <main>
+  68:	db c5       	rjmp	.+2998   	; 0xc20 <_exit>
+
+0000006a <__bad_interrupt>:
+  6a:	ca cf       	rjmp	.-108    	; 0x0 <__vectors>
+
+0000006c <process_bcc_3964r>:
+//Permet de pré-calculer le bcc avant l'envoi d'une trame
+//Paramètres : - data[] => tableau à envoyer par le protocole
+//			   - lenght => longueur du tableau data[]
+//Valeur de retour : - le bcc pré-calculé
+char process_bcc_3964r(char data[], unsigned char lenght)
+{
+  6c:	fc 01       	movw	r30, r24
+  6e:	92 e0       	ldi	r25, 0x02	; 2
+  70:	20 e0       	ldi	r18, 0x00	; 0
+  72:	07 c0       	rjmp	.+14     	; 0x82 <process_bcc_3964r+0x16>
+	unsigned char bcc = 0, i;
+
+	bcc ^= STX;
+	for(i=0; i<lenght; i++)
+	{
+		bcc ^= data[i];
+  74:	80 81       	ld	r24, Z
+  76:	98 27       	eor	r25, r24
+		//On compte un double DLE
+		if(data[i] == DLE)
+  78:	80 31       	cpi	r24, 0x10	; 16
+  7a:	09 f4       	brne	.+2      	; 0x7e <process_bcc_3964r+0x12>
+			bcc ^= DLE;
+  7c:	98 27       	eor	r25, r24
+char process_bcc_3964r(char data[], unsigned char lenght)
+{
+	unsigned char bcc = 0, i;
+
+	bcc ^= STX;
+	for(i=0; i<lenght; i++)
+  7e:	2f 5f       	subi	r18, 0xFF	; 255
+  80:	31 96       	adiw	r30, 0x01	; 1
+  82:	26 17       	cp	r18, r22
+  84:	b8 f3       	brcs	.-18     	; 0x74 <process_bcc_3964r+0x8>
+	}
+	bcc ^= DLE;
+	bcc ^= ETX;
+
+	return bcc;
+}
+  86:	83 e1       	ldi	r24, 0x13	; 19
+  88:	89 27       	eor	r24, r25
+  8a:	08 95       	ret
+
+0000008c <sum_error_3964r>:
+char sum_error_3964r(void)
+{
+	unsigned char sum, i;
+
+	for(i=0, sum=0; i<NB_ERRORS; i++)
+		sum += tab_error_3964r[i];
+  8c:	80 91 0a 01 	lds	r24, 0x010A
+  90:	90 91 09 01 	lds	r25, 0x0109
+  94:	89 0f       	add	r24, r25
+  96:	90 91 0b 01 	lds	r25, 0x010B
+  9a:	89 0f       	add	r24, r25
+  9c:	90 91 0c 01 	lds	r25, 0x010C
+  a0:	89 0f       	add	r24, r25
+  a2:	90 91 0d 01 	lds	r25, 0x010D
+
+	return sum;
+}
+  a6:	89 0f       	add	r24, r25
+  a8:	08 95       	ret
+
+000000aa <get_data_3964r>:
+//Fonction get_data_3964r
+//Recoi des données sur le protocole 3964 par le port série
+//Paramètres : - data[] => tableau qui va recevoir les données par le protocole
+//Valeur de retour : Aucune
+void get_data_3964r(char data[])
+{
+  aa:	9f 92       	push	r9
+  ac:	af 92       	push	r10
+  ae:	bf 92       	push	r11
+  b0:	cf 92       	push	r12
+  b2:	df 92       	push	r13
+  b4:	ef 92       	push	r14
+  b6:	ff 92       	push	r15
+  b8:	0f 93       	push	r16
+  ba:	1f 93       	push	r17
+  bc:	df 93       	push	r29
+  be:	cf 93       	push	r28
+  c0:	00 d0       	rcall	.+0      	; 0xc2 <get_data_3964r+0x18>
+  c2:	0f 92       	push	r0
+  c4:	cd b7       	in	r28, 0x3d	; 61
+  c6:	de b7       	in	r29, 0x3e	; 62
+  c8:	6c 01       	movw	r12, r24
+  ca:	10 e0       	ldi	r17, 0x00	; 0
+		//Désactivation de l'interruption de reception usart
+		DISABLE_RX_INT_USART;	
+		//Initialisation des variables
+		i = 0;
+		prev_c = 0;
+		flag_timer1 = FALSE;
+  cc:	99 24       	eor	r9, r9
+  ce:	93 94       	inc	r9
+		flag_error	= FALSE;
+		//Initialise le tableau flag_dle avec la valeur FALSE
+		memset(flag_dle,FALSE,3);
+  d0:	5e 01       	movw	r10, r28
+  d2:	08 94       	sec
+  d4:	a1 1c       	adc	r10, r1
+  d6:	b1 1c       	adc	r11, r1
+
+	pass = 0;
+	do
+	{
+		//Désactivation de l'interruption de reception usart
+		DISABLE_RX_INT_USART;	
+  d8:	80 91 c1 00 	lds	r24, 0x00C1
+  dc:	8f 77       	andi	r24, 0x7F	; 127
+  de:	80 93 c1 00 	sts	0x00C1, r24
+		//Initialisation des variables
+		i = 0;
+		prev_c = 0;
+		flag_timer1 = FALSE;
+  e2:	90 92 0e 01 	sts	0x010E, r9
+		flag_error	= FALSE;
+		//Initialise le tableau flag_dle avec la valeur FALSE
+		memset(flag_dle,FALSE,3);
+  e6:	c5 01       	movw	r24, r10
+  e8:	61 e0       	ldi	r22, 0x01	; 1
+  ea:	70 e0       	ldi	r23, 0x00	; 0
+  ec:	43 e0       	ldi	r20, 0x03	; 3
+  ee:	50 e0       	ldi	r21, 0x00	; 0
+  f0:	90 d5       	rcall	.+2848   	; 0xc12 <memset>
+	
+		//On attend de recevoir un caractère
+		if (pass==1)	
+  f2:	11 30       	cpi	r17, 0x01	; 1
+  f4:	11 f4       	brne	.+4      	; 0xfa <get_data_3964r+0x50>
+		{
+			c = getchar_usart();
+  f6:	0f d4       	rcall	.+2078   	; 0x916 <getchar_usart>
+  f8:	02 c0       	rjmp	.+4      	; 0xfe <get_data_3964r+0x54>
+		}
+		else
+		{
+			c = UDR0 ;// Mettre dans le buffer l'octet reçu sur RX	
+  fa:	80 91 c6 00 	lds	r24, 0x00C6
+			pass=1;
+		}
+
+		//Si on reçoi un STX
+		if(c == STX)
+  fe:	82 30       	cpi	r24, 0x02	; 2
+ 100:	09 f0       	breq	.+2      	; 0x104 <get_data_3964r+0x5a>
+ 102:	55 c0       	rjmp	.+170    	; 0x1ae <get_data_3964r+0x104>
+		{
+			//Calcul du bcc
+			bcc = STX;
+
+			//On répond DLE
+			putchar_usart(DLE);
+ 104:	80 e1       	ldi	r24, 0x10	; 16
+ 106:	ff d3       	rcall	.+2046   	; 0x906 <putchar_usart>
+ 108:	ff 24       	eor	r15, r15
+ 10a:	10 e0       	ldi	r17, 0x00	; 0
+ 10c:	82 e0       	ldi	r24, 0x02	; 2
+ 10e:	e8 2e       	mov	r14, r24
+
+			//Début de la boucle de réception
+			do
+			{
+				//Démarrage du timer avec la valeur de timeout TIMEOUT_MS
+				start_timer1(TIMEOUT_MS);
+ 110:	80 e1       	ldi	r24, 0x10	; 16
+ 112:	97 e2       	ldi	r25, 0x27	; 39
+ 114:	c1 d3       	rcall	.+1922   	; 0x898 <start_timer1>
+				
+				//Attend de recoir un caractère
+				//Passage à l'instruction suivant si le timeout est déclenché (flag_timer1 == TRUE)
+				c = getchar_usart();
+ 116:	ff d3       	rcall	.+2046   	; 0x916 <getchar_usart>
+ 118:	08 2f       	mov	r16, r24
+				//Stop le timer1
+				stop_timer1();
+ 11a:	ca d3       	rcall	.+1940   	; 0x8b0 <stop_timer1>
+				
+				//Si le timeout n'a pas expiré
+				if(flag_timer1 == FALSE)
+ 11c:	90 91 0e 01 	lds	r25, 0x010E
+ 120:	91 30       	cpi	r25, 0x01	; 1
+ 122:	41 f5       	brne	.+80     	; 0x174 <get_data_3964r+0xca>
+				{
+					//Calcul du bcc					
+					bcc ^= c;
+ 124:	e0 26       	eor	r14, r16
+					//Machine d'état pour le contrôle des double DLE
+					//Cette machine d'état permet de différencier 
+					//les doubles DLE et le DLE de terminaison des données utiles.
+
+					//Si le caractère précédent est différent d'un DLE et que le caractère reçu est un DLE
+					if((prev_c != DLE) && (c == DLE))
+ 126:	80 e1       	ldi	r24, 0x10	; 16
+ 128:	f8 16       	cp	r15, r24
+ 12a:	19 f0       	breq	.+6      	; 0x132 <get_data_3964r+0x88>
+ 12c:	00 31       	cpi	r16, 0x10	; 16
+ 12e:	a9 f4       	brne	.+42     	; 0x15a <get_data_3964r+0xb0>
+ 130:	0d c0       	rjmp	.+26     	; 0x14c <get_data_3964r+0xa2>
+						flag_dle[2] = FALSE;
+					}
+					else
+					{
+						//Si on est en présence d'un double DLE
+						if((prev_c == DLE) && (c == DLE))
+ 132:	00 31       	cpi	r16, 0x10	; 16
+ 134:	79 f4       	brne	.+30     	; 0x154 <get_data_3964r+0xaa>
+						{
+							//Vérification d'état (1er passage)
+							if(flag_dle[1] == FALSE)
+ 136:	8a 81       	ldd	r24, Y+2	; 0x02
+ 138:	81 30       	cpi	r24, 0x01	; 1
+ 13a:	41 f4       	brne	.+16     	; 0x14c <get_data_3964r+0xa2>
+							{
+								//Mise à jour des états
+								flag_dle[0] = FALSE;
+ 13c:	89 83       	std	Y+1, r24	; 0x01
+								flag_dle[1] = TRUE;
+ 13e:	1a 82       	std	Y+2, r1	; 0x02
+								flag_dle[2] = FALSE;
+ 140:	8b 83       	std	Y+3, r24	; 0x03
+								
+								//Place la valeur DLE dans le tabeau data
+								data[i] = DLE;
+ 142:	f6 01       	movw	r30, r12
+ 144:	e1 0f       	add	r30, r17
+ 146:	f1 1d       	adc	r31, r1
+ 148:	f0 82       	st	Z, r15
+ 14a:	0e c0       	rjmp	.+28     	; 0x168 <get_data_3964r+0xbe>
+							}
+							//Si 3 DLE consécutifs
+							else
+							{
+								//Mise à jour des états
+								flag_dle[0] = TRUE;
+ 14c:	19 82       	std	Y+1, r1	; 0x01
+								flag_dle[1] = FALSE;
+ 14e:	9a 83       	std	Y+2, r25	; 0x02
+								flag_dle[2] = FALSE;
+ 150:	9b 83       	std	Y+3, r25	; 0x03
+ 152:	0b c0       	rjmp	.+22     	; 0x16a <get_data_3964r+0xc0>
+						{
+							//Si le caractère présent est différent de DLE mais que le précédent est un DLE
+							if((prev_c == DLE) && (c != DLE))
+							{
+								//Mise à jour des états
+								flag_dle[1] = FALSE;
+ 154:	9a 83       	std	Y+2, r25	; 0x02
+								flag_dle[2] = TRUE;
+ 156:	1b 82       	std	Y+3, r1	; 0x03
+ 158:	03 c0       	rjmp	.+6      	; 0x160 <get_data_3964r+0xb6>
+							}
+
+							else
+							{
+								//Mise à jour des états
+								flag_dle[0] = FALSE;
+ 15a:	99 83       	std	Y+1, r25	; 0x01
+								flag_dle[1] = FALSE;
+ 15c:	9a 83       	std	Y+2, r25	; 0x02
+								flag_dle[2] = FALSE;
+ 15e:	9b 83       	std	Y+3, r25	; 0x03
+								
+								//Place la valeur c dans le tabeau data
+								data[i] = c;
+ 160:	f6 01       	movw	r30, r12
+ 162:	e1 0f       	add	r30, r17
+ 164:	f1 1d       	adc	r31, r1
+ 166:	00 83       	st	Z, r16
+								//Incrémentation de l'indice du tableau
+								i++;
+ 168:	1f 5f       	subi	r17, 0xFF	; 255
+ 16a:	f0 2e       	mov	r15, r16
+					putchar_usart(NAK);
+					//Sort de la boucle de reception
+					break;
+				}
+			//On continue de recevoir des caractères tant que on a pas déterminer le DLE de terminaison
+			}while(!((flag_dle[0] == TRUE) && (flag_dle[2] == TRUE)));
+ 16c:	89 81       	ldd	r24, Y+1	; 0x01
+ 16e:	88 23       	and	r24, r24
+ 170:	79 f6       	brne	.-98     	; 0x110 <get_data_3964r+0x66>
+ 172:	03 c0       	rjmp	.+6      	; 0x17a <get_data_3964r+0xd0>
+				}
+				//Si le timeout a expiré
+				else
+				{
+					//Envoi du caractère NAK
+					putchar_usart(NAK);
+ 174:	85 e1       	ldi	r24, 0x15	; 21
+ 176:	c7 d3       	rcall	.+1934   	; 0x906 <putchar_usart>
+ 178:	04 c0       	rjmp	.+8      	; 0x182 <get_data_3964r+0xd8>
+					//Sort de la boucle de reception
+					break;
+ 17a:	f0 2e       	mov	r15, r16
+				}
+			//On continue de recevoir des caractères tant que on a pas déterminer le DLE de terminaison
+			}while(!((flag_dle[0] == TRUE) && (flag_dle[2] == TRUE)));
+ 17c:	8b 81       	ldd	r24, Y+3	; 0x03
+ 17e:	88 23       	and	r24, r24
+ 180:	39 f6       	brne	.-114    	; 0x110 <get_data_3964r+0x66>
+
+			//Si le timeout n'a pas expiré
+			if(flag_timer1 == FALSE)
+ 182:	80 91 0e 01 	lds	r24, 0x010E
+ 186:	81 30       	cpi	r24, 0x01	; 1
+ 188:	91 f4       	brne	.+36     	; 0x1ae <get_data_3964r+0x104>
+			{
+				//Si le caractère dernier après le DLE est ETX
+				if(c == ETX)
+ 18a:	03 30       	cpi	r16, 0x03	; 3
+ 18c:	81 f4       	brne	.+32     	; 0x1ae <get_data_3964r+0x104>
+				{
+					//Démarrage du timer1 avec valeur de timeout TIMEOUT_MS
+					start_timer1(TIMEOUT_MS);
+ 18e:	80 e1       	ldi	r24, 0x10	; 16
+ 190:	97 e2       	ldi	r25, 0x27	; 39
+ 192:	82 d3       	rcall	.+1796   	; 0x898 <start_timer1>
+					//Attend de recevoir un caractère sur le port série
+					c = getchar_usart();
+ 194:	c0 d3       	rcall	.+1920   	; 0x916 <getchar_usart>
+ 196:	18 2f       	mov	r17, r24
+					//Arret du timeout
+					stop_timer1();
+ 198:	8b d3       	rcall	.+1814   	; 0x8b0 <stop_timer1>
+					
+					//Si le timeout n'a pas expiré
+					if(flag_timer1 == FALSE)
+ 19a:	80 91 0e 01 	lds	r24, 0x010E
+ 19e:	81 30       	cpi	r24, 0x01	; 1
+ 1a0:	31 f4       	brne	.+12     	; 0x1ae <get_data_3964r+0x104>
+					{
+						//Si le bcc reçu est égale au bcc calculé
+						if(c == bcc)
+ 1a2:	1e 15       	cp	r17, r14
+ 1a4:	21 f4       	brne	.+8      	; 0x1ae <get_data_3964r+0x104>
+							//Envoi d'un DLE
+							putchar_usart(DLE);
+ 1a6:	80 e1       	ldi	r24, 0x10	; 16
+ 1a8:	ae d3       	rcall	.+1884   	; 0x906 <putchar_usart>
+ 1aa:	91 e0       	ldi	r25, 0x01	; 1
+ 1ac:	03 c0       	rjmp	.+6      	; 0x1b4 <get_data_3964r+0x10a>
+		}
+		//Si le 1er caractère de la trame n'est pas STX
+		else
+		{
+			//Envoi un NAK
+			putchar_usart(NAK);
+ 1ae:	85 e1       	ldi	r24, 0x15	; 21
+ 1b0:	aa d3       	rcall	.+1876   	; 0x906 <putchar_usart>
+ 1b2:	90 e0       	ldi	r25, 0x00	; 0
+			flag_error = TRUE;
+		}
+	//On continue la reception tant que le flag_timer1 ou le flag_error est à TRUE
+	}while((flag_timer1 == TRUE) || (flag_error == TRUE));
+ 1b4:	80 91 0e 01 	lds	r24, 0x010E
+ 1b8:	11 e0       	ldi	r17, 0x01	; 1
+ 1ba:	88 23       	and	r24, r24
+ 1bc:	09 f4       	brne	.+2      	; 0x1c0 <get_data_3964r+0x116>
+ 1be:	8c cf       	rjmp	.-232    	; 0xd8 <get_data_3964r+0x2e>
+ 1c0:	99 23       	and	r25, r25
+ 1c2:	09 f4       	brne	.+2      	; 0x1c6 <get_data_3964r+0x11c>
+ 1c4:	89 cf       	rjmp	.-238    	; 0xd8 <get_data_3964r+0x2e>
+
+	//On réactive les interruptions sur usart
+	ENABLE_RX_INT_USART;
+ 1c6:	80 91 c1 00 	lds	r24, 0x00C1
+ 1ca:	80 68       	ori	r24, 0x80	; 128
+ 1cc:	80 93 c1 00 	sts	0x00C1, r24
+}
+ 1d0:	0f 90       	pop	r0
+ 1d2:	0f 90       	pop	r0
+ 1d4:	0f 90       	pop	r0
+ 1d6:	cf 91       	pop	r28
+ 1d8:	df 91       	pop	r29
+ 1da:	1f 91       	pop	r17
+ 1dc:	0f 91       	pop	r16
+ 1de:	ff 90       	pop	r15
+ 1e0:	ef 90       	pop	r14
+ 1e2:	df 90       	pop	r13
+ 1e4:	cf 90       	pop	r12
+ 1e6:	bf 90       	pop	r11
+ 1e8:	af 90       	pop	r10
+ 1ea:	9f 90       	pop	r9
+ 1ec:	08 95       	ret
+
+000001ee <send_data_3964r>:
+//			   - lenght => longueur du tableau data[]
+//Valeur de retour : - TRANSMISSION_SUCCESS
+//					 - TRANSMISSION_FAILED
+//					 - RECEPTION_MODE
+char send_data_3964r(char data[], unsigned char lenght)
+{
+ 1ee:	cf 92       	push	r12
+ 1f0:	df 92       	push	r13
+ 1f2:	ef 92       	push	r14
+ 1f4:	ff 92       	push	r15
+ 1f6:	0f 93       	push	r16
+ 1f8:	1f 93       	push	r17
+ 1fa:	cf 93       	push	r28
+ 1fc:	df 93       	push	r29
+ 1fe:	7c 01       	movw	r14, r24
+ 200:	06 2f       	mov	r16, r22
+	unsigned char bcc, i, c;
+	//Initialisation du tableau tab_error_3964r
+	memset(tab_error_3964r,0,5);
+ 202:	85 e0       	ldi	r24, 0x05	; 5
+ 204:	e9 e0       	ldi	r30, 0x09	; 9
+ 206:	f1 e0       	ldi	r31, 0x01	; 1
+ 208:	df 01       	movw	r26, r30
+ 20a:	1d 92       	st	X+, r1
+ 20c:	8a 95       	dec	r24
+ 20e:	e9 f7       	brne	.-6      	; 0x20a <send_data_3964r+0x1c>
+
+	//Pré-calcul du bcc pour la trame 3964 qui sera envoyée
+	bcc = process_bcc_3964r(data, lenght);
+ 210:	c7 01       	movw	r24, r14
+ 212:	2c df       	rcall	.-424    	; 0x6c <process_bcc_3964r>
+ 214:	d8 2e       	mov	r13, r24
+
+	do
+	{
+		//Initialisation des différents flag
+		flag_timer1 = FALSE;
+ 216:	cc 24       	eor	r12, r12
+ 218:	c3 94       	inc	r12
+ 21a:	c0 92 0e 01 	sts	0x010E, r12
+		flag_usart	= FALSE;
+ 21e:	c0 92 08 01 	sts	0x0108, r12
+
+		//Envoie du caractère STX
+		putchar_usart(STX);
+ 222:	82 e0       	ldi	r24, 0x02	; 2
+ 224:	70 d3       	rcall	.+1760   	; 0x906 <putchar_usart>
+
+		//Démarre le timer avec la valeur de timeout TIMEOUT_MS
+		start_timer1(TIMEOUT_MS);
+ 226:	80 e1       	ldi	r24, 0x10	; 16
+ 228:	97 e2       	ldi	r25, 0x27	; 39
+ 22a:	36 d3       	rcall	.+1644   	; 0x898 <start_timer1>
+		//Attend de recevoir un caractère
+		//Si on a pas reçu de caractère avant le timeout, flag_timer1 se met à TRUE et on continue l'execution du programme
+		c = getchar_usart();
+ 22c:	74 d3       	rcall	.+1768   	; 0x916 <getchar_usart>
+ 22e:	18 2f       	mov	r17, r24
+		//On arrete le timer1
+		stop_timer1();
+ 230:	3f d3       	rcall	.+1662   	; 0x8b0 <stop_timer1>
+
+		//On vérifie le timeout n'a pas été déclenché
+		if(flag_timer1 == FALSE)
+ 232:	80 91 0e 01 	lds	r24, 0x010E
+ 236:	81 30       	cpi	r24, 0x01	; 1
+ 238:	09 f0       	breq	.+2      	; 0x23c <send_data_3964r+0x4e>
+ 23a:	77 c0       	rjmp	.+238    	; 0x32a <send_data_3964r+0x13c>
+		{
+			//Si le caractère reçu est un DLE
+			if(c == DLE)
+ 23c:	10 31       	cpi	r17, 0x10	; 16
+ 23e:	09 f0       	breq	.+2      	; 0x242 <send_data_3964r+0x54>
+ 240:	6a c0       	rjmp	.+212    	; 0x316 <send_data_3964r+0x128>
+			{
+				//Activation l'interruption de l'usart en reception
+				//Si un caracère est reçu durant l'envoie, flag_usart est mis à TRUE
+				ENABLE_RX_INT_USART;
+ 242:	80 91 c1 00 	lds	r24, 0x00C1
+ 246:	80 68       	ori	r24, 0x80	; 128
+ 248:	80 93 c1 00 	sts	0x00C1, r24
+ 24c:	e7 01       	movw	r28, r14
+ 24e:	10 e0       	ldi	r17, 0x00	; 0
+ 250:	11 c0       	rjmp	.+34     	; 0x274 <send_data_3964r+0x86>
+				//On envoie le contenu du tableau data[]
+				//En fonction de la longueur donnée en paramètre
+				for(i=0; i<lenght; i++)
+				{
+					//Si on a pas reçu de caractère
+					if(flag_usart == FALSE)
+ 252:	80 91 08 01 	lds	r24, 0x0108
+ 256:	81 30       	cpi	r24, 0x01	; 1
+ 258:	79 f4       	brne	.+30     	; 0x278 <send_data_3964r+0x8a>
+					{
+						//Envoi des caractères du tableau data[]
+						putchar_usart(data[i]);
+ 25a:	88 81       	ld	r24, Y
+ 25c:	54 d3       	rcall	.+1704   	; 0x906 <putchar_usart>
+						//Traitement du double DLE
+						if(data[i] == DLE)
+ 25e:	88 81       	ld	r24, Y
+ 260:	80 31       	cpi	r24, 0x10	; 16
+ 262:	31 f4       	brne	.+12     	; 0x270 <send_data_3964r+0x82>
+						{
+							//Revérification du flag_usart
+							if(flag_usart == FALSE)
+ 264:	80 91 08 01 	lds	r24, 0x0108
+ 268:	81 30       	cpi	r24, 0x01	; 1
+ 26a:	31 f4       	brne	.+12     	; 0x278 <send_data_3964r+0x8a>
+								//Envoi du 2eme DLE
+								putchar_usart(DLE);
+ 26c:	80 e1       	ldi	r24, 0x10	; 16
+ 26e:	4b d3       	rcall	.+1686   	; 0x906 <putchar_usart>
+				//Si un caracère est reçu durant l'envoie, flag_usart est mis à TRUE
+				ENABLE_RX_INT_USART;
+				
+				//On envoie le contenu du tableau data[]
+				//En fonction de la longueur donnée en paramètre
+				for(i=0; i<lenght; i++)
+ 270:	1f 5f       	subi	r17, 0xFF	; 255
+ 272:	21 96       	adiw	r28, 0x01	; 1
+ 274:	10 17       	cp	r17, r16
+ 276:	68 f3       	brcs	.-38     	; 0x252 <send_data_3964r+0x64>
+					else
+						break;
+				}
+				
+				//Vérification du flag_usart	
+				if(flag_usart == FALSE)
+ 278:	80 91 08 01 	lds	r24, 0x0108
+ 27c:	81 30       	cpi	r24, 0x01	; 1
+ 27e:	79 f5       	brne	.+94     	; 0x2de <send_data_3964r+0xf0>
+				{
+					//Envoi du DLE pour signifier la fin des données utiles
+					putchar_usart(DLE);
+ 280:	80 e1       	ldi	r24, 0x10	; 16
+ 282:	41 d3       	rcall	.+1666   	; 0x906 <putchar_usart>
+					//Vérification du flag_usart
+					if(flag_usart == FALSE)
+ 284:	80 91 08 01 	lds	r24, 0x0108
+ 288:	81 30       	cpi	r24, 0x01	; 1
+ 28a:	49 f5       	brne	.+82     	; 0x2de <send_data_3964r+0xf0>
+					{
+						//Envoi de ETX
+						putchar_usart(ETX);
+ 28c:	83 e0       	ldi	r24, 0x03	; 3
+ 28e:	3b d3       	rcall	.+1654   	; 0x906 <putchar_usart>
+						//Vérification du flag_usart
+						if(flag_usart == FALSE)
+ 290:	80 91 08 01 	lds	r24, 0x0108
+ 294:	81 30       	cpi	r24, 0x01	; 1
+ 296:	19 f5       	brne	.+70     	; 0x2de <send_data_3964r+0xf0>
+						{
+							//Désactivation de l'interruption de reception usart
+							DISABLE_RX_INT_USART;
+ 298:	80 91 c1 00 	lds	r24, 0x00C1
+ 29c:	8f 77       	andi	r24, 0x7F	; 127
+ 29e:	80 93 c1 00 	sts	0x00C1, r24
+							
+							//Envoi du bcc
+							putchar_usart(bcc);
+ 2a2:	8d 2d       	mov	r24, r13
+ 2a4:	30 d3       	rcall	.+1632   	; 0x906 <putchar_usart>
+
+							//Vérification du flag_usart
+							if(flag_usart == FALSE)
+ 2a6:	80 91 08 01 	lds	r24, 0x0108
+ 2aa:	81 30       	cpi	r24, 0x01	; 1
+ 2ac:	e9 f4       	brne	.+58     	; 0x2e8 <send_data_3964r+0xfa>
+							{
+								//Démarrage du timer1 avec timeout de valeur TIMEOUT_MS
+								start_timer1(TIMEOUT_MS);
+ 2ae:	80 e1       	ldi	r24, 0x10	; 16
+ 2b0:	97 e2       	ldi	r25, 0x27	; 39
+ 2b2:	f2 d2       	rcall	.+1508   	; 0x898 <start_timer1>
+								//Attend la reception d'un caractère
+								c = getchar_usart();
+ 2b4:	30 d3       	rcall	.+1632   	; 0x916 <getchar_usart>
+ 2b6:	18 2f       	mov	r17, r24
+								//Arrete le timer1
+								stop_timer1();
+ 2b8:	fb d2       	rcall	.+1526   	; 0x8b0 <stop_timer1>
+
+								//Vérification que le timeout n'a pas expiré
+								if(flag_timer1 == FALSE)
+ 2ba:	80 91 0e 01 	lds	r24, 0x010E
+ 2be:	81 30       	cpi	r24, 0x01	; 1
+ 2c0:	41 f4       	brne	.+16     	; 0x2d2 <send_data_3964r+0xe4>
+								{
+									//Si on a reçu un caractère différent de DLE
+									if(c != DLE)
+ 2c2:	10 31       	cpi	r17, 0x10	; 16
+ 2c4:	b1 f0       	breq	.+44     	; 0x2f2 <send_data_3964r+0x104>
+										//Incrémentation du nombre d'erreurs
+										tab_error_3964r[1]++;
+ 2c6:	80 91 0a 01 	lds	r24, 0x010A
+ 2ca:	8f 5f       	subi	r24, 0xFF	; 255
+ 2cc:	80 93 0a 01 	sts	0x010A, r24
+ 2d0:	10 c0       	rjmp	.+32     	; 0x2f2 <send_data_3964r+0x104>
+								}
+								else
+									//Incrémentation du nombre d'erreurs
+									tab_error_3964r[2]++;
+ 2d2:	80 91 0b 01 	lds	r24, 0x010B
+ 2d6:	8f 5f       	subi	r24, 0xFF	; 255
+ 2d8:	80 93 0b 01 	sts	0x010B, r24
+ 2dc:	0a c0       	rjmp	.+20     	; 0x2f2 <send_data_3964r+0x104>
+					}
+					//Si interruption par l'usart
+					else
+					{
+						//Désactivation de l'interruption de reception usart
+						DISABLE_RX_INT_USART;
+ 2de:	80 91 c1 00 	lds	r24, 0x00C1
+ 2e2:	8f 77       	andi	r24, 0x7F	; 127
+ 2e4:	80 93 c1 00 	sts	0x00C1, r24
+						//Incrémentation du nombre d'erreurs
+						tab_error_3964r[3]++;
+ 2e8:	80 91 0c 01 	lds	r24, 0x010C
+ 2ec:	8f 5f       	subi	r24, 0xFF	; 255
+ 2ee:	80 93 0c 01 	sts	0x010C, r24
+char sum_error_3964r(void)
+{
+	unsigned char sum, i;
+
+	for(i=0, sum=0; i<NB_ERRORS; i++)
+		sum += tab_error_3964r[i];
+ 2f2:	80 91 0a 01 	lds	r24, 0x010A
+ 2f6:	90 91 09 01 	lds	r25, 0x0109
+ 2fa:	89 0f       	add	r24, r25
+ 2fc:	90 91 0b 01 	lds	r25, 0x010B
+ 300:	89 0f       	add	r24, r25
+ 302:	90 91 0c 01 	lds	r25, 0x010C
+ 306:	89 0f       	add	r24, r25
+		else
+			//Incrémentation du nombre d'erreurs
+			tab_error_3964r[4]++;
+
+		//Si la somme des erreurs est supérieur au seuil max
+		if(sum_error_3964r() == MAX_ERRORS)
+ 308:	90 91 0d 01 	lds	r25, 0x010D
+ 30c:	89 0f       	add	r24, r25
+ 30e:	86 30       	cpi	r24, 0x06	; 6
+ 310:	91 f4       	brne	.+36     	; 0x336 <send_data_3964r+0x148>
+ 312:	81 e0       	ldi	r24, 0x01	; 1
+ 314:	1b c0       	rjmp	.+54     	; 0x34c <send_data_3964r+0x15e>
+			}
+			//Si le 1er caractère reçu n'est pas un DLE
+			else
+			{
+				//Si le caractère est un STX
+				if(c == STX)
+ 316:	12 30       	cpi	r17, 0x02	; 2
+ 318:	11 f4       	brne	.+4      	; 0x31e <send_data_3964r+0x130>
+ 31a:	82 e0       	ldi	r24, 0x02	; 2
+ 31c:	17 c0       	rjmp	.+46     	; 0x34c <send_data_3964r+0x15e>
+						flag_timer1 = TRUE;
+				}
+				//Si le 1er caractère est différent de DLE et STX
+				else
+					//Incrémentation du nombre d'erreurs
+					tab_error_3964r[0]++;
+ 31e:	80 91 09 01 	lds	r24, 0x0109
+ 322:	8f 5f       	subi	r24, 0xFF	; 255
+ 324:	80 93 09 01 	sts	0x0109, r24
+ 328:	e4 cf       	rjmp	.-56     	; 0x2f2 <send_data_3964r+0x104>
+			}
+		}
+		//Si le périphérique n'a pas répondu au STX
+		else
+			//Incrémentation du nombre d'erreurs
+			tab_error_3964r[4]++;
+ 32a:	80 91 0d 01 	lds	r24, 0x010D
+ 32e:	8f 5f       	subi	r24, 0xFF	; 255
+ 330:	80 93 0d 01 	sts	0x010D, r24
+ 334:	de cf       	rjmp	.-68     	; 0x2f2 <send_data_3964r+0x104>
+		if(sum_error_3964r() == MAX_ERRORS)
+			//retourne une erreur de transmission
+			return TRANSMISSION_FAILED;
+
+	//On boucle tant que flag_timer1 ou flag_usart est a TRUE
+	}while((flag_timer1 == TRUE) || (flag_usart == TRUE));
+ 336:	80 91 0e 01 	lds	r24, 0x010E
+ 33a:	88 23       	and	r24, r24
+ 33c:	09 f4       	brne	.+2      	; 0x340 <send_data_3964r+0x152>
+ 33e:	6d cf       	rjmp	.-294    	; 0x21a <send_data_3964r+0x2c>
+ 340:	80 91 08 01 	lds	r24, 0x0108
+ 344:	88 23       	and	r24, r24
+ 346:	09 f4       	brne	.+2      	; 0x34a <send_data_3964r+0x15c>
+ 348:	68 cf       	rjmp	.-304    	; 0x21a <send_data_3964r+0x2c>
+ 34a:	80 e0       	ldi	r24, 0x00	; 0
+	
+	//la transmission s'est bien déroulée
+	return TRANSMISSION_SUCCESS;
+}
+ 34c:	df 91       	pop	r29
+ 34e:	cf 91       	pop	r28
+ 350:	1f 91       	pop	r17
+ 352:	0f 91       	pop	r16
+ 354:	ff 90       	pop	r15
+ 356:	ef 90       	pop	r14
+ 358:	df 90       	pop	r13
+ 35a:	cf 90       	pop	r12
+ 35c:	08 95       	ret
+
+0000035e <init_3964r>:
+unsigned char tab_error_3964r[NB_ERRORS];
+
+//Initialise les différents composants pour la communication en 3964r
+void init_3964r(void)
+{
+	init_usart(MYUBRR);
+ 35e:	87 e6       	ldi	r24, 0x67	; 103
+ 360:	90 e0       	ldi	r25, 0x00	; 0
+ 362:	be d2       	rcall	.+1404   	; 0x8e0 <init_usart>
+	init_timer1();
+ 364:	8b d2       	rcall	.+1302   	; 0x87c <init_timer1>
+
+	//memset permet d'initialiser un tableau avec un valeur par default
+	//On place la valeur 0 dans les 5 cellules de tab_error_3964r
+	memset(tab_error_3964r,0,5);
+ 366:	85 e0       	ldi	r24, 0x05	; 5
+ 368:	e9 e0       	ldi	r30, 0x09	; 9
+ 36a:	f1 e0       	ldi	r31, 0x01	; 1
+ 36c:	df 01       	movw	r26, r30
+ 36e:	1d 92       	st	X+, r1
+ 370:	8a 95       	dec	r24
+ 372:	e9 f7       	brne	.-6      	; 0x36e <init_3964r+0x10>
+}
+ 374:	08 95       	ret
+
+00000376 <i2c_init>:
+*************************************************************************/
+void i2c_init(void)
+{
+  /* initialize TWI clock: 100 kHz clock, TWPS = 0 => prescaler = 1 */
+  
+  TWSR = 0;                         /* no prescaler */
+ 376:	10 92 b9 00 	sts	0x00B9, r1
+  TWBR = ((F_CPU/SCL_CLOCK)-16)/2;  /* must be > 10 for stable operation */
+ 37a:	80 e2       	ldi	r24, 0x20	; 32
+ 37c:	80 93 b8 00 	sts	0x00B8, r24
+
+}/* i2c_init */
+ 380:	08 95       	ret
+
+00000382 <i2c_start>:
+  Issues a start condition and sends address and transfer direction.
+  (7 bits for address and 1 bit for read/write)
+  return 0 = device accessible, 1= failed to access device
+*************************************************************************/
+unsigned char i2c_start(unsigned char address)
+{
+ 382:	98 2f       	mov	r25, r24
+    uint8_t   twst;
+
+	// send START condition
+	TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+ 384:	84 ea       	ldi	r24, 0xA4	; 164
+ 386:	80 93 bc 00 	sts	0x00BC, r24
+
+	// wait until transmission completed
+	while(!(TWCR & (1<<TWINT)));
+ 38a:	80 91 bc 00 	lds	r24, 0x00BC
+ 38e:	87 ff       	sbrs	r24, 7
+ 390:	fc cf       	rjmp	.-8      	; 0x38a <i2c_start+0x8>
+
+	// check value of TWI Status Register. Mask prescaler bits.
+	twst = TW_STATUS & 0xF8;
+ 392:	80 91 b9 00 	lds	r24, 0x00B9
+ 396:	88 7f       	andi	r24, 0xF8	; 248
+	if ( (twst != TW_START) && (twst != TW_REP_START)) return 1;
+ 398:	88 30       	cpi	r24, 0x08	; 8
+ 39a:	21 f0       	breq	.+8      	; 0x3a4 <i2c_start+0x22>
+ 39c:	80 31       	cpi	r24, 0x10	; 16
+ 39e:	11 f0       	breq	.+4      	; 0x3a4 <i2c_start+0x22>
+ 3a0:	81 e0       	ldi	r24, 0x01	; 1
+ 3a2:	08 95       	ret
+
+	// send device address (load address, and start transmission of address)
+	TWDR = address; 
+ 3a4:	90 93 bb 00 	sts	0x00BB, r25
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 3a8:	84 e8       	ldi	r24, 0x84	; 132
+ 3aa:	80 93 bc 00 	sts	0x00BC, r24
+
+	// wail until transmission completed (when TWINT is set) and ACK/NACK has been received
+	while(!(TWCR & (1<<TWINT)));
+ 3ae:	80 91 bc 00 	lds	r24, 0x00BC
+ 3b2:	87 ff       	sbrs	r24, 7
+ 3b4:	fc cf       	rjmp	.-8      	; 0x3ae <i2c_start+0x2c>
+
+	// check value of TWI Status Register. Mask prescaler bits.
+	twst = TW_STATUS & 0xF8;
+ 3b6:	90 91 b9 00 	lds	r25, 0x00B9
+ 3ba:	98 7f       	andi	r25, 0xF8	; 248
+	if ( (twst != TW_MT_SLA_ACK) && (twst != TW_MR_SLA_ACK) ) return 1;
+ 3bc:	98 31       	cpi	r25, 0x18	; 24
+ 3be:	11 f4       	brne	.+4      	; 0x3c4 <i2c_start+0x42>
+ 3c0:	80 e0       	ldi	r24, 0x00	; 0
+ 3c2:	08 95       	ret
+ 3c4:	80 e0       	ldi	r24, 0x00	; 0
+ 3c6:	90 34       	cpi	r25, 0x40	; 64
+ 3c8:	09 f0       	breq	.+2      	; 0x3cc <i2c_start+0x4a>
+ 3ca:	81 e0       	ldi	r24, 0x01	; 1
+
+	return 0;
+
+}/* i2c_start */
+ 3cc:	08 95       	ret
+
+000003ce <i2c_start_wait>:
+ If device is busy, use ack polling to wait until device is ready
+ 
+ Input:   address and transfer direction of I2C device
+*************************************************************************/
+void i2c_start_wait(unsigned char address)
+{
+ 3ce:	98 2f       	mov	r25, r24
+
+
+    while ( 1 )
+    {
+	    // send START condition
+	    TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+ 3d0:	44 ea       	ldi	r20, 0xA4	; 164
+    	twst = TW_STATUS & 0xF8;
+    	if ( (twst != TW_START) && (twst != TW_REP_START)) continue;
+    
+    	// send device address
+    	TWDR = address;
+    	TWCR = (1<<TWINT) | (1<<TWEN);
+ 3d2:	34 e8       	ldi	r19, 0x84	; 132
+    	// check value of TWI Status Register. Mask prescaler bits.
+    	twst = TW_STATUS & 0xF8;
+    	if ( (twst == TW_MT_SLA_NACK )||(twst ==TW_MR_DATA_NACK) ) 
+    	{    	    
+    	    /* device busy, send stop condition to terminate write operation */
+	        TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+ 3d4:	24 e9       	ldi	r18, 0x94	; 148
+
+
+    while ( 1 )
+    {
+	    // send START condition
+	    TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+ 3d6:	40 93 bc 00 	sts	0x00BC, r20
+    
+    	// wait until transmission completed
+    	while(!(TWCR & (1<<TWINT)));
+ 3da:	80 91 bc 00 	lds	r24, 0x00BC
+ 3de:	87 ff       	sbrs	r24, 7
+ 3e0:	fc cf       	rjmp	.-8      	; 0x3da <i2c_start_wait+0xc>
+    
+    	// check value of TWI Status Register. Mask prescaler bits.
+    	twst = TW_STATUS & 0xF8;
+ 3e2:	80 91 b9 00 	lds	r24, 0x00B9
+ 3e6:	88 7f       	andi	r24, 0xF8	; 248
+    	if ( (twst != TW_START) && (twst != TW_REP_START)) continue;
+ 3e8:	88 30       	cpi	r24, 0x08	; 8
+ 3ea:	11 f0       	breq	.+4      	; 0x3f0 <i2c_start_wait+0x22>
+ 3ec:	80 31       	cpi	r24, 0x10	; 16
+ 3ee:	99 f7       	brne	.-26     	; 0x3d6 <i2c_start_wait+0x8>
+    
+    	// send device address
+    	TWDR = address;
+ 3f0:	90 93 bb 00 	sts	0x00BB, r25
+    	TWCR = (1<<TWINT) | (1<<TWEN);
+ 3f4:	30 93 bc 00 	sts	0x00BC, r19
+    
+    	// wail until transmission completed
+    	while(!(TWCR & (1<<TWINT)));
+ 3f8:	80 91 bc 00 	lds	r24, 0x00BC
+ 3fc:	87 ff       	sbrs	r24, 7
+ 3fe:	fc cf       	rjmp	.-8      	; 0x3f8 <i2c_start_wait+0x2a>
+    
+    	// check value of TWI Status Register. Mask prescaler bits.
+    	twst = TW_STATUS & 0xF8;
+ 400:	80 91 b9 00 	lds	r24, 0x00B9
+ 404:	88 7f       	andi	r24, 0xF8	; 248
+    	if ( (twst == TW_MT_SLA_NACK )||(twst ==TW_MR_DATA_NACK) ) 
+ 406:	80 32       	cpi	r24, 0x20	; 32
+ 408:	11 f0       	breq	.+4      	; 0x40e <i2c_start_wait+0x40>
+ 40a:	88 35       	cpi	r24, 0x58	; 88
+ 40c:	39 f4       	brne	.+14     	; 0x41c <i2c_start_wait+0x4e>
+    	{    	    
+    	    /* device busy, send stop condition to terminate write operation */
+	        TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+ 40e:	20 93 bc 00 	sts	0x00BC, r18
+	        
+	        // wait until stop condition is executed and bus released
+	        while(TWCR & (1<<TWSTO));
+ 412:	80 91 bc 00 	lds	r24, 0x00BC
+ 416:	84 fd       	sbrc	r24, 4
+ 418:	fc cf       	rjmp	.-8      	; 0x412 <i2c_start_wait+0x44>
+ 41a:	dd cf       	rjmp	.-70     	; 0x3d6 <i2c_start_wait+0x8>
+ 41c:	08 95       	ret
+
+0000041e <i2c_rep_start>:
+ Return:  0 device accessible
+          1 failed to access device
+*************************************************************************/
+unsigned char i2c_rep_start(unsigned char address)
+{
+    return i2c_start( address );
+ 41e:	b1 df       	rcall	.-158    	; 0x382 <i2c_start>
+
+}/* i2c_rep_start */
+ 420:	08 95       	ret
+
+00000422 <i2c_stop>:
+ Terminates the data transfer and releases the I2C bus
+*************************************************************************/
+void i2c_stop(void)
+{
+    /* send stop condition */
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+ 422:	84 e9       	ldi	r24, 0x94	; 148
+ 424:	80 93 bc 00 	sts	0x00BC, r24
+	
+	// wait until stop condition is executed and bus released
+	while(TWCR & (1<<TWSTO));
+ 428:	80 91 bc 00 	lds	r24, 0x00BC
+ 42c:	84 fd       	sbrc	r24, 4
+ 42e:	fc cf       	rjmp	.-8      	; 0x428 <i2c_stop+0x6>
+
+}/* i2c_stop */
+ 430:	08 95       	ret
+
+00000432 <i2c_write>:
+unsigned char i2c_write( unsigned char data )
+{	
+    uint8_t   twst;
+    
+	// send data to the previously addressed device
+	TWDR = data;
+ 432:	80 93 bb 00 	sts	0x00BB, r24
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 436:	84 e8       	ldi	r24, 0x84	; 132
+ 438:	80 93 bc 00 	sts	0x00BC, r24
+
+	// wait until transmission completed
+	while(!(TWCR & (1<<TWINT)));
+ 43c:	80 91 bc 00 	lds	r24, 0x00BC
+ 440:	87 ff       	sbrs	r24, 7
+ 442:	fc cf       	rjmp	.-8      	; 0x43c <i2c_write+0xa>
+
+	// check value of TWI Status Register. Mask prescaler bits
+	twst = TW_STATUS & 0xF8;
+ 444:	80 91 b9 00 	lds	r24, 0x00B9
+ 448:	90 e0       	ldi	r25, 0x00	; 0
+ 44a:	88 7f       	andi	r24, 0xF8	; 248
+ 44c:	88 32       	cpi	r24, 0x28	; 40
+ 44e:	09 f0       	breq	.+2      	; 0x452 <i2c_write+0x20>
+ 450:	91 e0       	ldi	r25, 0x01	; 1
+	if( twst != TW_MT_DATA_ACK) return 1;
+	return 0;
+
+}/* i2c_write */
+ 452:	89 2f       	mov	r24, r25
+ 454:	08 95       	ret
+
+00000456 <i2c_readAck>:
+ 
+ Return:  byte read from I2C device
+*************************************************************************/
+unsigned char i2c_readAck(void)
+{
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWEA);
+ 456:	84 ec       	ldi	r24, 0xC4	; 196
+ 458:	80 93 bc 00 	sts	0x00BC, r24
+	while(!(TWCR & (1<<TWINT)));    
+ 45c:	80 91 bc 00 	lds	r24, 0x00BC
+ 460:	87 ff       	sbrs	r24, 7
+ 462:	fc cf       	rjmp	.-8      	; 0x45c <i2c_readAck+0x6>
+
+    return TWDR;
+ 464:	80 91 bb 00 	lds	r24, 0x00BB
+
+}/* i2c_readAck */
+ 468:	08 95       	ret
+
+0000046a <i2c_readNak>:
+ 
+ Return:  byte read from I2C device
+*************************************************************************/
+unsigned char i2c_readNak(void)
+{
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 46a:	84 e8       	ldi	r24, 0x84	; 132
+ 46c:	80 93 bc 00 	sts	0x00BC, r24
+	while(!(TWCR & (1<<TWINT)));
+ 470:	80 91 bc 00 	lds	r24, 0x00BC
+ 474:	87 ff       	sbrs	r24, 7
+ 476:	fc cf       	rjmp	.-8      	; 0x470 <i2c_readNak+0x6>
+	
+    return TWDR;
+ 478:	80 91 bb 00 	lds	r24, 0x00BB
+
+}/* i2c_readNak */
+ 47c:	08 95       	ret
+
+0000047e <transmission>:
+}
+
+
+/***** Transmission vers FoxBoard *****/
+void transmission(char commande, char data_low, char data_high)
+{
+ 47e:	0f 93       	push	r16
+ 480:	1f 93       	push	r17
+	data_to_transmit[0]=commande;
+ 482:	80 93 15 01 	sts	0x0115, r24
+	data_to_transmit[1]=data_high;								// Charge le byte de poid faible dans le premier byte			
+ 486:	40 93 16 01 	sts	0x0116, r20
+	data_to_transmit[2]=data_low;								// Charge le byte de poid fort dans le deuxième byte
+ 48a:	60 93 17 01 	sts	0x0117, r22
+
+	DISABLE_RX_INT_USART;
+ 48e:	01 ec       	ldi	r16, 0xC1	; 193
+ 490:	10 e0       	ldi	r17, 0x00	; 0
+ 492:	f8 01       	movw	r30, r16
+ 494:	80 81       	ld	r24, Z
+ 496:	8f 77       	andi	r24, 0x7F	; 127
+ 498:	80 83       	st	Z, r24
+	fonctionnement_RX = 0 ; 									// Indique que l'on va se mettre en mode d'envoi de donné vers la Fox
+ 49a:	10 92 28 01 	sts	0x0128, r1
+	TRANSMIT_STATUT = send_data_3964r(data_to_transmit,3);			// Envoie les deux bytes en protocole 3964	
+ 49e:	85 e1       	ldi	r24, 0x15	; 21
+ 4a0:	91 e0       	ldi	r25, 0x01	; 1
+ 4a2:	63 e0       	ldi	r22, 0x03	; 3
+ 4a4:	a4 de       	rcall	.-696    	; 0x1ee <send_data_3964r>
+ 4a6:	80 93 1a 01 	sts	0x011A, r24
+	fonctionnement_RX = 1 ;									// Indique que l'on se remet en mode de réception de donnée venant de la Fox
+ 4aa:	81 e0       	ldi	r24, 0x01	; 1
+ 4ac:	80 93 28 01 	sts	0x0128, r24
+	
+	ENABLE_RX_INT_USART;
+ 4b0:	f8 01       	movw	r30, r16
+ 4b2:	80 81       	ld	r24, Z
+ 4b4:	80 68       	ori	r24, 0x80	; 128
+ 4b6:	80 83       	st	Z, r24
+}
+ 4b8:	1f 91       	pop	r17
+ 4ba:	0f 91       	pop	r16
+ 4bc:	08 95       	ret
+
+000004be <init>:
+
+/***** Initialisation *****/
+void init()							
+{
+	unsigned char i ;
+	cli();							// Désactiver toutes les interruptions
+ 4be:	f8 94       	cli
+
+	sDDR(DDRD,1);					// mettre port TX en sortie
+ 4c0:	51 9a       	sbi	0x0a, 1	; 10
+	sbiBF(PORTD,0); 				// mettre pull-up sur RX
+ 4c2:	58 9a       	sbi	0x0b, 0	; 11
+
+	for(i=0;i<=4;i++)				// Initialiser les demandes à 0 qui signifie qu'il n'y a pas de demande de la part de la FoxBoard
+	{
+		data[i]=0x00;
+ 4c4:	10 92 2f 01 	sts	0x012F, r1
+ 4c8:	10 92 30 01 	sts	0x0130, r1
+ 4cc:	10 92 31 01 	sts	0x0131, r1
+ 4d0:	10 92 32 01 	sts	0x0132, r1
+ 4d4:	10 92 33 01 	sts	0x0133, r1
+	}
+
+    i2c_init();              		// Initialisation interface I2C
+ 4d8:	4e df       	rcall	.-356    	; 0x376 <i2c_init>
+
+	init_3964r();					// Initialisation de la communication en protocole 3964 avec la FoxBoard
+ 4da:	41 df       	rcall	.-382    	; 0x35e <init_3964r>
+	ENABLE_RX_INT_USART;			// Autoriser les interruption série RX
+ 4dc:	e1 ec       	ldi	r30, 0xC1	; 193
+ 4de:	f0 e0       	ldi	r31, 0x00	; 0
+ 4e0:	80 81       	ld	r24, Z
+ 4e2:	80 68       	ori	r24, 0x80	; 128
+ 4e4:	80 83       	st	Z, r24
+	fonctionnement_RX = 1;			// mode de réception
+ 4e6:	81 e0       	ldi	r24, 0x01	; 1
+ 4e8:	80 93 28 01 	sts	0x0128, r24
+
+	init_watchdog();				// Initilise les reset
+ 4ec:	51 d2       	rcall	.+1186   	; 0x990 <init_watchdog>
+
+	InitADC();						// Initialise les ADC
+ 4ee:	df d2       	rcall	.+1470   	; 0xaae <InitADC>
+
+	sei();							// Activer toutes les interruptions	
+ 4f0:	78 94       	sei
+}
+ 4f2:	08 95       	ret
+
+000004f4 <__vector_18>:
+/*************************/
+
+/***** Interruption usart en reception *****/
+
+ISR(USART_RX_vect)
+{
+ 4f4:	1f 92       	push	r1
+ 4f6:	0f 92       	push	r0
+ 4f8:	0f b6       	in	r0, 0x3f	; 63
+ 4fa:	0f 92       	push	r0
+ 4fc:	11 24       	eor	r1, r1
+ 4fe:	2f 93       	push	r18
+ 500:	3f 93       	push	r19
+ 502:	4f 93       	push	r20
+ 504:	5f 93       	push	r21
+ 506:	6f 93       	push	r22
+ 508:	7f 93       	push	r23
+ 50a:	8f 93       	push	r24
+ 50c:	9f 93       	push	r25
+ 50e:	af 93       	push	r26
+ 510:	bf 93       	push	r27
+ 512:	ef 93       	push	r30
+ 514:	ff 93       	push	r31
+	if(fonctionnement_RX==0) // mode d'envoi
+ 516:	80 91 28 01 	lds	r24, 0x0128
+ 51a:	88 23       	and	r24, r24
+ 51c:	19 f4       	brne	.+6      	; 0x524 <__stack+0x25>
+	{
+		//Si un caractère est reçu, on set le flag_usart à TRUE pour quitter la boucle de getchar_usart
+		flag_usart = TRUE;
+ 51e:	10 92 08 01 	sts	0x0108, r1
+ 522:	07 c0       	rjmp	.+14     	; 0x532 <__stack+0x33>
+	}
+	else if (fonctionnement_RX==1) // mode de réception
+ 524:	81 30       	cpi	r24, 0x01	; 1
+ 526:	29 f4       	brne	.+10     	; 0x532 <__stack+0x33>
+	{
+		get_data_3964r(data);	
+ 528:	8f e2       	ldi	r24, 0x2F	; 47
+ 52a:	91 e0       	ldi	r25, 0x01	; 1
+ 52c:	be dd       	rcall	.-1156   	; 0xaa <get_data_3964r>
+		data[4]=0x00; // Force le dernier bit des demandes à 0.  Au maximum 4 demandes qui n'ont pas été traitée peuvent être enregistrée.		
+ 52e:	10 92 33 01 	sts	0x0133, r1
+	}
+}
+ 532:	ff 91       	pop	r31
+ 534:	ef 91       	pop	r30
+ 536:	bf 91       	pop	r27
+ 538:	af 91       	pop	r26
+ 53a:	9f 91       	pop	r25
+ 53c:	8f 91       	pop	r24
+ 53e:	7f 91       	pop	r23
+ 540:	6f 91       	pop	r22
+ 542:	5f 91       	pop	r21
+ 544:	4f 91       	pop	r20
+ 546:	3f 91       	pop	r19
+ 548:	2f 91       	pop	r18
+ 54a:	0f 90       	pop	r0
+ 54c:	0f be       	out	0x3f, r0	; 63
+ 54e:	0f 90       	pop	r0
+ 550:	1f 90       	pop	r1
+ 552:	18 95       	reti
+
+00000554 <main>:
+/*****************************************************************/
+/*********************** Programme principal *********************/
+/*****************************************************************/
+
+int main(void)
+{
+ 554:	1f 93       	push	r17
+	/***** Variables locales *****/
+	unsigned char dev1_access, dev2_access, dev3_access, dev4_access, dev5_access, dev6_access, dev7_access, dev8_access, dev9_access;						// Indique si les informations ont bien été prise du capteur
+
+	init();									// Initialisations globales
+ 556:	b3 df       	rcall	.-154    	; 0x4be <init>
+	
+	dev1_access = initDS7505(ADD1_DS7505);	// Initialiser le capteur de T° n°1
+ 558:	80 e9       	ldi	r24, 0x90	; 144
+ 55a:	52 d2       	rcall	.+1188   	; 0xa00 <initDS7505>
+	dev2_access = initDS7505(ADD2_DS7505);	// Initialiser le capteur de T° n°2
+ 55c:	82 e9       	ldi	r24, 0x92	; 146
+ 55e:	50 d2       	rcall	.+1184   	; 0xa00 <initDS7505>
+	dev3_access = initDS7505(ADD3_DS7505);	// Initialiser le capteur de T° n°3
+ 560:	84 e9       	ldi	r24, 0x94	; 148
+ 562:	4e d2       	rcall	.+1180   	; 0xa00 <initDS7505>
+	dev4_access = initDS7505(ADD4_DS7505);	// Initialiser le capteur de T° n°4
+ 564:	86 e9       	ldi	r24, 0x96	; 150
+ 566:	4c d2       	rcall	.+1176   	; 0xa00 <initDS7505>
+	dev5_access = initDS7505(ADD5_DS7505);	// Initialiser le capteur de T° n°5
+ 568:	88 e9       	ldi	r24, 0x98	; 152
+ 56a:	4a d2       	rcall	.+1172   	; 0xa00 <initDS7505>
+	dev6_access = initDS7505(ADD6_DS7505);	// Initialiser le capteur de T° n°6
+ 56c:	8a e9       	ldi	r24, 0x9A	; 154
+ 56e:	48 d2       	rcall	.+1168   	; 0xa00 <initDS7505>
+	dev7_access = initDS7505(ADD7_DS7505);	// Initialiser le capteur de T° n°7
+ 570:	8c e9       	ldi	r24, 0x9C	; 156
+ 572:	46 d2       	rcall	.+1164   	; 0xa00 <initDS7505>
+	dev8_access = initDS7505(ADD8_DS7505);	// Initialiser le capteur de T° n°8
+ 574:	8e e9       	ldi	r24, 0x9E	; 158
+ 576:	44 d2       	rcall	.+1160   	; 0xa00 <initDS7505>
+	dev9_access = initSHT21(ADD1_SHT21);	// Initialiser le capteur d'%RH n°1
+ 578:	80 e8       	ldi	r24, 0x80	; 128
+ 57a:	f4 d2       	rcall	.+1512   	; 0xb64 <initSHT21>
+					Sens_0 = 0 ;
+					transmission(CMD_SENS_0_NEGATIF,Conf_sens0n, 0x00 );
+					break;
+
+				case CMD_SENS_1_POSITIF :
+					Sens_1 = 1 ;
+ 57c:	11 e0       	ldi	r17, 0x01	; 1
+
+
+	/* boucle infinie */
+	for(;;)
+	{	
+		if( data[0] != 0x00 ) // Envoie des informations à la foxboard
+ 57e:	80 91 2f 01 	lds	r24, 0x012F
+ 582:	88 23       	and	r24, r24
+ 584:	09 f4       	brne	.+2      	; 0x588 <main+0x34>
+ 586:	78 c1       	rjmp	.+752    	; 0x878 <main+0x324>
+		{
+			switch(data[0])
+ 588:	82 35       	cpi	r24, 0x52	; 82
+ 58a:	09 f4       	brne	.+2      	; 0x58e <main+0x3a>
+ 58c:	2f c1       	rjmp	.+606    	; 0x7ec <main+0x298>
+ 58e:	83 35       	cpi	r24, 0x53	; 83
+ 590:	40 f5       	brcc	.+80     	; 0x5e2 <main+0x8e>
+ 592:	84 34       	cpi	r24, 0x44	; 68
+ 594:	09 f4       	brne	.+2      	; 0x598 <main+0x44>
+ 596:	c0 c0       	rjmp	.+384    	; 0x718 <main+0x1c4>
+ 598:	85 34       	cpi	r24, 0x45	; 69
+ 59a:	80 f4       	brcc	.+32     	; 0x5bc <main+0x68>
+ 59c:	81 34       	cpi	r24, 0x41	; 65
+ 59e:	09 f4       	brne	.+2      	; 0x5a2 <main+0x4e>
+ 5a0:	82 c0       	rjmp	.+260    	; 0x6a6 <main+0x152>
+ 5a2:	82 34       	cpi	r24, 0x42	; 66
+ 5a4:	20 f4       	brcc	.+8      	; 0x5ae <main+0x5a>
+ 5a6:	80 34       	cpi	r24, 0x40	; 64
+ 5a8:	09 f0       	breq	.+2      	; 0x5ac <main+0x58>
+ 5aa:	53 c1       	rjmp	.+678    	; 0x852 <main+0x2fe>
+ 5ac:	69 c0       	rjmp	.+210    	; 0x680 <main+0x12c>
+ 5ae:	82 34       	cpi	r24, 0x42	; 66
+ 5b0:	09 f4       	brne	.+2      	; 0x5b4 <main+0x60>
+ 5b2:	8c c0       	rjmp	.+280    	; 0x6cc <main+0x178>
+ 5b4:	83 34       	cpi	r24, 0x43	; 67
+ 5b6:	09 f0       	breq	.+2      	; 0x5ba <main+0x66>
+ 5b8:	4c c1       	rjmp	.+664    	; 0x852 <main+0x2fe>
+ 5ba:	9b c0       	rjmp	.+310    	; 0x6f2 <main+0x19e>
+ 5bc:	87 34       	cpi	r24, 0x47	; 71
+ 5be:	09 f4       	brne	.+2      	; 0x5c2 <main+0x6e>
+ 5c0:	e4 c0       	rjmp	.+456    	; 0x78a <main+0x236>
+ 5c2:	88 34       	cpi	r24, 0x48	; 72
+ 5c4:	38 f4       	brcc	.+14     	; 0x5d4 <main+0x80>
+ 5c6:	85 34       	cpi	r24, 0x45	; 69
+ 5c8:	09 f4       	brne	.+2      	; 0x5cc <main+0x78>
+ 5ca:	b9 c0       	rjmp	.+370    	; 0x73e <main+0x1ea>
+ 5cc:	86 34       	cpi	r24, 0x46	; 70
+ 5ce:	09 f0       	breq	.+2      	; 0x5d2 <main+0x7e>
+ 5d0:	40 c1       	rjmp	.+640    	; 0x852 <main+0x2fe>
+ 5d2:	c8 c0       	rjmp	.+400    	; 0x764 <main+0x210>
+ 5d4:	80 35       	cpi	r24, 0x50	; 80
+ 5d6:	09 f4       	brne	.+2      	; 0x5da <main+0x86>
+ 5d8:	eb c0       	rjmp	.+470    	; 0x7b0 <main+0x25c>
+ 5da:	81 35       	cpi	r24, 0x51	; 81
+ 5dc:	09 f0       	breq	.+2      	; 0x5e0 <main+0x8c>
+ 5de:	39 c1       	rjmp	.+626    	; 0x852 <main+0x2fe>
+ 5e0:	f6 c0       	rjmp	.+492    	; 0x7ce <main+0x27a>
+ 5e2:	80 38       	cpi	r24, 0x80	; 128
+ 5e4:	09 f4       	brne	.+2      	; 0x5e8 <main+0x94>
+ 5e6:	40 c0       	rjmp	.+128    	; 0x668 <main+0x114>
+ 5e8:	81 38       	cpi	r24, 0x81	; 129
+ 5ea:	70 f4       	brcc	.+28     	; 0x608 <main+0xb4>
+ 5ec:	80 36       	cpi	r24, 0x60	; 96
+ 5ee:	f1 f0       	breq	.+60     	; 0x62c <main+0xd8>
+ 5f0:	81 36       	cpi	r24, 0x61	; 97
+ 5f2:	20 f4       	brcc	.+8      	; 0x5fc <main+0xa8>
+ 5f4:	83 35       	cpi	r24, 0x53	; 83
+ 5f6:	09 f0       	breq	.+2      	; 0x5fa <main+0xa6>
+ 5f8:	2c c1       	rjmp	.+600    	; 0x852 <main+0x2fe>
+ 5fa:	07 c1       	rjmp	.+526    	; 0x80a <main+0x2b6>
+ 5fc:	80 37       	cpi	r24, 0x70	; 112
+ 5fe:	e1 f0       	breq	.+56     	; 0x638 <main+0xe4>
+ 600:	81 37       	cpi	r24, 0x71	; 113
+ 602:	09 f0       	breq	.+2      	; 0x606 <main+0xb2>
+ 604:	26 c1       	rjmp	.+588    	; 0x852 <main+0x2fe>
+ 606:	2a c0       	rjmp	.+84     	; 0x65c <main+0x108>
+ 608:	81 39       	cpi	r24, 0x91	; 145
+ 60a:	09 f4       	brne	.+2      	; 0x60e <main+0xba>
+ 60c:	12 c1       	rjmp	.+548    	; 0x832 <main+0x2de>
+ 60e:	82 39       	cpi	r24, 0x92	; 146
+ 610:	30 f4       	brcc	.+12     	; 0x61e <main+0xca>
+ 612:	81 38       	cpi	r24, 0x81	; 129
+ 614:	79 f1       	breq	.+94     	; 0x674 <main+0x120>
+ 616:	80 39       	cpi	r24, 0x90	; 144
+ 618:	09 f0       	breq	.+2      	; 0x61c <main+0xc8>
+ 61a:	1b c1       	rjmp	.+566    	; 0x852 <main+0x2fe>
+ 61c:	05 c1       	rjmp	.+522    	; 0x828 <main+0x2d4>
+ 61e:	82 39       	cpi	r24, 0x92	; 146
+ 620:	09 f4       	brne	.+2      	; 0x624 <main+0xd0>
+ 622:	0c c1       	rjmp	.+536    	; 0x83c <main+0x2e8>
+ 624:	83 39       	cpi	r24, 0x93	; 147
+ 626:	09 f0       	breq	.+2      	; 0x62a <main+0xd6>
+ 628:	14 c1       	rjmp	.+552    	; 0x852 <main+0x2fe>
+ 62a:	0d c1       	rjmp	.+538    	; 0x846 <main+0x2f2>
+			{
+				case CMD_INCLINAISON : // Envoie les informations d'inclinaisons du sous-marin
+					transmission(CMD_INCLINAISON, ACCL, ACCH);
+ 62c:	80 e6       	ldi	r24, 0x60	; 96
+ 62e:	60 91 26 01 	lds	r22, 0x0126
+ 632:	40 91 29 01 	lds	r20, 0x0129
+ 636:	10 c0       	rjmp	.+32     	; 0x658 <main+0x104>
+					break;
+
+				case CMD_HYGROMETRE1 : // Envoie les informations d'humidité du premier capteur hygrométrique
+					dev9_access = get_SHT21_Devices(ADD1_SHT21, listTemp);
+ 638:	80 e8       	ldi	r24, 0x80	; 128
+ 63a:	6f e0       	ldi	r22, 0x0F	; 15
+ 63c:	71 e0       	ldi	r23, 0x01	; 1
+ 63e:	a5 d2       	rcall	.+1354   	; 0xb8a <get_SHT21_Devices>
+					tempHum = convertHum(listTemp);
+ 640:	8f e0       	ldi	r24, 0x0F	; 15
+ 642:	91 e0       	ldi	r25, 0x01	; 1
+ 644:	77 d2       	rcall	.+1262   	; 0xb34 <convertHum>
+ 646:	48 2f       	mov	r20, r24
+ 648:	80 93 1f 01 	sts	0x011F, r24
+					HUM1H = tempHum;
+ 64c:	80 93 3b 01 	sts	0x013B, r24
+					HUM1L = 0;
+ 650:	10 92 17 01 	sts	0x0117, r1
+					
+					transmission(CMD_HYGROMETRE1, HUM1L, HUM1H);
+ 654:	80 e7       	ldi	r24, 0x70	; 112
+ 656:	60 e0       	ldi	r22, 0x00	; 0
+ 658:	12 df       	rcall	.-476    	; 0x47e <transmission>
+ 65a:	fc c0       	rjmp	.+504    	; 0x854 <main+0x300>
+					break;
+
+				case CMD_HYGROMETRE2 : // Envoie les informations d'humidité du deuxième capteur hygrométrique
+					transmission(CMD_HYGROMETRE2, HUM2L, HUM2H);
+ 65c:	81 e7       	ldi	r24, 0x71	; 113
+ 65e:	60 91 19 01 	lds	r22, 0x0119
+ 662:	40 91 42 01 	lds	r20, 0x0142
+ 666:	f8 cf       	rjmp	.-16     	; 0x658 <main+0x104>
+					break;
+
+				case CMD_BALLAST : // Envoie les informations de la position du ballast
+					transmission(CMD_BALLAST, IMP1L, IMP1H);
+ 668:	80 e8       	ldi	r24, 0x80	; 128
+ 66a:	60 91 38 01 	lds	r22, 0x0138
+ 66e:	40 91 14 01 	lds	r20, 0x0114
+ 672:	f2 cf       	rjmp	.-28     	; 0x658 <main+0x104>
+					break;
+
+				case CMD_SYSTEME_BALLAST : // Envoie les informations de la position du chariot portant le ballast
+					transmission(CMD_SYSTEME_BALLAST, IMP2L, IMP2H);
+ 674:	81 e8       	ldi	r24, 0x81	; 129
+ 676:	60 91 22 01 	lds	r22, 0x0122
+ 67a:	40 91 37 01 	lds	r20, 0x0137
+ 67e:	ec cf       	rjmp	.-40     	; 0x658 <main+0x104>
+					break;
+
+				case CMD_TEMP1 : // Envoie les informations de température du premier capteur
+					dev1_access = get_DS7505_Devices(ADD1_DS7505, listTemp); // Récupérer T° capteur n°1
+ 680:	80 e9       	ldi	r24, 0x90	; 144
+ 682:	6f e0       	ldi	r22, 0x0F	; 15
+ 684:	71 e0       	ldi	r23, 0x01	; 1
+ 686:	cf d1       	rcall	.+926    	; 0xa26 <get_DS7505_Devices>
+					convertTemp(listTemp, tempResult);
+ 688:	8f e0       	ldi	r24, 0x0F	; 15
+ 68a:	91 e0       	ldi	r25, 0x01	; 1
+ 68c:	60 e2       	ldi	r22, 0x20	; 32
+ 68e:	71 e0       	ldi	r23, 0x01	; 1
+ 690:	ea d1       	rcall	.+980    	; 0xa66 <convertTemp>
+					TEMP1H = tempResult[0];
+ 692:	40 91 20 01 	lds	r20, 0x0120
+ 696:	40 93 12 01 	sts	0x0112, r20
+					TEMP1L = tempResult[1];
+ 69a:	60 91 21 01 	lds	r22, 0x0121
+ 69e:	60 93 3f 01 	sts	0x013F, r22
+					transmission(CMD_TEMP1, TEMP1L, TEMP1H);
+ 6a2:	80 e4       	ldi	r24, 0x40	; 64
+ 6a4:	d9 cf       	rjmp	.-78     	; 0x658 <main+0x104>
+					break;
+
+				case CMD_TEMP2 : // Envoie les informations de température du deuxième capteur
+					dev2_access = get_DS7505_Devices(ADD2_DS7505, listTemp); // Récupérer T° capteur n°2					
+ 6a6:	82 e9       	ldi	r24, 0x92	; 146
+ 6a8:	6f e0       	ldi	r22, 0x0F	; 15
+ 6aa:	71 e0       	ldi	r23, 0x01	; 1
+ 6ac:	bc d1       	rcall	.+888    	; 0xa26 <get_DS7505_Devices>
+					convertTemp(listTemp, tempResult);
+ 6ae:	8f e0       	ldi	r24, 0x0F	; 15
+ 6b0:	91 e0       	ldi	r25, 0x01	; 1
+ 6b2:	60 e2       	ldi	r22, 0x20	; 32
+ 6b4:	71 e0       	ldi	r23, 0x01	; 1
+ 6b6:	d7 d1       	rcall	.+942    	; 0xa66 <convertTemp>
+					TEMP2H = tempResult[0];
+ 6b8:	40 91 20 01 	lds	r20, 0x0120
+ 6bc:	40 93 1d 01 	sts	0x011D, r20
+					TEMP2L = tempResult[1];
+ 6c0:	60 91 21 01 	lds	r22, 0x0121
+ 6c4:	60 93 40 01 	sts	0x0140, r22
+					transmission(CMD_TEMP2, TEMP2L, TEMP2H);
+ 6c8:	81 e4       	ldi	r24, 0x41	; 65
+ 6ca:	c6 cf       	rjmp	.-116    	; 0x658 <main+0x104>
+					break;
+
+				case CMD_TEMP3 : // Envoie les informations de température du troisième capteur
+					dev3_access = get_DS7505_Devices(ADD3_DS7505, listTemp); // Récupérer T° capteur n°3					
+ 6cc:	84 e9       	ldi	r24, 0x94	; 148
+ 6ce:	6f e0       	ldi	r22, 0x0F	; 15
+ 6d0:	71 e0       	ldi	r23, 0x01	; 1
+ 6d2:	a9 d1       	rcall	.+850    	; 0xa26 <get_DS7505_Devices>
+					convertTemp(listTemp, tempResult);
+ 6d4:	8f e0       	ldi	r24, 0x0F	; 15
+ 6d6:	91 e0       	ldi	r25, 0x01	; 1
+ 6d8:	60 e2       	ldi	r22, 0x20	; 32
+ 6da:	71 e0       	ldi	r23, 0x01	; 1
+ 6dc:	c4 d1       	rcall	.+904    	; 0xa66 <convertTemp>
+					TEMP3H = tempResult[0];
+ 6de:	40 91 20 01 	lds	r20, 0x0120
+ 6e2:	40 93 3e 01 	sts	0x013E, r20
+					TEMP3L = tempResult[1];
+ 6e6:	60 91 21 01 	lds	r22, 0x0121
+ 6ea:	60 93 41 01 	sts	0x0141, r22
+					transmission(CMD_TEMP3, TEMP3L, TEMP3H);
+ 6ee:	82 e4       	ldi	r24, 0x42	; 66
+ 6f0:	b3 cf       	rjmp	.-154    	; 0x658 <main+0x104>
+					break;
+
+				case CMD_TEMP4 : // Envoie les informations de température du quatrième capteur
+					dev4_access = get_DS7505_Devices(ADD4_DS7505, listTemp); // Récupérer T° capteur n°3					
+ 6f2:	86 e9       	ldi	r24, 0x96	; 150
+ 6f4:	6f e0       	ldi	r22, 0x0F	; 15
+ 6f6:	71 e0       	ldi	r23, 0x01	; 1
+ 6f8:	96 d1       	rcall	.+812    	; 0xa26 <get_DS7505_Devices>
+					convertTemp(listTemp, tempResult);
+ 6fa:	8f e0       	ldi	r24, 0x0F	; 15
+ 6fc:	91 e0       	ldi	r25, 0x01	; 1
+ 6fe:	60 e2       	ldi	r22, 0x20	; 32
+ 700:	71 e0       	ldi	r23, 0x01	; 1
+ 702:	b1 d1       	rcall	.+866    	; 0xa66 <convertTemp>
+					TEMP4H = tempResult[0];
+ 704:	40 91 20 01 	lds	r20, 0x0120
+ 708:	40 93 3c 01 	sts	0x013C, r20
+					TEMP4L = tempResult[1];
+ 70c:	60 91 21 01 	lds	r22, 0x0121
+ 710:	60 93 3a 01 	sts	0x013A, r22
+					transmission(CMD_TEMP4,TEMP4L, TEMP4H);
+ 714:	83 e4       	ldi	r24, 0x43	; 67
+ 716:	a0 cf       	rjmp	.-192    	; 0x658 <main+0x104>
+					break;
+
+				case CMD_TEMP5 : // Envoie les informations de température du cinquième capteur
+					dev5_access = get_DS7505_Devices(ADD5_DS7505, listTemp); // Récupérer T° capteur n°3					
+ 718:	88 e9       	ldi	r24, 0x98	; 152
+ 71a:	6f e0       	ldi	r22, 0x0F	; 15
+ 71c:	71 e0       	ldi	r23, 0x01	; 1
+ 71e:	83 d1       	rcall	.+774    	; 0xa26 <get_DS7505_Devices>
+					convertTemp(listTemp, tempResult);
+ 720:	8f e0       	ldi	r24, 0x0F	; 15
+ 722:	91 e0       	ldi	r25, 0x01	; 1
+ 724:	60 e2       	ldi	r22, 0x20	; 32
+ 726:	71 e0       	ldi	r23, 0x01	; 1
+ 728:	9e d1       	rcall	.+828    	; 0xa66 <convertTemp>
+					TEMP5H = tempResult[0];
+ 72a:	40 91 20 01 	lds	r20, 0x0120
+ 72e:	40 93 21 01 	sts	0x0121, r20
+					TEMP5L = tempResult[1];
+ 732:	60 91 21 01 	lds	r22, 0x0121
+ 736:	60 93 34 01 	sts	0x0134, r22
+					transmission(CMD_TEMP5, TEMP5L, TEMP5H);
+ 73a:	84 e4       	ldi	r24, 0x44	; 68
+ 73c:	8d cf       	rjmp	.-230    	; 0x658 <main+0x104>
+					break;
+
+				case CMD_TEMP6 : // Envoie les informations de température du sixième capteur
+					dev6_access = get_DS7505_Devices(ADD6_DS7505, listTemp); // Récupérer T° capteur n°3					
+ 73e:	8a e9       	ldi	r24, 0x9A	; 154
+ 740:	6f e0       	ldi	r22, 0x0F	; 15
+ 742:	71 e0       	ldi	r23, 0x01	; 1
+ 744:	70 d1       	rcall	.+736    	; 0xa26 <get_DS7505_Devices>
+					convertTemp(listTemp, tempResult);
+ 746:	8f e0       	ldi	r24, 0x0F	; 15
+ 748:	91 e0       	ldi	r25, 0x01	; 1
+ 74a:	60 e2       	ldi	r22, 0x20	; 32
+ 74c:	71 e0       	ldi	r23, 0x01	; 1
+ 74e:	8b d1       	rcall	.+790    	; 0xa66 <convertTemp>
+					TEMP6H = tempResult[0];
+ 750:	40 91 20 01 	lds	r20, 0x0120
+ 754:	40 93 18 01 	sts	0x0118, r20
+					TEMP6L = tempResult[1];
+ 758:	60 91 21 01 	lds	r22, 0x0121
+ 75c:	60 93 2d 01 	sts	0x012D, r22
+					transmission(CMD_TEMP6, TEMP6L, TEMP6H);
+ 760:	85 e4       	ldi	r24, 0x45	; 69
+ 762:	7a cf       	rjmp	.-268    	; 0x658 <main+0x104>
+					break;
+
+				case CMD_TEMP7 : // Envoie les informations de température du septième capteur
+					dev7_access = get_DS7505_Devices(ADD7_DS7505, listTemp); // Récupérer T° capteur n°3					
+ 764:	8c e9       	ldi	r24, 0x9C	; 156
+ 766:	6f e0       	ldi	r22, 0x0F	; 15
+ 768:	71 e0       	ldi	r23, 0x01	; 1
+ 76a:	5d d1       	rcall	.+698    	; 0xa26 <get_DS7505_Devices>
+					convertTemp(listTemp, tempResult);
+ 76c:	8f e0       	ldi	r24, 0x0F	; 15
+ 76e:	91 e0       	ldi	r25, 0x01	; 1
+ 770:	60 e2       	ldi	r22, 0x20	; 32
+ 772:	71 e0       	ldi	r23, 0x01	; 1
+ 774:	78 d1       	rcall	.+752    	; 0xa66 <convertTemp>
+					TEMP7H = tempResult[0];
+ 776:	40 91 20 01 	lds	r20, 0x0120
+ 77a:	40 93 1b 01 	sts	0x011B, r20
+					TEMP7L = tempResult[1];
+ 77e:	60 91 21 01 	lds	r22, 0x0121
+ 782:	60 93 1c 01 	sts	0x011C, r22
+					transmission(CMD_TEMP7, TEMP7L, TEMP7H);
+ 786:	86 e4       	ldi	r24, 0x46	; 70
+ 788:	67 cf       	rjmp	.-306    	; 0x658 <main+0x104>
+					break;
+
+				case CMD_TEMP8 :  // Envoie les informations de température du huitième capteur
+					dev8_access = get_DS7505_Devices(ADD8_DS7505, listTemp); // Récupérer T° capteur n°3					
+ 78a:	8e e9       	ldi	r24, 0x9E	; 158
+ 78c:	6f e0       	ldi	r22, 0x0F	; 15
+ 78e:	71 e0       	ldi	r23, 0x01	; 1
+ 790:	4a d1       	rcall	.+660    	; 0xa26 <get_DS7505_Devices>
+					convertTemp(listTemp, tempResult);
+ 792:	8f e0       	ldi	r24, 0x0F	; 15
+ 794:	91 e0       	ldi	r25, 0x01	; 1
+ 796:	60 e2       	ldi	r22, 0x20	; 32
+ 798:	71 e0       	ldi	r23, 0x01	; 1
+ 79a:	65 d1       	rcall	.+714    	; 0xa66 <convertTemp>
+					TEMP8H = tempResult[0];
+ 79c:	40 91 20 01 	lds	r20, 0x0120
+ 7a0:	40 93 1e 01 	sts	0x011E, r20
+					TEMP8L = tempResult[1];
+ 7a4:	60 91 21 01 	lds	r22, 0x0121
+ 7a8:	60 93 25 01 	sts	0x0125, r22
+					transmission(CMD_TEMP8, TEMP8L, TEMP8H);
+ 7ac:	87 e4       	ldi	r24, 0x47	; 71
+ 7ae:	54 cf       	rjmp	.-344    	; 0x658 <main+0x104>
+					break;
+				
+				case CMD_PROFONDEUR : // Envoie les informations de pression reçue par le capteur de pression comme indicatif de la profondeur
+					StartADC(0);
+ 7b0:	80 e0       	ldi	r24, 0x00	; 0
+ 7b2:	a2 d1       	rcall	.+836    	; 0xaf8 <StartADC>
+					ReadADC(listTemp);
+ 7b4:	8f e0       	ldi	r24, 0x0F	; 15
+ 7b6:	91 e0       	ldi	r25, 0x01	; 1
+ 7b8:	93 d1       	rcall	.+806    	; 0xae0 <ReadADC>
+					ADC1L = listTemp[0];
+ 7ba:	60 91 0f 01 	lds	r22, 0x010F
+ 7be:	60 93 13 01 	sts	0x0113, r22
+					ADC1H = listTemp[1];
+ 7c2:	40 91 10 01 	lds	r20, 0x0110
+ 7c6:	40 93 35 01 	sts	0x0135, r20
+					transmission(CMD_PROFONDEUR, ADC1L, ADC1H);
+ 7ca:	80 e5       	ldi	r24, 0x50	; 80
+ 7cc:	45 cf       	rjmp	.-374    	; 0x658 <main+0x104>
+					break;
+
+				case CMD_ADC2 : // Envoie les informations du deuxième convertisseur ADC
+					StartADC(1);
+ 7ce:	81 e0       	ldi	r24, 0x01	; 1
+ 7d0:	93 d1       	rcall	.+806    	; 0xaf8 <StartADC>
+					ReadADC(listTemp);
+ 7d2:	8f e0       	ldi	r24, 0x0F	; 15
+ 7d4:	91 e0       	ldi	r25, 0x01	; 1
+ 7d6:	84 d1       	rcall	.+776    	; 0xae0 <ReadADC>
+					ADC2L = listTemp[0];
+ 7d8:	60 91 0f 01 	lds	r22, 0x010F
+ 7dc:	60 93 23 01 	sts	0x0123, r22
+					ADC2H = listTemp[1];
+ 7e0:	40 91 10 01 	lds	r20, 0x0110
+ 7e4:	40 93 2e 01 	sts	0x012E, r20
+					transmission(CMD_ADC2, ADC2L, ADC2H);
+ 7e8:	81 e5       	ldi	r24, 0x51	; 81
+ 7ea:	36 cf       	rjmp	.-404    	; 0x658 <main+0x104>
+					break;
+
+				case CMD_ADC3 : // Envoie les informations du troisième convertisseur ADC
+					StartADC(2);
+ 7ec:	82 e0       	ldi	r24, 0x02	; 2
+ 7ee:	84 d1       	rcall	.+776    	; 0xaf8 <StartADC>
+					ReadADC(listTemp);
+ 7f0:	8f e0       	ldi	r24, 0x0F	; 15
+ 7f2:	91 e0       	ldi	r25, 0x01	; 1
+ 7f4:	75 d1       	rcall	.+746    	; 0xae0 <ReadADC>
+					ADC3L = listTemp[0];
+ 7f6:	60 91 0f 01 	lds	r22, 0x010F
+ 7fa:	60 93 2a 01 	sts	0x012A, r22
+					ADC3H = listTemp[1];
+ 7fe:	40 91 10 01 	lds	r20, 0x0110
+ 802:	40 93 27 01 	sts	0x0127, r20
+					transmission(CMD_ADC3, ADC3L, ADC3H);
+ 806:	82 e5       	ldi	r24, 0x52	; 82
+ 808:	27 cf       	rjmp	.-434    	; 0x658 <main+0x104>
+					break;
+
+				case CMD_ADC4 : // Envoie les informations du quatrième convertisseur ADC
+					StartADC(3);
+ 80a:	83 e0       	ldi	r24, 0x03	; 3
+ 80c:	75 d1       	rcall	.+746    	; 0xaf8 <StartADC>
+					ReadADC(listTemp);
+ 80e:	8f e0       	ldi	r24, 0x0F	; 15
+ 810:	91 e0       	ldi	r25, 0x01	; 1
+ 812:	66 d1       	rcall	.+716    	; 0xae0 <ReadADC>
+					ADC4L = listTemp[0];
+ 814:	60 91 0f 01 	lds	r22, 0x010F
+ 818:	60 93 3d 01 	sts	0x013D, r22
+					ADC4H = listTemp[1];
+ 81c:	40 91 10 01 	lds	r20, 0x0110
+ 820:	40 93 2c 01 	sts	0x012C, r20
+					transmission(CMD_ADC4, ADC4L, ADC4H);
+ 824:	83 e5       	ldi	r24, 0x53	; 83
+ 826:	18 cf       	rjmp	.-464    	; 0x658 <main+0x104>
+					break;
+
+				case CMD_SENS_0_POSITIF :
+					Sens_0 = 1 ;
+ 828:	10 93 01 01 	sts	0x0101, r17
+					transmission(CMD_SENS_0_POSITIF,Conf_sens0p, 0x00 );
+ 82c:	80 e9       	ldi	r24, 0x90	; 144
+ 82e:	60 ea       	ldi	r22, 0xA0	; 160
+ 830:	0e c0       	rjmp	.+28     	; 0x84e <main+0x2fa>
+					break;
+
+				case CMD_SENS_0_NEGATIF :
+					Sens_0 = 0 ;
+ 832:	10 92 01 01 	sts	0x0101, r1
+					transmission(CMD_SENS_0_NEGATIF,Conf_sens0n, 0x00 );
+ 836:	81 e9       	ldi	r24, 0x91	; 145
+ 838:	61 ea       	ldi	r22, 0xA1	; 161
+ 83a:	09 c0       	rjmp	.+18     	; 0x84e <main+0x2fa>
+					break;
+
+				case CMD_SENS_1_POSITIF :
+					Sens_1 = 1 ;
+ 83c:	10 93 02 01 	sts	0x0102, r17
+					transmission(CMD_SENS_1_POSITIF,Conf_sens1p, 0x00 );
+ 840:	82 e9       	ldi	r24, 0x92	; 146
+ 842:	62 ea       	ldi	r22, 0xA2	; 162
+ 844:	04 c0       	rjmp	.+8      	; 0x84e <main+0x2fa>
+					break;
+
+				case CMD_SENS_1_NEGATIF :
+					Sens_1 = 0 ;
+ 846:	10 92 02 01 	sts	0x0102, r1
+					transmission(CMD_SENS_1_NEGATIF, Conf_sens1n, 0x00 );
+ 84a:	83 e9       	ldi	r24, 0x93	; 147
+ 84c:	63 ea       	ldi	r22, 0xA3	; 163
+ 84e:	40 e0       	ldi	r20, 0x00	; 0
+ 850:	03 cf       	rjmp	.-506    	; 0x658 <main+0x104>
+					break;
+
+				default :
+					asm("nop");
+ 852:	00 00       	nop
+			}
+
+			for(decalage=0;decalage<=4;decalage++) // Décale les demandes pour supprimer la première et passer au traitement de la demande suivante
+ 854:	10 92 2b 01 	sts	0x012B, r1
+ 858:	90 e0       	ldi	r25, 0x00	; 0
+ 85a:	07 c0       	rjmp	.+14     	; 0x86a <main+0x316>
+			{
+				data[decalage]=data[decalage+1];	
+ 85c:	e9 2f       	mov	r30, r25
+ 85e:	f0 e0       	ldi	r31, 0x00	; 0
+ 860:	e1 5d       	subi	r30, 0xD1	; 209
+ 862:	fe 4f       	sbci	r31, 0xFE	; 254
+ 864:	81 81       	ldd	r24, Z+1	; 0x01
+ 866:	80 83       	st	Z, r24
+ 868:	9f 5f       	subi	r25, 0xFF	; 255
+
+				default :
+					asm("nop");
+			}
+
+			for(decalage=0;decalage<=4;decalage++) // Décale les demandes pour supprimer la première et passer au traitement de la demande suivante
+ 86a:	95 30       	cpi	r25, 0x05	; 5
+ 86c:	b8 f3       	brcs	.-18     	; 0x85c <main+0x308>
+ 86e:	90 93 2b 01 	sts	0x012B, r25
+			{
+				data[decalage]=data[decalage+1];	
+			}
+			data[4] = 0x00 ;
+ 872:	10 92 33 01 	sts	0x0133, r1
+ 876:	83 ce       	rjmp	.-762    	; 0x57e <main+0x2a>
+		}
+		else
+		{
+			asm("nop");
+ 878:	00 00       	nop
+ 87a:	81 ce       	rjmp	.-766    	; 0x57e <main+0x2a>
+
+0000087c <init_timer1>:
+
+#include "timer1.h"
+
+void init_timer1(void)
+{
+	TCCR1B |= (1<<WGM12);	//CTC
+ 87c:	e1 e8       	ldi	r30, 0x81	; 129
+ 87e:	f0 e0       	ldi	r31, 0x00	; 0
+ 880:	80 81       	ld	r24, Z
+ 882:	88 60       	ori	r24, 0x08	; 8
+ 884:	80 83       	st	Z, r24
+	TIMSK1 |= (1<<OCIE1A);	//Enable OCIE1A
+ 886:	ef e6       	ldi	r30, 0x6F	; 111
+ 888:	f0 e0       	ldi	r31, 0x00	; 0
+ 88a:	80 81       	ld	r24, Z
+ 88c:	82 60       	ori	r24, 0x02	; 2
+ 88e:	80 83       	st	Z, r24
+
+	flag_timer1 = FALSE;
+ 890:	81 e0       	ldi	r24, 0x01	; 1
+ 892:	80 93 0e 01 	sts	0x010E, r24
+}
+ 896:	08 95       	ret
+
+00000898 <start_timer1>:
+
+//Prescaler 8 => 65536ms MAX
+void start_timer1(unsigned int time)
+{
+	cli();
+ 898:	f8 94       	cli
+	OCR1A = time;
+ 89a:	90 93 89 00 	sts	0x0089, r25
+ 89e:	80 93 88 00 	sts	0x0088, r24
+	sei();
+ 8a2:	78 94       	sei
+
+	//TCCR1B |= (1<<CS11);  //start - Prescaler 8
+	TCCR1B |= (1<<CS10) | (1<<CS12);  //start - Prescaler 1024
+ 8a4:	e1 e8       	ldi	r30, 0x81	; 129
+ 8a6:	f0 e0       	ldi	r31, 0x00	; 0
+ 8a8:	80 81       	ld	r24, Z
+ 8aa:	85 60       	ori	r24, 0x05	; 5
+ 8ac:	80 83       	st	Z, r24
+}
+ 8ae:	08 95       	ret
+
+000008b0 <stop_timer1>:
+
+void stop_timer1(void)
+{
+	TCCR1B &= 0b11111101;
+ 8b0:	e1 e8       	ldi	r30, 0x81	; 129
+ 8b2:	f0 e0       	ldi	r31, 0x00	; 0
+ 8b4:	80 81       	ld	r24, Z
+ 8b6:	8d 7f       	andi	r24, 0xFD	; 253
+ 8b8:	80 83       	st	Z, r24
+	//TCCR1B &= 0b11111010;
+
+	//Reset timer
+	//Obligation d'arreter les interruptions car le timer est un 16bits => 2 instructions (voir datasheet)
+	cli();
+ 8ba:	f8 94       	cli
+	TCNT1 = 0;
+ 8bc:	10 92 85 00 	sts	0x0085, r1
+ 8c0:	10 92 84 00 	sts	0x0084, r1
+	sei();
+ 8c4:	78 94       	sei
+}
+ 8c6:	08 95       	ret
+
+000008c8 <__vector_11>:
+
+ISR(TIMER1_COMPA_vect)
+{
+ 8c8:	1f 92       	push	r1
+ 8ca:	0f 92       	push	r0
+ 8cc:	0f b6       	in	r0, 0x3f	; 63
+ 8ce:	0f 92       	push	r0
+ 8d0:	11 24       	eor	r1, r1
+	flag_timer1 = TRUE;	//Force à quitter la boucle de getchar_usart();
+ 8d2:	10 92 0e 01 	sts	0x010E, r1
+}
+ 8d6:	0f 90       	pop	r0
+ 8d8:	0f be       	out	0x3f, r0	; 63
+ 8da:	0f 90       	pop	r0
+ 8dc:	1f 90       	pop	r1
+ 8de:	18 95       	reti
+
+000008e0 <init_usart>:
+
+//Initialisation de l'usart
+void init_usart(unsigned int ubrr)
+{
+	/*Set baud rate */
+	UBRR0H = (unsigned char)(ubrr>>8);
+ 8e0:	90 93 c5 00 	sts	0x00C5, r25
+	UBRR0L = (unsigned char)ubrr;
+ 8e4:	80 93 c4 00 	sts	0x00C4, r24
+	/*Double speed*/
+	UCSR0A = (1<<U2X0);
+ 8e8:	82 e0       	ldi	r24, 0x02	; 2
+ 8ea:	80 93 c0 00 	sts	0x00C0, r24
+	/*Enable receiver and transmitter */
+	UCSR0B |= (1<<TXEN0) | (1<<RXEN0);
+ 8ee:	e1 ec       	ldi	r30, 0xC1	; 193
+ 8f0:	f0 e0       	ldi	r31, 0x00	; 0
+ 8f2:	80 81       	ld	r24, Z
+ 8f4:	88 61       	ori	r24, 0x18	; 24
+ 8f6:	80 83       	st	Z, r24
+	/* Set frame format: 8data, 1stop bit */
+	UCSR0C = (3<<UCSZ00);
+ 8f8:	86 e0       	ldi	r24, 0x06	; 6
+ 8fa:	80 93 c2 00 	sts	0x00C2, r24
+
+	flag_usart = FALSE;
+ 8fe:	81 e0       	ldi	r24, 0x01	; 1
+ 900:	80 93 08 01 	sts	0x0108, r24
+}
+ 904:	08 95       	ret
+
+00000906 <putchar_usart>:
+
+//Permet l'envoi d'un caractère
+void putchar_usart(char c)
+{
+ 906:	98 2f       	mov	r25, r24
+	/* Wait for empty transmit buffer */
+	while (!( UCSR0A & (1<<UDRE0)));
+ 908:	80 91 c0 00 	lds	r24, 0x00C0
+ 90c:	85 ff       	sbrs	r24, 5
+ 90e:	fc cf       	rjmp	.-8      	; 0x908 <putchar_usart+0x2>
+	/* Put data into buffer, sends the data */
+	UDR0 = c;
+ 910:	90 93 c6 00 	sts	0x00C6, r25
+}
+ 914:	08 95       	ret
+
+00000916 <getchar_usart>:
+//Permet la reception d'un caractère
+char getchar_usart(void)
+{
+	/* Wait for data to be received */
+	//Si le flag_timer1 est différent de FALSE, on sort de la boucle
+	while ((!(UCSR0A & (1<<RXC0))) && (flag_timer1 == FALSE));
+ 916:	80 91 c0 00 	lds	r24, 0x00C0
+ 91a:	87 fd       	sbrc	r24, 7
+ 91c:	04 c0       	rjmp	.+8      	; 0x926 <getchar_usart+0x10>
+ 91e:	80 91 0e 01 	lds	r24, 0x010E
+ 922:	81 30       	cpi	r24, 0x01	; 1
+ 924:	c1 f3       	breq	.-16     	; 0x916 <getchar_usart>
+	/* Get and return received data from buffer */
+	if((UCSR0A & (1<<RXC0)))
+ 926:	80 91 c0 00 	lds	r24, 0x00C0
+ 92a:	87 fd       	sbrc	r24, 7
+ 92c:	02 c0       	rjmp	.+4      	; 0x932 <getchar_usart+0x1c>
+ 92e:	80 e0       	ldi	r24, 0x00	; 0
+ 930:	08 95       	ret
+	{
+		return UDR0;
+ 932:	80 91 c6 00 	lds	r24, 0x00C6
+	}
+	else
+	{
+		return 0;
+	}
+}
+ 936:	08 95       	ret
+
+00000938 <gets_usart>:
+		putchar_usart(string[i]);
+}
+
+//Permet de recevoir une chaine de caractère sur l'usart
+void gets_usart(char string[], unsigned char len)
+{
+ 938:	0f 93       	push	r16
+ 93a:	1f 93       	push	r17
+ 93c:	cf 93       	push	r28
+ 93e:	df 93       	push	r29
+ 940:	06 2f       	mov	r16, r22
+ 942:	ec 01       	movw	r28, r24
+ 944:	10 e0       	ldi	r17, 0x00	; 0
+ 946:	03 c0       	rjmp	.+6      	; 0x94e <gets_usart+0x16>
+	unsigned char i;
+	
+	for(i=0; i<len; i++)
+		string[i] = getchar_usart();
+ 948:	e6 df       	rcall	.-52     	; 0x916 <getchar_usart>
+ 94a:	89 93       	st	Y+, r24
+//Permet de recevoir une chaine de caractère sur l'usart
+void gets_usart(char string[], unsigned char len)
+{
+	unsigned char i;
+	
+	for(i=0; i<len; i++)
+ 94c:	1f 5f       	subi	r17, 0xFF	; 255
+ 94e:	10 17       	cp	r17, r16
+ 950:	d8 f3       	brcs	.-10     	; 0x948 <gets_usart+0x10>
+		string[i] = getchar_usart();
+}
+ 952:	df 91       	pop	r29
+ 954:	cf 91       	pop	r28
+ 956:	1f 91       	pop	r17
+ 958:	0f 91       	pop	r16
+ 95a:	08 95       	ret
+
+0000095c <puts_usart>:
+	}
+}
+
+//Permet d'écrire une chaine de caractère sur l'usart
+void puts_usart(char string[])
+{
+ 95c:	9c 01       	movw	r18, r24
+	unsigned char i;
+
+	for(i=0; i<strlen(string); i++)
+ 95e:	dc 01       	movw	r26, r24
+ 960:	0d 90       	ld	r0, X+
+ 962:	00 20       	and	r0, r0
+ 964:	e9 f7       	brne	.-6      	; 0x960 <puts_usart+0x4>
+ 966:	11 97       	sbiw	r26, 0x01	; 1
+ 968:	a8 1b       	sub	r26, r24
+ 96a:	b9 0b       	sbc	r27, r25
+ 96c:	90 e0       	ldi	r25, 0x00	; 0
+ 96e:	0a c0       	rjmp	.+20     	; 0x984 <puts_usart+0x28>
+		putchar_usart(string[i]);
+ 970:	e2 0f       	add	r30, r18
+ 972:	f3 1f       	adc	r31, r19
+ 974:	40 81       	ld	r20, Z
+
+//Permet l'envoi d'un caractère
+void putchar_usart(char c)
+{
+	/* Wait for empty transmit buffer */
+	while (!( UCSR0A & (1<<UDRE0)));
+ 976:	80 91 c0 00 	lds	r24, 0x00C0
+ 97a:	85 ff       	sbrs	r24, 5
+ 97c:	fc cf       	rjmp	.-8      	; 0x976 <puts_usart+0x1a>
+	/* Put data into buffer, sends the data */
+	UDR0 = c;
+ 97e:	40 93 c6 00 	sts	0x00C6, r20
+//Permet d'écrire une chaine de caractère sur l'usart
+void puts_usart(char string[])
+{
+	unsigned char i;
+
+	for(i=0; i<strlen(string); i++)
+ 982:	9f 5f       	subi	r25, 0xFF	; 255
+ 984:	e9 2f       	mov	r30, r25
+ 986:	f0 e0       	ldi	r31, 0x00	; 0
+ 988:	ea 17       	cp	r30, r26
+ 98a:	fb 07       	cpc	r31, r27
+ 98c:	88 f3       	brcs	.-30     	; 0x970 <puts_usart+0x14>
+		putchar_usart(string[i]);
+}
+ 98e:	08 95       	ret
+
+00000990 <init_watchdog>:
+
+volatile unsigned int timeout = TIMEOUT_RESET;
+
+void init_watchdog(void)
+{
+	cli();
+ 990:	f8 94       	cli
+
+	//reset watchdog
+	wdt_reset();
+ 992:	a8 95       	wdr
+	//set up WDT Interrupt Mode
+	WDTCSR = (1<<WDCE)|(1<<WDE);
+ 994:	e0 e6       	ldi	r30, 0x60	; 96
+ 996:	f0 e0       	ldi	r31, 0x00	; 0
+ 998:	88 e1       	ldi	r24, 0x18	; 24
+ 99a:	80 83       	st	Z, r24
+	//Start watchdog timer with 8s prescaller
+	WDTCSR = (1<<WDIE)|(1<<WDP3)|(1<<WDP0);
+ 99c:	81 e6       	ldi	r24, 0x61	; 97
+ 99e:	80 83       	st	Z, r24
+
+	sei();
+ 9a0:	78 94       	sei
+}
+ 9a2:	08 95       	ret
+
+000009a4 <__vector_6>:
+
+ISR(WDT_vect)
+{
+ 9a4:	1f 92       	push	r1
+ 9a6:	0f 92       	push	r0
+ 9a8:	0f b6       	in	r0, 0x3f	; 63
+ 9aa:	0f 92       	push	r0
+ 9ac:	11 24       	eor	r1, r1
+ 9ae:	8f 93       	push	r24
+ 9b0:	9f 93       	push	r25
+	cli();
+ 9b2:	f8 94       	cli
+	if(timeout != 0)
+ 9b4:	80 91 03 01 	lds	r24, 0x0103
+ 9b8:	90 91 04 01 	lds	r25, 0x0104
+ 9bc:	89 2b       	or	r24, r25
+ 9be:	89 f0       	breq	.+34     	; 0x9e2 <__vector_6+0x3e>
+	{
+		//reset watchdog
+		wdt_reset();
+ 9c0:	a8 95       	wdr
+		//set up WDT Interrupt Mode
+		WDTCSR = (1<<WDCE)|(1<<WDE);
+ 9c2:	88 e1       	ldi	r24, 0x18	; 24
+ 9c4:	80 93 60 00 	sts	0x0060, r24
+		//Start watchdog timer with 8s prescaller
+		WDTCSR = (1<<WDIE)|(1<<WDP3)|(1<<WDP0);
+ 9c8:	81 e6       	ldi	r24, 0x61	; 97
+ 9ca:	80 93 60 00 	sts	0x0060, r24
+		
+		timeout--;
+ 9ce:	80 91 03 01 	lds	r24, 0x0103
+ 9d2:	90 91 04 01 	lds	r25, 0x0104
+ 9d6:	01 97       	sbiw	r24, 0x01	; 1
+ 9d8:	90 93 04 01 	sts	0x0104, r25
+ 9dc:	80 93 03 01 	sts	0x0103, r24
+ 9e0:	07 c0       	rjmp	.+14     	; 0x9f0 <__vector_6+0x4c>
+	}
+	else
+	{
+		//reset watchdog
+		wdt_reset();
+ 9e2:	a8 95       	wdr
+		//set up WDT Reset Mode
+		WDTCSR = (1<<WDCE)|(1<<WDE);
+ 9e4:	88 e1       	ldi	r24, 0x18	; 24
+ 9e6:	80 93 60 00 	sts	0x0060, r24
+		//Reset Mode
+		WDTCSR = (1<<WDE);
+ 9ea:	88 e0       	ldi	r24, 0x08	; 8
+ 9ec:	80 93 60 00 	sts	0x0060, r24
+	}
+	sei();
+ 9f0:	78 94       	sei
+}
+ 9f2:	9f 91       	pop	r25
+ 9f4:	8f 91       	pop	r24
+ 9f6:	0f 90       	pop	r0
+ 9f8:	0f be       	out	0x3f, r0	; 63
+ 9fa:	0f 90       	pop	r0
+ 9fc:	1f 90       	pop	r1
+ 9fe:	18 95       	reti
+
+00000a00 <initDS7505>:
+
+/*********************************************************************/
+// FUNCTION: char initDS7505(unsigned char addr_mode)
+// PURPOSE: Initialisation d'un capteur de T° dont l'adresse I2C est spécifiée
+unsigned char initDS7505(unsigned char addr_mode)
+{
+ a00:	1f 93       	push	r17
+	unsigned char ret;
+
+    ret = i2c_start(addr_mode+I2C_WRITE);       // Start avec adresse capteur + write bit
+ a02:	bf dc       	rcall	.-1666   	; 0x382 <i2c_start>
+ a04:	18 2f       	mov	r17, r24
+	/* Si le capteur n'est pas présent sur le bus I2C */
+    if ( ret ) 
+ a06:	88 23       	and	r24, r24
+ a08:	11 f0       	breq	.+4      	; 0xa0e <initDS7505+0xe>
+	{
+        i2c_stop();		// Fin de communication sur le bus I2C
+ a0a:	0b dd       	rcall	.-1514   	; 0x422 <i2c_stop>
+ a0c:	09 c0       	rjmp	.+18     	; 0xa20 <initDS7505+0x20>
+    }
+	/* Le capteur est présent sur le bus I2C */
+	else 
+	{
+        i2c_write(CONF_REG); 	// Envoyer commande "Configuration register"
+ a0e:	81 e0       	ldi	r24, 0x01	; 1
+ a10:	10 dd       	rcall	.-1504   	; 0x432 <i2c_write>
+        i2c_write(RES_10);  	// Conversion 10 bits 
+ a12:	80 e2       	ldi	r24, 0x20	; 32
+ a14:	0e dd       	rcall	.-1508   	; 0x432 <i2c_write>
+		i2c_stop();				// Fin de communication sur le bus I2C
+ a16:	05 dd       	rcall	.-1526   	; 0x422 <i2c_stop>
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ a18:	80 e3       	ldi	r24, 0x30	; 48
+ a1a:	95 e7       	ldi	r25, 0x75	; 117
+ a1c:	01 97       	sbiw	r24, 0x01	; 1
+ a1e:	f1 f7       	brne	.-4      	; 0xa1c <initDS7505+0x1c>
+		_delay_ms(15);			// Délais avant de communiquer à nouveau avec le capteur
+	}
+	return ret;
+}
+ a20:	81 2f       	mov	r24, r17
+ a22:	1f 91       	pop	r17
+ a24:	08 95       	ret
+
+00000a26 <get_DS7505_Devices>:
+
+/*********************************************************************/
+// FUNCTION: get_DS7505_Devices(unsigned char addr_mode, char *listTemp)
+// PURPOSE: Aquérir la T° d'un DS7505 dont l'adresse I2C est spécifiée
+unsigned char get_DS7505_Devices(unsigned char addr_mode, char *listTemp)
+{
+ a26:	0f 93       	push	r16
+ a28:	1f 93       	push	r17
+ a2a:	cf 93       	push	r28
+ a2c:	df 93       	push	r29
+ a2e:	18 2f       	mov	r17, r24
+ a30:	eb 01       	movw	r28, r22
+	unsigned char ret;
+	ret = i2c_start(addr_mode+I2C_WRITE);       // Start avec adresse capteur + write bit
+ a32:	a7 dc       	rcall	.-1714   	; 0x382 <i2c_start>
+ a34:	08 2f       	mov	r16, r24
+	i2c_stop();
+ a36:	f5 dc       	rcall	.-1558   	; 0x422 <i2c_stop>
+
+	if (!ret)/* Si le capteur est présent sur le bus I2C */
+ a38:	00 23       	and	r16, r16
+ a3a:	69 f4       	brne	.+26     	; 0xa56 <get_DS7505_Devices+0x30>
+	{
+	    i2c_start_wait(addr_mode+I2C_WRITE);    	// Start avec adresse capteur + write bit
+ a3c:	81 2f       	mov	r24, r17
+ a3e:	c7 dc       	rcall	.-1650   	; 0x3ce <i2c_start_wait>
+													// Et attend que le bus soit libéré
+	    i2c_write(TEMP_REG);  						// Envoyer commande "Read Temperature"
+ a40:	80 e0       	ldi	r24, 0x00	; 0
+ a42:	f7 dc       	rcall	.-1554   	; 0x432 <i2c_write>
+		i2c_rep_start(addr_mode+I2C_READ);        	// Repeated start avec adresse capteur + write bit
+ a44:	81 2f       	mov	r24, r17
+ a46:	8f 5f       	subi	r24, 0xFF	; 255
+ a48:	ea dc       	rcall	.-1580   	; 0x41e <i2c_rep_start>
+
+		listTemp[0] = i2c_readAck();	// Sauvegarder les bits de poids fort + Acknowledge
+ a4a:	05 dd       	rcall	.-1526   	; 0x456 <i2c_readAck>
+ a4c:	88 83       	st	Y, r24
+		listTemp[1] = i2c_readNak();	// Sauvegarder les bits de poids faible + Not acknowledge
+ a4e:	0d dd       	rcall	.-1510   	; 0x46a <i2c_readNak>
+ a50:	89 83       	std	Y+1, r24	; 0x01
+
+	    i2c_stop();						// Fin de communication sur le bus I2C
+ a52:	e7 dc       	rcall	.-1586   	; 0x422 <i2c_stop>
+ a54:	02 c0       	rjmp	.+4      	; 0xa5a <get_DS7505_Devices+0x34>
+	}
+	else/* Le capteur n'est pas présent sur le bus I2C */
+	{
+		listTemp[0] = 0;				// Mettre à zéro l'octet de poids fort
+ a56:	18 82       	st	Y, r1
+		listTemp[1] = 0;				// Mettre à zéro l'octet de poids faible
+ a58:	19 82       	std	Y+1, r1	; 0x01
+	}
+	return ret ;						// Fin de communication sur le bus I2C
+}
+ a5a:	80 2f       	mov	r24, r16
+ a5c:	df 91       	pop	r29
+ a5e:	cf 91       	pop	r28
+ a60:	1f 91       	pop	r17
+ a62:	0f 91       	pop	r16
+ a64:	08 95       	ret
+
+00000a66 <convertTemp>:
+
+/*********************************************************************/
+// FUNCTION: convertTemp(char *tempMes, char *tempResult)
+// PURPOSE: Convertir la valeur de T° brute, en valeur exploitable
+void convertTemp(char *tempMes, char *tempResult)		
+{
+ a66:	fc 01       	movw	r30, r24
+ a68:	db 01       	movw	r26, r22
+	//unsigned int tempNeg = 0;
+	unsigned int temp_fraction = 0, temp_Lpol = 0; //tempHLpol = 0;
+	char temp_whole =0 ;
+	/******* Vérifier si la température est négative *******/
+    if (tempMes[0] & 0x80) // Si température négative (1000.0000.0000.0000)
+ a6a:	40 81       	ld	r20, Z
+ a6c:	47 fd       	sbrc	r20, 7
+ a6e:	03 c0       	rjmp	.+6      	; 0xa76 <convertTemp+0x10>
+ a70:	20 e0       	ldi	r18, 0x00	; 0
+ a72:	30 e0       	ldi	r19, 0x00	; 0
+ a74:	03 c0       	rjmp	.+6      	; 0xa7c <convertTemp+0x16>
+    {
+		temp_Lpol = 0b10000000; // Bit 8 à 1 pour signaler la température négative
+        temp_whole = ~tempMes[0] + 1;                     // Inverser la valeur et incrémenter de 1 (complément à 2
+ a76:	41 95       	neg	r20
+ a78:	20 e8       	ldi	r18, 0x80	; 128
+ a7a:	30 e0       	ldi	r19, 0x00	; 0
+		temp_Lpol = 0b00000000; // Bit 8 à 0 pour signaler la température positive
+	}
+
+    /******* Extraire les décimales *******/
+    temp_fraction = tempMes[1] & 0xC0;             // Masquage, garder le bit 7 et 6
+	switch (temp_fraction)
+ a7c:	81 81       	ldd	r24, Z+1	; 0x01
+ a7e:	90 e0       	ldi	r25, 0x00	; 0
+ a80:	80 7c       	andi	r24, 0xC0	; 192
+ a82:	90 70       	andi	r25, 0x00	; 0
+ a84:	80 38       	cpi	r24, 0x80	; 128
+ a86:	91 05       	cpc	r25, r1
+ a88:	49 f0       	breq	.+18     	; 0xa9c <convertTemp+0x36>
+ a8a:	80 3c       	cpi	r24, 0xC0	; 192
+ a8c:	91 05       	cpc	r25, r1
+ a8e:	49 f0       	breq	.+18     	; 0xaa2 <convertTemp+0x3c>
+ a90:	80 34       	cpi	r24, 0x40	; 64
+ a92:	91 05       	cpc	r25, r1
+ a94:	41 f4       	brne	.+16     	; 0xaa6 <convertTemp+0x40>
+		case 0b00000000 :
+			temp_Lpol =  temp_Lpol + 0 ;
+			break;
+			
+		case 0b01000000 :
+			temp_Lpol =  temp_Lpol + 25 ;
+ a96:	27 5e       	subi	r18, 0xE7	; 231
+ a98:	3f 4f       	sbci	r19, 0xFF	; 255
+ a9a:	05 c0       	rjmp	.+10     	; 0xaa6 <convertTemp+0x40>
+			break;
+			
+		case 0b10000000 :
+			temp_Lpol = temp_Lpol + 50 ;
+ a9c:	2e 5c       	subi	r18, 0xCE	; 206
+ a9e:	3f 4f       	sbci	r19, 0xFF	; 255
+ aa0:	02 c0       	rjmp	.+4      	; 0xaa6 <convertTemp+0x40>
+			break;
+			
+		case 0b11000000 :
+			temp_Lpol =  temp_Lpol + 75 ;
+ aa2:	25 5b       	subi	r18, 0xB5	; 181
+ aa4:	3f 4f       	sbci	r19, 0xFF	; 255
+			break;
+	}
+	tempResult[0] = temp_whole;		// Sauver les unités de température
+ aa6:	4c 93       	st	X, r20
+	tempResult[1] = temp_Lpol;		// Sauver les décimales et le signe (+/-)
+ aa8:	11 96       	adiw	r26, 0x01	; 1
+ aaa:	2c 93       	st	X, r18
+}
+ aac:	08 95       	ret
+
+00000aae <InitADC>:
+	//cbiBF(DDRC,0);
+	//cbiBF(DDRC,1);
+	//cbiBF(DDRC,2);
+	//cbiBF(DDRC,3);
+	// Selection du voltage de référence sur AREF, les données seront ajustées à gauche
+	ADMUX |= (0<<REFS1)|(0<<REFS0)|(1<<ADLAR);
+ aae:	ec e7       	ldi	r30, 0x7C	; 124
+ ab0:	f0 e0       	ldi	r31, 0x00	; 0
+ ab2:	80 81       	ld	r24, Z
+ ab4:	80 62       	ori	r24, 0x20	; 32
+ ab6:	80 83       	st	Z, r24
+	//	Bit 	15		14		13		12		11		10 		9 		8
+	//	(0x79) 	ADC9 	ADC8 	ADC7 	ADC6 	ADC5 	ADC4 	ADC3 	ADC2 	ADCH
+	//	(0x78) 	ADC1 	ADC0 	– 		– 		–		–		–		–		ADCL
+	// Activer l' ADC
+	ADCSRA |= (1<<ADEN);
+ ab8:	ea e7       	ldi	r30, 0x7A	; 122
+ aba:	f0 e0       	ldi	r31, 0x00	; 0
+ abc:	80 81       	ld	r24, Z
+ abe:	80 68       	ori	r24, 0x80	; 128
+ ac0:	80 83       	st	Z, r24
+	// Activer conversion
+	// ADCSRA |= (1<<ADSC);
+	// Digital Input Disable (mise à 1 pour diminuer la puissance et favoriser entrée analogique)
+	DIDR0 |= (1<<ADC3D)|(1<<ADC2D)|(1<<ADC1D)|(1<<ADC0D);
+ ac2:	ee e7       	ldi	r30, 0x7E	; 126
+ ac4:	f0 e0       	ldi	r31, 0x00	; 0
+ ac6:	80 81       	ld	r24, Z
+ ac8:	8f 60       	ori	r24, 0x0F	; 15
+ aca:	80 83       	st	Z, r24
+	
+	
+}
+ acc:	08 95       	ret
+
+00000ace <ClearFlagADC>:
+
+void ClearFlagADC(void)
+{
+	// ADC Interrupt Flag => mis à 1 quand conversation terminée ; forcer à un pour mettre à 0
+	ADCSRA |= (1<<ADIF);
+ ace:	ea e7       	ldi	r30, 0x7A	; 122
+ ad0:	f0 e0       	ldi	r31, 0x00	; 0
+ ad2:	80 81       	ld	r24, Z
+ ad4:	80 61       	ori	r24, 0x10	; 16
+ ad6:	80 83       	st	Z, r24
+	// Clear pour éviter conversion
+	ADCSRA &= ~(1<<ADSC);
+ ad8:	80 81       	ld	r24, Z
+ ada:	8f 7b       	andi	r24, 0xBF	; 191
+ adc:	80 83       	st	Z, r24
+}
+ ade:	08 95       	ret
+
+00000ae0 <ReadADC>:
+
+void ReadADC(char EnregistrementADC[])
+{
+ ae0:	fc 01       	movw	r30, r24
+	// Attendre que la conversion soit finie
+	while(((ADCSRA)&(1<<ADIF))==0);
+ ae2:	80 91 7a 00 	lds	r24, 0x007A
+ ae6:	84 ff       	sbrs	r24, 4
+ ae8:	fc cf       	rjmp	.-8      	; 0xae2 <ReadADC+0x2>
+	// Enregistre les données
+	EnregistrementADC[0] = ADCL;
+ aea:	80 91 78 00 	lds	r24, 0x0078
+ aee:	80 83       	st	Z, r24
+	EnregistrementADC[1] = ADCH;
+ af0:	80 91 79 00 	lds	r24, 0x0079
+ af4:	81 83       	std	Z+1, r24	; 0x01
+}
+ af6:	08 95       	ret
+
+00000af8 <StartADC>:
+
+void StartADC(unsigned char multiplexeur)
+{
+	// Selection le canal ADC
+	if(multiplexeur==0)
+ af8:	88 23       	and	r24, r24
+ afa:	11 f4       	brne	.+4      	; 0xb00 <StartADC+0x8>
+	{
+		ADMUX = CHANNEL0;
+ afc:	80 e2       	ldi	r24, 0x20	; 32
+ afe:	03 c0       	rjmp	.+6      	; 0xb06 <StartADC+0xe>
+	}
+	else if(multiplexeur==1)
+ b00:	81 30       	cpi	r24, 0x01	; 1
+ b02:	21 f4       	brne	.+8      	; 0xb0c <StartADC+0x14>
+	{
+		ADMUX = CHANNEL1;
+ b04:	81 e2       	ldi	r24, 0x21	; 33
+ b06:	80 93 7c 00 	sts	0x007C, r24
+ b0a:	09 c0       	rjmp	.+18     	; 0xb1e <StartADC+0x26>
+	}
+	else if(multiplexeur==2)
+ b0c:	82 30       	cpi	r24, 0x02	; 2
+ b0e:	11 f4       	brne	.+4      	; 0xb14 <StartADC+0x1c>
+	{
+		ADMUX = CHANNEL2;
+ b10:	82 e2       	ldi	r24, 0x22	; 34
+ b12:	f9 cf       	rjmp	.-14     	; 0xb06 <StartADC+0xe>
+	}
+	else if(multiplexeur==3)
+ b14:	83 30       	cpi	r24, 0x03	; 3
+ b16:	11 f4       	brne	.+4      	; 0xb1c <StartADC+0x24>
+	{
+		ADMUX = CHANNEL3; 
+ b18:	83 e2       	ldi	r24, 0x23	; 35
+ b1a:	f5 cf       	rjmp	.-22     	; 0xb06 <StartADC+0xe>
+	}
+	else asm("nop");	
+ b1c:	00 00       	nop
+
+	// Commence la conversion
+	ADCSRA |= (1<<ADSC);
+ b1e:	80 91 7a 00 	lds	r24, 0x007A
+ b22:	80 64       	ori	r24, 0x40	; 64
+ b24:	80 93 7a 00 	sts	0x007A, r24
+	// desactiver le power reduction register pour adc pour permettre conversion un par un
+	PRR &= ~(1<<PRADC);
+ b28:	80 91 64 00 	lds	r24, 0x0064
+ b2c:	8e 7f       	andi	r24, 0xFE	; 254
+ b2e:	80 93 64 00 	sts	0x0064, r24
+}
+ b32:	08 95       	ret
+
+00000b34 <convertHum>:
+
+/*********************************************************************/
+// FUNCTION: unsigned char convertHum(char *humMes)	
+// PURPOSE: Convertir la valeur d'humidité brute, en valeur exploitable
+unsigned char convertHum(char *humMes)		
+{
+ b34:	fc 01       	movw	r30, r24
+	unsigned long int hum_whole = 0 ;
+	unsigned char hum_pourc = 0;
+	
+	hum_whole = humMes[0] << RES_SHIFT ;		// Décaler de 8 bits vers la gauche du bit de poid fort
+ b36:	70 81       	ld	r23, Z
+ b38:	60 e0       	ldi	r22, 0x00	; 0
+ b3a:	88 27       	eor	r24, r24
+ b3c:	77 fd       	sbrc	r23, 7
+ b3e:	80 95       	com	r24
+ b40:	98 2f       	mov	r25, r24
+	hum_whole = hum_whole + humMes[1];			// Ajouter le bit de poids faible
+ b42:	21 81       	ldd	r18, Z+1	; 0x01
+ b44:	62 0f       	add	r22, r18
+ b46:	71 1d       	adc	r23, r1
+ b48:	81 1d       	adc	r24, r1
+ b4a:	91 1d       	adc	r25, r1
+	
+	/******* Formule pour obtenir l'humidité relative *******/
+	/* relative  humidity  above  liquid  water  according  to  World Meteorological Organization  (WMO) */
+	hum_whole = 125*hum_whole;
+ b4c:	2d e7       	ldi	r18, 0x7D	; 125
+ b4e:	30 e0       	ldi	r19, 0x00	; 0
+ b50:	40 e0       	ldi	r20, 0x00	; 0
+ b52:	50 e0       	ldi	r21, 0x00	; 0
+ b54:	3f d0       	rcall	.+126    	; 0xbd4 <__mulsi3>
+ b56:	dc 01       	movw	r26, r24
+ b58:	cb 01       	movw	r24, r22
+ b5a:	cd 01       	movw	r24, r26
+ b5c:	aa 27       	eor	r26, r26
+ b5e:	bb 27       	eor	r27, r27
+
+	hum_whole = hum_whole/65536; 
+	hum_pourc = hum_whole -6;
+	
+	return hum_pourc;		// Retourne la valeur de l'humidité relative en %, de 0 à 100
+}
+ b60:	86 50       	subi	r24, 0x06	; 6
+ b62:	08 95       	ret
+
+00000b64 <initSHT21>:
+
+/*********************************************************************/
+// FUNCTION: char initSHT21(unsigned char addr_mode)
+// PURPOSE: Initialisation d'un capteur de T° dont l'adresse I2C est spécifiée
+unsigned char initSHT21(unsigned char addr_mode)
+{
+ b64:	1f 93       	push	r17
+	unsigned char ret;
+
+    ret = i2c_start(addr_mode+I2C_WRITE);       // Start avec adresse capteur + write bit
+ b66:	0d dc       	rcall	.-2022   	; 0x382 <i2c_start>
+ b68:	18 2f       	mov	r17, r24
+	/* Si le capteur n'est pas présent sur le bus I2C */
+    if ( ret ) // Si le capteur n'est pas présent sur le bus I2C
+ b6a:	88 23       	and	r24, r24
+ b6c:	11 f0       	breq	.+4      	; 0xb72 <initSHT21+0xe>
+	{
+        i2c_stop();		// Fin de communication sur le bus I2C
+ b6e:	59 dc       	rcall	.-1870   	; 0x422 <i2c_stop>
+ b70:	09 c0       	rjmp	.+18     	; 0xb84 <initSHT21+0x20>
+    }
+	/* Le capteur est présent sur le bus I2C */
+	else 
+	{
+        i2c_write(W_USER_REG); 	// Envoyer commande "Write user register"
+ b72:	86 ee       	ldi	r24, 0xE6	; 230
+ b74:	5e dc       	rcall	.-1860   	; 0x432 <i2c_write>
+        i2c_write(RES_RH_8);  	// Conversion 8 bits 
+ b76:	83 e0       	ldi	r24, 0x03	; 3
+ b78:	5c dc       	rcall	.-1864   	; 0x432 <i2c_write>
+		i2c_stop();				// Fin de communication sur le bus I2C
+ b7a:	53 dc       	rcall	.-1882   	; 0x422 <i2c_stop>
+ b7c:	80 e3       	ldi	r24, 0x30	; 48
+ b7e:	95 e7       	ldi	r25, 0x75	; 117
+ b80:	01 97       	sbiw	r24, 0x01	; 1
+ b82:	f1 f7       	brne	.-4      	; 0xb80 <initSHT21+0x1c>
+		_delay_ms(15);			// Délais avant de communiquer à nouveau avec le capteur
+	}
+	return ret;
+}
+ b84:	81 2f       	mov	r24, r17
+ b86:	1f 91       	pop	r17
+ b88:	08 95       	ret
+
+00000b8a <get_SHT21_Devices>:
+
+/*********************************************************************/
+// FUNCTION: get_SHT21_Devices(unsigned char addr_mode, char *listHum)
+// PURPOSE: Aquérir la T° d'un SHT21 dont l'adresse I2C est spécifiée
+unsigned char get_SHT21_Devices(unsigned char addr_mode, char *listHum)
+{
+ b8a:	0f 93       	push	r16
+ b8c:	1f 93       	push	r17
+ b8e:	cf 93       	push	r28
+ b90:	df 93       	push	r29
+ b92:	18 2f       	mov	r17, r24
+ b94:	eb 01       	movw	r28, r22
+	unsigned char ret;
+	ret = i2c_start(addr_mode+I2C_WRITE);       // Start avec adresse capteur + write bit
+ b96:	f5 db       	rcall	.-2070   	; 0x382 <i2c_start>
+ b98:	08 2f       	mov	r16, r24
+	i2c_stop();
+ b9a:	43 dc       	rcall	.-1914   	; 0x422 <i2c_stop>
+
+	if (!ret)/* Si le capteur est présent sur le bus I2C */
+ b9c:	00 23       	and	r16, r16
+ b9e:	99 f4       	brne	.+38     	; 0xbc6 <get_SHT21_Devices+0x3c>
+	{
+		i2c_start_wait(addr_mode+I2C_WRITE);    	// Start avec adresse capteur + write bit
+ ba0:	81 2f       	mov	r24, r17
+ ba2:	15 dc       	rcall	.-2006   	; 0x3ce <i2c_start_wait>
+													// Et attend que le bus soit libéré
+		i2c_write(TRIG_T);  						// Envoyer commande "Trigger Temperature measurement (hold master)"
+ ba4:	83 ee       	ldi	r24, 0xE3	; 227
+ ba6:	45 dc       	rcall	.-1910   	; 0x432 <i2c_write>
+		i2c_rep_start(addr_mode+I2C_READ);        	// Repeated start avec adresse capteur + write bit
+ ba8:	81 2f       	mov	r24, r17
+ baa:	8f 5f       	subi	r24, 0xFF	; 255
+ bac:	38 dc       	rcall	.-1936   	; 0x41e <i2c_rep_start>
+ bae:	80 e1       	ldi	r24, 0x10	; 16
+ bb0:	97 e2       	ldi	r25, 0x27	; 39
+ bb2:	01 97       	sbiw	r24, 0x01	; 1
+ bb4:	f1 f7       	brne	.-4      	; 0xbb2 <get_SHT21_Devices+0x28>
+		
+		// Attente la fin de la conversion A/D, selon la résolution	
+		_delay_ms(5);
+
+		listHum[0] = i2c_readAck();	// Sauvegarder les bits de poids fort + Acknowledge
+ bb6:	4f dc       	rcall	.-1890   	; 0x456 <i2c_readAck>
+ bb8:	88 83       	st	Y, r24
+		listHum[1] = i2c_readAck();	// Sauvegarder les bits de poids faible + Not acknowledge
+ bba:	4d dc       	rcall	.-1894   	; 0x456 <i2c_readAck>
+ bbc:	89 83       	std	Y+1, r24	; 0x01
+		listHum[2] = i2c_readNak(); // CRC checksum
+ bbe:	55 dc       	rcall	.-1878   	; 0x46a <i2c_readNak>
+ bc0:	8a 83       	std	Y+2, r24	; 0x02
+
+		i2c_stop();							// Fin de communication sur le bus I2C
+ bc2:	2f dc       	rcall	.-1954   	; 0x422 <i2c_stop>
+ bc4:	01 c0       	rjmp	.+2      	; 0xbc8 <get_SHT21_Devices+0x3e>
+	}
+	else/* Le capteur n'est pas présent sur le bus I2C */
+	{
+		listHum[0] = 0;				// Mettre à zéro l'octet de poids fort
+		listHum[0] = 0;				// Mettre à zéro l'octet de poids faible
+		listHum[0] = 0;
+ bc6:	18 82       	st	Y, r1
+	}
+	return ret ;						// Fin de communication sur le bus I2C
+}                                                                                                                                                      
+ bc8:	80 2f       	mov	r24, r16
+ bca:	df 91       	pop	r29
+ bcc:	cf 91       	pop	r28
+ bce:	1f 91       	pop	r17
+ bd0:	0f 91       	pop	r16
+ bd2:	08 95       	ret
+
+00000bd4 <__mulsi3>:
+ bd4:	62 9f       	mul	r22, r18
+ bd6:	d0 01       	movw	r26, r0
+ bd8:	73 9f       	mul	r23, r19
+ bda:	f0 01       	movw	r30, r0
+ bdc:	82 9f       	mul	r24, r18
+ bde:	e0 0d       	add	r30, r0
+ be0:	f1 1d       	adc	r31, r1
+ be2:	64 9f       	mul	r22, r20
+ be4:	e0 0d       	add	r30, r0
+ be6:	f1 1d       	adc	r31, r1
+ be8:	92 9f       	mul	r25, r18
+ bea:	f0 0d       	add	r31, r0
+ bec:	83 9f       	mul	r24, r19
+ bee:	f0 0d       	add	r31, r0
+ bf0:	74 9f       	mul	r23, r20
+ bf2:	f0 0d       	add	r31, r0
+ bf4:	65 9f       	mul	r22, r21
+ bf6:	f0 0d       	add	r31, r0
+ bf8:	99 27       	eor	r25, r25
+ bfa:	72 9f       	mul	r23, r18
+ bfc:	b0 0d       	add	r27, r0
+ bfe:	e1 1d       	adc	r30, r1
+ c00:	f9 1f       	adc	r31, r25
+ c02:	63 9f       	mul	r22, r19
+ c04:	b0 0d       	add	r27, r0
+ c06:	e1 1d       	adc	r30, r1
+ c08:	f9 1f       	adc	r31, r25
+ c0a:	bd 01       	movw	r22, r26
+ c0c:	cf 01       	movw	r24, r30
+ c0e:	11 24       	eor	r1, r1
+ c10:	08 95       	ret
+
+00000c12 <memset>:
+ c12:	dc 01       	movw	r26, r24
+ c14:	01 c0       	rjmp	.+2      	; 0xc18 <memset+0x6>
+ c16:	6d 93       	st	X+, r22
+ c18:	41 50       	subi	r20, 0x01	; 1
+ c1a:	50 40       	sbci	r21, 0x00	; 0
+ c1c:	e0 f7       	brcc	.-8      	; 0xc16 <memset+0x4>
+ c1e:	08 95       	ret
+
+00000c20 <_exit>:
+ c20:	f8 94       	cli
+
+00000c22 <__stop_program>:
+ c22:	ff cf       	rjmp	.-2      	; 0xc22 <__stop_program>
