@@ -34,7 +34,7 @@
 //Taille du tableau d'erreur
 #define NB_ERRORS 5
 //Définition du timeout (10000 = 10ms)
-#define TIMEOUT_MS 10000	//5 ms limite avec la FOXBOARD
+#define TIMEOUT_MS 50000	//50 ms limite avec la FOXBOARD
 
 //Valeur de retour de la commande d'envoie
 #define TRANSMISSION_SUCCESS 0
