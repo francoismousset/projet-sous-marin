@@ -268,8 +268,8 @@ void get_data_3964r(char data[])
 			{
 				//Démarrage du timer avec la valeur de timeout TIMEOUT_MS
 				start_timer1(TIMEOUT_MS);
- 110:	80 e1       	ldi	r24, 0x10	; 16
- 112:	97 e2       	ldi	r25, 0x27	; 39
+ 110:	80 e5       	ldi	r24, 0x50	; 80
+ 112:	93 ec       	ldi	r25, 0xC3	; 195
  114:	c1 d3       	rcall	.+1922   	; 0x898 <start_timer1>
 				
 				//Attend de recoir un caractère
@@ -418,8 +418,8 @@ void get_data_3964r(char data[])
 				{
 					//Démarrage du timer1 avec valeur de timeout TIMEOUT_MS
 					start_timer1(TIMEOUT_MS);
- 18e:	80 e1       	ldi	r24, 0x10	; 16
- 190:	97 e2       	ldi	r25, 0x27	; 39
+ 18e:	80 e5       	ldi	r24, 0x50	; 80
+ 190:	93 ec       	ldi	r25, 0xC3	; 195
  192:	82 d3       	rcall	.+1796   	; 0x898 <start_timer1>
 					//Attend de recevoir un caractère sur le port série
 					c = getchar_usart();
@@ -540,8 +540,8 @@ char send_data_3964r(char data[], unsigned char lenght)
 
 		//Démarre le timer avec la valeur de timeout TIMEOUT_MS
 		start_timer1(TIMEOUT_MS);
- 226:	80 e1       	ldi	r24, 0x10	; 16
- 228:	97 e2       	ldi	r25, 0x27	; 39
+ 226:	80 e5       	ldi	r24, 0x50	; 80
+ 228:	93 ec       	ldi	r25, 0xC3	; 195
  22a:	36 d3       	rcall	.+1644   	; 0x898 <start_timer1>
 		//Attend de recevoir un caractère
 		//Si on a pas reçu de caractère avant le timeout, flag_timer1 se met à TRUE et on continue l'execution du programme
@@ -662,8 +662,8 @@ char send_data_3964r(char data[], unsigned char lenght)
 							{
 								//Démarrage du timer1 avec timeout de valeur TIMEOUT_MS
 								start_timer1(TIMEOUT_MS);
- 2ae:	80 e1       	ldi	r24, 0x10	; 16
- 2b0:	97 e2       	ldi	r25, 0x27	; 39
+ 2ae:	80 e5       	ldi	r24, 0x50	; 80
+ 2b0:	93 ec       	ldi	r25, 0xC3	; 195
  2b2:	f2 d2       	rcall	.+1508   	; 0x898 <start_timer1>
 								//Attend la reception d'un caractère
 								c = getchar_usart();
