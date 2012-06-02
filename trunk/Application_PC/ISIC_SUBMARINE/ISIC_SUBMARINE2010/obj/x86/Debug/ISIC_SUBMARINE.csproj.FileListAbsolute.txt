@@ -1,0 +1,75 @@
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormAide.resources
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormApropos.resources
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormConsole.resources
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormGraphiques.resources
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormMain.resources
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam.resources
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletBD.resources
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletGeneral.resources
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletGraphiques.resources
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormParam_OngletRS232.resources
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.FormTelecommande.resources
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\isic_submarine_com.FormPortCom.resources
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.Properties.Resources.resources
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.exe
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\BDSousMarin.sdf
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe.config
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.pdb
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\ZedGraph.dll
+C:\Documents and Settings\Chris\Mes documents\Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.pdb
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe.config
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.exe
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.pdb
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\BDSousMarin.sdf
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.pdb
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\ZedGraph.dll
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\3964rProtocol.dll
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\3964rProtocol.pdb
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe.config
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.exe
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.pdb
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.FormApropos.resources
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.FormConsole.resources
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.FormMain.resources
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.Properties.Resources.resources
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.UI_Remote.resources
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.UI_Sensor.resources
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.UI_SerialPort.resources
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.FormApropos.resources
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.FormMain.resources
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.Properties.Resources.resources
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.UI_Remote.resources
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.UI_Sensor.resources
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.UI_SerialPort.resources
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.pdb
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\3964rProtocol.dll
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\ZedGraph.dll
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\ISIC_SUBMARINE2010\bin\Debug\3964rProtocol.pdb
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe.config
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.exe
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE2010.pdb
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.exe
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\ISIC_SUBMARINE2010\bin\Debug\ISIC_SUBMARINE2010.pdb
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\ISIC_SUBMARINE2010\bin\Debug\3964rProtocol.dll
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\ISIC_SUBMARINE2010\bin\Debug\3964rProtocol.pdb
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\ISIC_SUBMARINE2010\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.FormApropos.resources
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.FormMain.resources
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.Properties.Resources.resources
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.UI_Remote.resources
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.UI_Sensor.resources
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\ISIC_SUBMARINE2010\obj\x86\Debug\ISIC_SUBMARINE.UI_SerialPort.resources
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\ISIC_SUBMARINE2010\obj\x86\Debug\GenerateResource.write.1.tlog

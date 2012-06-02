@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Fichier de configuration -->
+<!-- Interface du Projet Sous-Marin -->
+<!-- Mars 2010 -->
+
+<configuration>
+
+  <general>
+  	<nbr_submarine>1</nbr_submarine>
+  	<num>1</num>
+  </general>
+
+  <submarine_1>
+    <IG>
+      <auto_start>TRUE</auto_start>
+      <auto_load>TRUE</auto_load>
+      
+      <FORM_REMOTE>
+        <titre>Télécommande</titre>
+        <POS_X>10</POS_X>
+        <POS_Y>10</POS_Y>
+        <W>100</W>
+        <H>100</H>
+      </FORM_REMOTE>
+      
+      <FORM_GRAPH>
+        <titre>Graphiques</titre>
+        <POS_X>10</POS_X>
+        <POS_Y>10</POS_Y>
+        <W>100</W>
+        <H>100</H>
+      </FORM_GRAPH>
+      
+      <FORM_CONSOLE>
+        <titre>Console</titre>
+        <POS_X>10</POS_X>
+        <POS_Y>10</POS_Y>
+        <W>100</W>
+        <H>100</H>
+      </FORM_CONSOLE>
+    </IG>
+    
+    <RS232>
+      <Num_port>COM1</Num_port>
+      <Baudrate>300</Baudrate>
+      <nbr_bits>8</nbr_bits>
+      <parite>NONE</parite>
+      <bits_stop>ONE</bits_stop>
+      <taille_buff_entree>4096</taille_buff_entree>
+      <taille_buff_sortie>2</taille_buff_sortie>
+      <timeout_entree>-1</timeout_entree>
+      <timeout_sortie>-1</timeout_sortie>
+    </RS232>
+
+    <GRAPHIQUE>
+      <Ballast_Av>
+        <Refresh>500</Refresh>
+        <Affichage>Nuage_De_Point</Affichage>
+        <Couleur_Courbe>Bleu</Couleur_Courbe>
+        <Couleur_Ar_plan>Blanc</Couleur_Ar_plan>
+        <Nbre_Pt_aff>500</Nbre_Pt_aff>
+        <Nbre_Pt_Bd>0</Nbre_Pt_Bd>
+        <Enable>TRUE</Enable>
+      </Ballast_Av>
+
+      <Ballast_Ar>
+        <Refresh>500</Refresh>
+        <Affichage>Nuage_De_Point</Affichage>
+        <Couleur_Courbe>Rouge</Couleur_Courbe>
+        <Couleur_Ar_plan>Blanc</Couleur_Ar_plan>
+        <Nbre_Pt_aff>500</Nbre_Pt_aff>
+        <Nbre_Pt_Bd>0</Nbre_Pt_Bd>
+        <Enable>TRUE</Enable>
+      </Ballast_Ar>
+
+      <Moteur_G>
+        <Refresh>500</Refresh>
+        <Affichage>Nuage_De_Point</Affichage>
+        <Couleur_Courbe>Vert</Couleur_Courbe>
+        <Couleur_Ar_plan>Blanc</Couleur_Ar_plan>
+        <Nbre_Pt_aff>500</Nbre_Pt_aff>
+        <Nbre_Pt_Bd>0</Nbre_Pt_Bd>
+        <Enable>TRUE</Enable>
+      </Moteur_G>
+
+      <Moteur_D>
+        <Refresh>500</Refresh>
+        <Affichage>Nuage_De_Point</Affichage>
+        <Couleur_Courbe>Bleu</Couleur_Courbe>
+        <Couleur_Ar_plan>Blanc</Couleur_Ar_plan>
+        <Nbre_Pt_aff>500</Nbre_Pt_aff>
+        <Nbre_Pt_Bd>0</Nbre_Pt_Bd>
+        <Enable>TRUE</Enable>
+      </Moteur_D>
+
+      <Accel_Av>
+        <Axe_X>
+          <Refresh>500</Refresh>
+          <Affichage>Nuage_De_Point</Affichage>
+          <Couleur_Courbe>Bleu</Couleur_Courbe>
+          <Couleur_Ar_plan>Blanc</Couleur_Ar_plan>
+          <Nbre_Pt_aff>500</Nbre_Pt_aff>
+          <Nbre_Pt_Bd>0</Nbre_Pt_Bd>
+          <Enable>TRUE</Enable>
+        </Axe_X>
+        <Axe_Y>
+          <Refresh>500</Refresh>
+          <Affichage>Nuage_De_Point</Affichage>
+          <Couleur_Courbe>Rouge</Couleur_Courbe>
+          <Couleur_Ar_plan>Blanc</Couleur_Ar_plan>
+          <Nbre_Pt_aff>500</Nbre_Pt_aff>
+          <Nbre_Pt_Bd>0</Nbre_Pt_Bd>
+          <Enable>TRUE</Enable>
+        </Axe_Y>
+      </Accel_Av>
+
+      <Accel_Ar>
+        <Axe_X>
+          <Refresh>500</Refresh>
+          <Affichage>Nuage_De_Point</Affichage>
+          <Couleur_Courbe>Vert</Couleur_Courbe>
+          <Couleur_Ar_plan>Blanc</Couleur_Ar_plan>
+          <Nbre_Pt_aff>500</Nbre_Pt_aff>
+          <Nbre_Pt_Bd>0</Nbre_Pt_Bd>
+          <Enable>TRUE</Enable>
+        </Axe_X>
+        <Axe_Y>
+          <Refresh>500</Refresh>
+          <Affichage>Nuage_De_Point</Affichage>
+          <Couleur_Courbe>Bleu</Couleur_Courbe>
+          <Couleur_Ar_plan>Blanc</Couleur_Ar_plan>
+          <Nbre_Pt_aff>500</Nbre_Pt_aff>
+          <Nbre_Pt_Bd>0</Nbre_Pt_Bd>
+          <Enable>TRUE</Enable>
+        </Axe_Y>
+      </Accel_Ar>
+
+      <Pression>
+        <Refresh>500</Refresh>
+        <Affichage>Nuage_De_Point</Affichage>
+        <Couleur_Courbe>Rouge</Couleur_Courbe>
+        <Couleur_Ar_plan>Blanc</Couleur_Ar_plan>
+        <Nbre_Pt_aff>500</Nbre_Pt_aff>
+        <Nbre_Pt_Bd>0</Nbre_Pt_Bd>
+        <Enable>TRUE</Enable>
+      </Pression>
+    
+  </GRAPHIQUE>
+    
+  </submarine_1>
+
+</configuration>

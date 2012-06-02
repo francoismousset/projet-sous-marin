@@ -1,0 +1,33 @@
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\bin\Debug\SensorCardSimulator.exe
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\bin\Debug\SensorCardSimulator.pdb
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\bin\Debug\3964rProtocol.dll
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\bin\Debug\3964rProtocol.pdb
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\obj\x86\Debug\SensorCardSimulator.Form1.resources
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\obj\x86\Debug\SensorCardSimulator.Properties.Resources.resources
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\obj\x86\Debug\SensorCardSimulator.exe
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\obj\x86\Debug\SensorCardSimulator.pdb
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\bin\Debug\SensorCardSimulator.exe
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\bin\Debug\SensorCardSimulator.pdb
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\bin\Debug\3964rProtocol.dll
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\bin\Debug\3964rProtocol.pdb
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\obj\x86\Debug\SensorCardSimulator.Form1.resources
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\obj\x86\Debug\SensorCardSimulator.Properties.Resources.resources
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\obj\x86\Debug\SensorCardSimulator.exe
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\SensorCardSimulator\obj\x86\Debug\SensorCardSimulator.pdb
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\SensorCardSimulator\obj\x86\Debug\SensorCardSimulator.exe
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\SensorCardSimulator\obj\x86\Debug\SensorCardSimulator.pdb
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\SensorCardSimulator\bin\Debug\SensorCardSimulator.exe
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\SensorCardSimulator\bin\Debug\SensorCardSimulator.pdb
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\SensorCardSimulator\bin\Debug\3964rProtocol.dll
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\SensorCardSimulator\bin\Debug\3964rProtocol.pdb
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\SensorCardSimulator\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\SensorCardSimulator\obj\x86\Debug\SensorCardSimulator.MainForm.resources
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\SensorCardSimulator\obj\x86\Debug\SensorCardSimulator.Properties.Resources.resources
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\SensorCardSimulator\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Chris\Mes documents\Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE\SensorCardSimulator\obj\x86\Debug\GenerateResource.write.1.tlog
