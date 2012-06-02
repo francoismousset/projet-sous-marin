@@ -15,8 +15,8 @@ from LoggingDB import LoggingDB
 from USCmdWatcher import USCmdWatcher
 from BluetoothCmdWatcher import BluetoothCmdWatcher
 
-debug = True
-#debug = False
+#debug = True
+debug = False
 
 Timeout_US = 0.5
 Timeout_Motor = 0.5
