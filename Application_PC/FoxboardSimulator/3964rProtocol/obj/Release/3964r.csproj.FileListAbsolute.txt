@@ -1,0 +1,10 @@
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\3964rProtocol\bin\Release\3964rProtocol.dll
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\3964rProtocol\bin\Release\3964rProtocol.pdb
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\3964rProtocol\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\3964rProtocol\obj\Release\3964rProtocol.dll
+C:\Documents and Settings\Chris\Mes documents\My Dropbox\ISIC\MA2\Projet Sous-marin\Application_PC\ISIC_SUBMARINE2011 (avec protocole)\3964rProtocol\obj\Release\3964rProtocol.pdb
+E:\Data_Prog\Visual C#\FoxboardSimulator\3964rProtocol\bin\Release\3964rProtocol.dll
+E:\Data_Prog\Visual C#\FoxboardSimulator\3964rProtocol\bin\Release\3964rProtocol.pdb
+E:\Data_Prog\Visual C#\FoxboardSimulator\3964rProtocol\obj\Release\ResolveAssemblyReference.cache
+E:\Data_Prog\Visual C#\FoxboardSimulator\3964rProtocol\obj\Release\3964rProtocol.dll
+E:\Data_Prog\Visual C#\FoxboardSimulator\3964rProtocol\obj\Release\3964rProtocol.pdb
