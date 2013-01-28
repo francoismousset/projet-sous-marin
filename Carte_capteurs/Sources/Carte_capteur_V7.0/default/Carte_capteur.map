@@ -1,0 +1,672 @@
+Archive member included because of file (symbol)
+
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_mulsi3.o)
+                              gestion_H.o (__mulsi3)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_exit.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crtm88.o (exit)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_copy_data.o)
+                              3964r.o (__do_copy_data)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_clear_bss.o)
+                              3964r.o (__do_clear_bss)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(memset.o)
+                              3964r.o (memset)
+
+Allocating common symbols
+Common symbol       size              file
+
+listTemp            0x3               main.o
+TEMP1H              0x1               main.o
+ADC1L               0x1               main.o
+IMP1H               0x1               main.o
+data_to_transmit    0x2               main.o
+HUM1L               0x1               main.o
+TEMP6H              0x1               main.o
+flag_usart          0x1               3964r.o
+tab_error_3964r     0x5               3964r.o
+HUM2L               0x1               main.o
+TRANSMIT_STATUT     0x1               main.o
+TEMP7H              0x1               main.o
+TEMP7L              0x1               main.o
+TEMP2H              0x1               main.o
+TEMP8H              0x1               main.o
+tempHum             0x1               main.o
+tempResult          0x1               main.o
+TEMP5H              0x1               main.o
+IMP2L               0x1               main.o
+ADC2L               0x1               main.o
+ADCL_Temp           0x1               main.o
+TEMP8L              0x1               main.o
+ACCL                0x1               main.o
+ADC3H               0x1               main.o
+fonctionnement_RX   0x1               main.o
+ACCH                0x1               main.o
+ADC3L               0x1               main.o
+decalage            0x1               main.o
+ADC4H               0x1               main.o
+TEMP6L              0x1               main.o
+ADC2H               0x1               main.o
+data                0x5               main.o
+TEMP5L              0x1               main.o
+ADC1H               0x1               main.o
+numero_capteur      0x1               main.o
+IMP2H               0x1               main.o
+IMP1L               0x1               main.o
+ADCH_Temp           0x1               main.o
+TEMP4L              0x1               main.o
+HUM1H               0x1               main.o
+TEMP4H              0x1               main.o
+ADC4L               0x1               main.o
+TEMP3H              0x1               main.o
+TEMP1L              0x1               main.o
+TEMP2L              0x1               main.o
+flag_timer1         0x1               3964r.o
+TEMP3L              0x1               main.o
+HUM2H               0x1               main.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00002000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crtm88.o
+LOAD 3964r.o
+LOAD I2Cmaster.o
+LOAD main.o
+LOAD timer1.o
+LOAD usart.o
+LOAD watchdog.o
+LOAD DS7505.o
+LOAD gestion_T.o
+LOAD ADC.o
+LOAD gestion_H.o
+LOAD SHT21.o
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000      0xc24
+ *(.vectors)
+ .vectors       0x00000000       0x34 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crtm88.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x00000034                . = ALIGN (0x2)
+                0x00000034                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000034        0x0 linker stubs
+ *(.trampolines*)
+                0x00000034                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000034                __ctors_start = .
+ *(.ctors)
+                0x00000034                __ctors_end = .
+                0x00000034                __dtors_start = .
+ *(.dtors)
+                0x00000034                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000034        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crtm88.o
+                0x00000034                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000034        0xc c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crtm88.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000040       0x16 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_copy_data.o)
+                0x00000040                __do_copy_data
+ .init4         0x00000056       0x10 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_clear_bss.o)
+                0x00000056                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x00000066        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crtm88.o
+ *(.init9)
+ *(.text)
+ .text          0x0000006a        0x2 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crtm88.o
+                0x0000006a                __vector_22
+                0x0000006a                __vector_1
+                0x0000006a                __vector_24
+                0x0000006a                __vector_12
+                0x0000006a                __bad_interrupt
+                0x0000006a                __vector_3
+                0x0000006a                __vector_23
+                0x0000006a                __vector_25
+                0x0000006a                __vector_13
+                0x0000006a                __vector_17
+                0x0000006a                __vector_19
+                0x0000006a                __vector_7
+                0x0000006a                __vector_5
+                0x0000006a                __vector_4
+                0x0000006a                __vector_9
+                0x0000006a                __vector_2
+                0x0000006a                __vector_21
+                0x0000006a                __vector_15
+                0x0000006a                __vector_8
+                0x0000006a                __vector_14
+                0x0000006a                __vector_10
+                0x0000006a                __vector_16
+                0x0000006a                __vector_20
+ .text          0x0000006c      0x30a 3964r.o
+                0x000001ee                send_data_3964r
+                0x0000006c                process_bcc_3964r
+                0x0000035e                init_3964r
+                0x000000aa                get_data_3964r
+                0x0000008c                sum_error_3964r
+ .text          0x00000376      0x108 I2Cmaster.o
+                0x00000432                i2c_write
+                0x0000046a                i2c_readNak
+                0x00000456                i2c_readAck
+                0x0000041e                i2c_rep_start
+                0x00000382                i2c_start
+                0x00000422                i2c_stop
+                0x000003ce                i2c_start_wait
+                0x00000376                i2c_init
+ .text          0x0000047e      0x3fe main.o
+                0x0000047e                transmission
+                0x000004be                init
+                0x00000554                main
+                0x000004f4                __vector_18
+ .text          0x0000087c       0x64 timer1.o
+                0x00000898                start_timer1
+                0x000008b0                stop_timer1
+                0x000008c8                __vector_11
+                0x0000087c                init_timer1
+ .text          0x000008e0       0xb0 usart.o
+                0x00000916                getchar_usart
+                0x00000906                putchar_usart
+                0x0000095c                puts_usart
+                0x000008e0                init_usart
+                0x00000938                gets_usart
+ .text          0x00000990       0x70 watchdog.o
+                0x000009a4                __vector_6
+                0x00000990                init_watchdog
+ .text          0x00000a00       0x66 DS7505.o
+                0x00000a26                get_DS7505_Devices
+                0x00000a00                initDS7505
+ .text          0x00000a66       0x48 gestion_T.o
+                0x00000a66                convertTemp
+ .text          0x00000aae       0x86 ADC.o
+                0x00000aae                InitADC
+                0x00000ae0                ReadADC
+                0x00000ace                ClearFlagADC
+                0x00000af8                StartADC
+ .text          0x00000b34       0x30 gestion_H.o
+                0x00000b34                convertHum
+ .text          0x00000b64       0x70 SHT21.o
+                0x00000b8a                get_SHT21_Devices
+                0x00000b64                initSHT21
+ .text          0x00000bd4        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_mulsi3.o)
+ .text          0x00000bd4        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_exit.o)
+ .text          0x00000bd4        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_copy_data.o)
+ .text          0x00000bd4        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_clear_bss.o)
+ .text          0x00000bd4        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(memset.o)
+                0x00000bd4                . = ALIGN (0x2)
+ *(.text.*)
+ .text.libgcc   0x00000bd4       0x3e c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_mulsi3.o)
+                0x00000bd4                __mulsi3
+ .text.libgcc   0x00000c12        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_exit.o)
+ .text.libgcc   0x00000c12        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000c12        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_clear_bss.o)
+ .text.avr-libc
+                0x00000c12        0xe c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(memset.o)
+                0x00000c12                memset
+                0x00000c20                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00000c20        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_exit.o)
+                0x00000c20                exit
+                0x00000c20                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00000c20        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00000c24                _etext = .
+
+.data           0x00800100        0x6 load address 0x00000c24
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crtm88.o
+ .data          0x00800100        0x1 3964r.o
+                0x00800100                priority
+ .data          0x00800101        0x0 I2Cmaster.o
+ .data          0x00800101        0x2 main.o
+                0x00800101                Sens_0
+                0x00800102                Sens_1
+ .data          0x00800103        0x0 timer1.o
+ .data          0x00800103        0x0 usart.o
+ .data          0x00800103        0x2 watchdog.o
+                0x00800103                timeout
+ .data          0x00800105        0x0 DS7505.o
+ .data          0x00800105        0x0 gestion_T.o
+ .data          0x00800105        0x0 ADC.o
+ .data          0x00800105        0x0 gestion_H.o
+ .data          0x00800105        0x0 SHT21.o
+ .data          0x00800105        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_mulsi3.o)
+ .data          0x00800105        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_exit.o)
+ .data          0x00800105        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_copy_data.o)
+ .data          0x00800105        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_clear_bss.o)
+ .data          0x00800105        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(memset.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x00800106                . = ALIGN (0x2)
+ *fill*         0x00800105        0x1 00
+                0x00800106                _edata = .
+                0x00800106                PROVIDE (__data_end, .)
+
+.bss            0x00800106       0x3d
+                0x00800106                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x00800106        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crtm88.o
+ .bss           0x00800106        0x0 3964r.o
+ .bss           0x00800106        0x0 I2Cmaster.o
+ .bss           0x00800106        0x2 main.o
+                0x00800107                ADC_Choice
+                0x00800106                bufUSART_RX
+ .bss           0x00800108        0x0 timer1.o
+ .bss           0x00800108        0x0 usart.o
+ .bss           0x00800108        0x0 watchdog.o
+ .bss           0x00800108        0x0 DS7505.o
+ .bss           0x00800108        0x0 gestion_T.o
+ .bss           0x00800108        0x0 ADC.o
+ .bss           0x00800108        0x0 gestion_H.o
+ .bss           0x00800108        0x0 SHT21.o
+ .bss           0x00800108        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_mulsi3.o)
+ .bss           0x00800108        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_exit.o)
+ .bss           0x00800108        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_copy_data.o)
+ .bss           0x00800108        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_clear_bss.o)
+ .bss           0x00800108        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(memset.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x00800108        0x7 3964r.o
+                0x00800108                flag_usart
+                0x00800109                tab_error_3964r
+                0x0080010e                flag_timer1
+ COMMON         0x0080010f       0x34 main.o
+                0x0080010f                listTemp
+                0x00800112                TEMP1H
+                0x00800113                ADC1L
+                0x00800114                IMP1H
+                0x00800115                data_to_transmit
+                0x00800117                HUM1L
+                0x00800118                TEMP6H
+                0x00800119                HUM2L
+                0x0080011a                TRANSMIT_STATUT
+                0x0080011b                TEMP7H
+                0x0080011c                TEMP7L
+                0x0080011d                TEMP2H
+                0x0080011e                TEMP8H
+                0x0080011f                tempHum
+                0x00800120                tempResult
+                0x00800121                TEMP5H
+                0x00800122                IMP2L
+                0x00800123                ADC2L
+                0x00800124                ADCL_Temp
+                0x00800125                TEMP8L
+                0x00800126                ACCL
+                0x00800127                ADC3H
+                0x00800128                fonctionnement_RX
+                0x00800129                ACCH
+                0x0080012a                ADC3L
+                0x0080012b                decalage
+                0x0080012c                ADC4H
+                0x0080012d                TEMP6L
+                0x0080012e                ADC2H
+                0x0080012f                data
+                0x00800134                TEMP5L
+                0x00800135                ADC1H
+                0x00800136                numero_capteur
+                0x00800137                IMP2H
+                0x00800138                IMP1L
+                0x00800139                ADCH_Temp
+                0x0080013a                TEMP4L
+                0x0080013b                HUM1H
+                0x0080013c                TEMP4H
+                0x0080013d                ADC4L
+                0x0080013e                TEMP3H
+                0x0080013f                TEMP1L
+                0x00800140                TEMP2L
+                0x00800141                TEMP3L
+                0x00800142                HUM2H
+                0x00800143                PROVIDE (__bss_end, .)
+                0x00000c24                __data_load_start = LOADADDR (.data)
+                0x00000c2a                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00800143        0x0
+                0x00800143                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x00800143                PROVIDE (__noinit_end, .)
+                0x00800143                _end = .
+                0x00800143                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x160
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 3964r.o
+ .debug_aranges
+                0x00000020       0x20 I2Cmaster.o
+ .debug_aranges
+                0x00000040       0x20 main.o
+ .debug_aranges
+                0x00000060       0x20 timer1.o
+ .debug_aranges
+                0x00000080       0x20 usart.o
+ .debug_aranges
+                0x000000a0       0x20 watchdog.o
+ .debug_aranges
+                0x000000c0       0x20 DS7505.o
+ .debug_aranges
+                0x000000e0       0x20 gestion_T.o
+ .debug_aranges
+                0x00000100       0x20 ADC.o
+ .debug_aranges
+                0x00000120       0x20 gestion_H.o
+ .debug_aranges
+                0x00000140       0x20 SHT21.o
+
+.debug_pubnames
+                0x00000000      0x603
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0xb2 3964r.o
+ .debug_pubnames
+                0x000000b2       0x8d I2Cmaster.o
+ .debug_pubnames
+                0x0000013f      0x2a7 main.o
+ .debug_pubnames
+                0x000003e6       0x63 timer1.o
+ .debug_pubnames
+                0x00000449       0x82 usart.o
+ .debug_pubnames
+                0x000004cb       0x3f watchdog.o
+ .debug_pubnames
+                0x0000050a       0x38 DS7505.o
+ .debug_pubnames
+                0x00000542       0x22 gestion_T.o
+ .debug_pubnames
+                0x00000564       0x48 ADC.o
+ .debug_pubnames
+                0x000005ac       0x21 gestion_H.o
+ .debug_pubnames
+                0x000005cd       0x36 SHT21.o
+
+.debug_info     0x00000000     0x11bd
+ *(.debug_info)
+ .debug_info    0x00000000      0x2a7 3964r.o
+ .debug_info    0x000002a7      0x196 I2Cmaster.o
+ .debug_info    0x0000043d      0x545 main.o
+ .debug_info    0x00000982       0xd9 timer1.o
+ .debug_info    0x00000a5b      0x196 usart.o
+ .debug_info    0x00000bf1       0x9d watchdog.o
+ .debug_info    0x00000c8e      0x17f DS7505.o
+ .debug_info    0x00000e0d       0x98 gestion_T.o
+ .debug_info    0x00000ea5       0xdf ADC.o
+ .debug_info    0x00000f84       0x87 gestion_H.o
+ .debug_info    0x0000100b      0x1b2 SHT21.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x7f1
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x184 3964r.o
+ .debug_abbrev  0x00000184       0xbe I2Cmaster.o
+ .debug_abbrev  0x00000242       0xe0 main.o
+ .debug_abbrev  0x00000322       0x7d timer1.o
+ .debug_abbrev  0x0000039f      0x103 usart.o
+ .debug_abbrev  0x000004a2       0x57 watchdog.o
+ .debug_abbrev  0x000004f9       0xc8 DS7505.o
+ .debug_abbrev  0x000005c1       0x79 gestion_T.o
+ .debug_abbrev  0x0000063a       0x83 ADC.o
+ .debug_abbrev  0x000006bd       0x6c gestion_H.o
+ .debug_abbrev  0x00000729       0xc8 SHT21.o
+
+.debug_line     0x00000000     0x1309
+ *(.debug_line)
+ .debug_line    0x00000000      0x3d1 3964r.o
+ .debug_line    0x000003d1      0x233 I2Cmaster.o
+ .debug_line    0x00000604      0x467 main.o
+ .debug_line    0x00000a6b       0xf9 timer1.o
+ .debug_line    0x00000b64      0x14f usart.o
+ .debug_line    0x00000cb3       0xe7 watchdog.o
+ .debug_line    0x00000d9a      0x194 DS7505.o
+ .debug_line    0x00000f2e       0xa0 gestion_T.o
+ .debug_line    0x00000fce      0x122 ADC.o
+ .debug_line    0x000010f0       0x78 gestion_H.o
+ .debug_line    0x00001168      0x1a1 SHT21.o
+
+.debug_frame    0x00000000      0x310
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x60 3964r.o
+ .debug_frame   0x00000060       0x90 I2Cmaster.o
+ .debug_frame   0x000000f0       0x50 main.o
+ .debug_frame   0x00000140       0x50 timer1.o
+ .debug_frame   0x00000190       0x60 usart.o
+ .debug_frame   0x000001f0       0x30 watchdog.o
+ .debug_frame   0x00000220       0x30 DS7505.o
+ .debug_frame   0x00000250       0x20 gestion_T.o
+ .debug_frame   0x00000270       0x50 ADC.o
+ .debug_frame   0x000002c0       0x20 gestion_H.o
+ .debug_frame   0x000002e0       0x30 SHT21.o
+
+.debug_str      0x00000000      0x622
+ *(.debug_str)
+ .debug_str     0x00000000      0x145 3964r.o
+                                0x17e (size before relaxing)
+ .debug_str     0x00000145       0x7f I2Cmaster.o
+                                0x14a (size before relaxing)
+ .debug_str     0x000001c4      0x22a main.o
+                                0x316 (size before relaxing)
+ .debug_str     0x000003ee       0x42 timer1.o
+                                0x114 (size before relaxing)
+ .debug_str     0x00000430       0x54 usart.o
+                                0x136 (size before relaxing)
+ .debug_str     0x00000484       0x2f watchdog.o
+                                 0xf5 (size before relaxing)
+ .debug_str     0x000004b3       0x77 DS7505.o
+                                0x14b (size before relaxing)
+ .debug_str     0x0000052a       0x46 gestion_T.o
+                                 0xc2 (size before relaxing)
+ .debug_str     0x00000570       0x4e ADC.o
+                                0x119 (size before relaxing)
+ .debug_str     0x000005be       0x35 gestion_H.o
+                                 0xb9 (size before relaxing)
+ .debug_str     0x000005f3       0x2f SHT21.o
+                                0x147 (size before relaxing)
+
+.debug_loc      0x00000000      0x64b
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x1b0 3964r.o
+ .debug_loc     0x000001b0       0xbf I2Cmaster.o
+ .debug_loc     0x0000026f       0x39 main.o
+ .debug_loc     0x000002a8       0x18 timer1.o
+ .debug_loc     0x000002c0       0xc2 usart.o
+ .debug_loc     0x00000382       0xc3 DS7505.o
+ .debug_loc     0x00000445       0x78 gestion_T.o
+ .debug_loc     0x000004bd       0x67 ADC.o
+ .debug_loc     0x00000524       0x4c gestion_H.o
+ .debug_loc     0x00000570       0xdb SHT21.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(Carte_capteur.elf elf32-avr)
+LOAD linker stubs
