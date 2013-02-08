@@ -1,0 +1,510 @@
+Archive member included because of file (symbol)
+
+d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_exit.o)
+                              d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr4/crtm88.o (exit)
+d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_copy_data.o)
+                              main.o (__do_copy_data)
+d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_clear_bss.o)
+                              main.o (__do_clear_bss)
+
+Allocating common symbols
+Common symbol       size              file
+
+Prime_Interrupt     0x1               USART.o
+Tx_Buffer           0x65              USART.o
+test                0x1               COM_600_BAUD.o
+data                0x1               main.o
+Rx_Buffer           0x65              USART.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00002000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr4/crtm88.o
+LOAD main.o
+LOAD USART.o
+LOAD COM_600_BAUD.o
+LOAD INT.o
+LOAD TIMER.o
+LOAD ASCII_TO_CHAR.o
+LOAD d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a
+LOAD d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr4\libc.a
+LOAD d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000      0x8e4
+ *(.vectors)
+ .vectors       0x00000000       0x34 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr4/crtm88.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ .progmem.gcc_sw_table
+                0x00000034       0x4e ASCII_TO_CHAR.o
+ *(.progmem*)
+                0x00000082                . = ALIGN (0x2)
+                0x00000082                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000082        0x0 linker stubs
+ *(.trampolines*)
+                0x00000082                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000082                __ctors_start = .
+ *(.ctors)
+                0x00000082                __ctors_end = .
+                0x00000082                __dtors_start = .
+ *(.dtors)
+                0x00000082                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000082        0x0 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr4/crtm88.o
+                0x00000082                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000082        0xc d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr4/crtm88.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x0000008e       0x16 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_copy_data.o)
+                0x0000008e                __do_copy_data
+ .init4         0x000000a4       0x10 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_clear_bss.o)
+                0x000000a4                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x000000b4        0x4 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr4/crtm88.o
+ *(.init9)
+ *(.text)
+ .text          0x000000b8        0x2 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr4/crtm88.o
+                0x000000b8                __vector_22
+                0x000000b8                __vector_1
+                0x000000b8                __vector_24
+                0x000000b8                __vector_12
+                0x000000b8                __bad_interrupt
+                0x000000b8                __vector_6
+                0x000000b8                __vector_3
+                0x000000b8                __vector_23
+                0x000000b8                __vector_25
+                0x000000b8                __vector_11
+                0x000000b8                __vector_13
+                0x000000b8                __vector_17
+                0x000000b8                __vector_19
+                0x000000b8                __vector_5
+                0x000000b8                __vector_9
+                0x000000b8                __vector_2
+                0x000000b8                __vector_21
+                0x000000b8                __vector_15
+                0x000000b8                __vector_8
+                0x000000b8                __vector_10
+                0x000000b8                __vector_16
+ .text          0x000000ba      0x1ec main.o
+                0x00000134                chartobit
+                0x0000010c                __vector_7
+                0x0000019a                init
+                0x000001de                main
+                0x000000ba                __vector_4
+                0x000000e4                __vector_14
+ .text          0x000002a6      0x20e USART.o
+                0x000003b6                Buffer_USART_Tx_String
+                0x000002b4                USART_TX0
+                0x000002a6                USART_RX0
+                0x0000031a                Init_Buffers_USART
+                0x00000376                putchar_Buffer
+                0x00000338                getchar_Buffer
+                0x000002c4                USART_TX0_STRING
+                0x00000302                Enable_Interrupt_On_RX0
+                0x0000030e                Disable_Interrupt_On_RX0
+                0x000003ce                __vector_18
+                0x000002da                USART0_Init_9600
+                0x00000432                __vector_20
+ .text          0x000004b4      0x2f4 COM_600_BAUD.o
+                0x00000554                com_test
+                0x00000590                Received_600_baud
+                0x000004b4                Send_600_baud
+ .text          0x000007a8       0x28 INT.o
+                0x000007be                INT_BP
+                0x000007a8                init_pcint
+ .text          0x000007d0       0x6a TIMER.o
+                0x0000082e                TIMER2_START
+                0x000007d0                TIMER0_STOP
+                0x000007ec                TIMER1_INIT
+                0x000007d6                TIMER0_START
+                0x00000812                TIMER2_INIT
+                0x000007de                TIMER0_INIT
+                0x00000824                TIMER2_STOP
+ .text          0x0000083a       0xa6 ASCII_TO_CHAR.o
+                0x0000083a                ConvertAsciiToValue
+                0x0000088c                ConvertValueToAscii
+ .text          0x000008e0        0x0 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_exit.o)
+ .text          0x000008e0        0x0 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_copy_data.o)
+ .text          0x000008e0        0x0 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_clear_bss.o)
+                0x000008e0                . = ALIGN (0x2)
+ *(.text.*)
+ .text.libgcc   0x000008e0        0x0 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_exit.o)
+ .text.libgcc   0x000008e0        0x0 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_copy_data.o)
+ .text.libgcc   0x000008e0        0x0 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_clear_bss.o)
+                0x000008e0                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x000008e0        0x0 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_exit.o)
+                0x000008e0                exit
+                0x000008e0                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x000008e0        0x4 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_exit.o)
+ *(.fini0)
+                0x000008e4                _etext = .
+
+.data           0x00800100       0x26 load address 0x000008e4
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x0 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr4/crtm88.o
+ .data          0x00800100       0x1b main.o
+                0x00800118                valeurf2
+                0x0080011a                c
+                0x00800116                valeurf1
+                0x0080010b                Data_Received
+ .data          0x0080011b        0x0 USART.o
+ .data          0x0080011b        0xb COM_600_BAUD.o
+                0x00800123                Data_Verif
+                0x0080011b                Data_com
+ .data          0x00800126        0x0 INT.o
+ .data          0x00800126        0x0 TIMER.o
+ .data          0x00800126        0x0 ASCII_TO_CHAR.o
+ .data          0x00800126        0x0 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_exit.o)
+ .data          0x00800126        0x0 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_copy_data.o)
+ .data          0x00800126        0x0 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_clear_bss.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x00800126                . = ALIGN (0x2)
+                0x00800126                _edata = .
+                0x00800126                PROVIDE (__data_end, .)
+
+.bss            0x00800126       0xeb
+                0x00800126                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x00800126        0x0 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr4/crtm88.o
+ .bss           0x00800126       0x10 main.o
+                0x00800126                Receiving
+                0x00800129                Compteur_Data_Received
+                0x00800133                Index
+                0x00800135                TX600INTREQUEST
+                0x00800127                Need_Receiving
+                0x0080012b                tableau
+                0x00800134                RX600INTREQUEST
+                0x0080012a                Compteur_Timer
+                0x00800128                Sending
+ .bss           0x00800136        0xa USART.o
+                0x0080013a                Tx_Wr_Index
+                0x0080013c                Tx_Counter
+                0x00800138                Rx_Counter
+                0x00800139                Rx_Buffer_Overflow
+                0x0080013e                UsartReception
+                0x0080013b                Tx_Rd_Index
+                0x0080013d                Amorce
+                0x00800136                Rx_Wr_Index
+                0x00800137                Rx_Rd_Index
+ .bss           0x00800140        0x4 COM_600_BAUD.o
+                0x00800140                nbreappel
+                0x00800141                Data_Result
+                0x00800143                Compteur_Bit
+                0x00800142                Receiv_Statut
+ .bss           0x00800144        0x0 INT.o
+ .bss           0x00800144        0x0 TIMER.o
+ .bss           0x00800144        0x0 ASCII_TO_CHAR.o
+ .bss           0x00800144        0x0 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_exit.o)
+ .bss           0x00800144        0x0 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_copy_data.o)
+ .bss           0x00800144        0x0 d:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr4\libgcc.a(_clear_bss.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x00800144        0x1 main.o
+                0x00800144                data
+ COMMON         0x00800145       0xcb USART.o
+                0x00800145                Prime_Interrupt
+                0x00800146                Tx_Buffer
+                0x008001ab                Rx_Buffer
+ COMMON         0x00800210        0x1 COM_600_BAUD.o
+                0x00800210                test
+                0x00800211                PROVIDE (__bss_end, .)
+                0x000008e4                __data_load_start = LOADADDR (.data)
+                0x0000090a                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00800211        0x0
+                0x00800211                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x00800211                PROVIDE (__noinit_end, .)
+                0x00800211                _end = .
+                0x00800211                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0xc0
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 main.o
+ .debug_aranges
+                0x00000020       0x20 USART.o
+ .debug_aranges
+                0x00000040       0x20 COM_600_BAUD.o
+ .debug_aranges
+                0x00000060       0x20 INT.o
+ .debug_aranges
+                0x00000080       0x20 TIMER.o
+ .debug_aranges
+                0x000000a0       0x20 ASCII_TO_CHAR.o
+
+.debug_pubnames
+                0x00000000      0x49f
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000      0x134 main.o
+ .debug_pubnames
+                0x00000134      0x1cc USART.o
+ .debug_pubnames
+                0x00000300       0xad COM_600_BAUD.o
+ .debug_pubnames
+                0x000003ad       0x2c INT.o
+ .debug_pubnames
+                0x000003d9       0x84 TIMER.o
+ .debug_pubnames
+                0x0000045d       0x42 ASCII_TO_CHAR.o
+
+.debug_info     0x00000000      0x983
+ *(.debug_info)
+ .debug_info    0x00000000      0x25a main.o
+ .debug_info    0x0000025a      0x30f USART.o
+ .debug_info    0x00000569      0x1d1 COM_600_BAUD.o
+ .debug_info    0x0000073a       0x89 INT.o
+ .debug_info    0x000007c3       0xed TIMER.o
+ .debug_info    0x000008b0       0xd3 ASCII_TO_CHAR.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x3eb
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0xe9 main.o
+ .debug_abbrev  0x000000e9      0x157 USART.o
+ .debug_abbrev  0x00000240       0x9a COM_600_BAUD.o
+ .debug_abbrev  0x000002da       0x48 INT.o
+ .debug_abbrev  0x00000322       0x48 TIMER.o
+ .debug_abbrev  0x0000036a       0x81 ASCII_TO_CHAR.o
+
+.debug_line     0x00000000      0xc75
+ *(.debug_line)
+ .debug_line    0x00000000      0x336 main.o
+ .debug_line    0x00000336      0x271 USART.o
+ .debug_line    0x000005a7      0x393 COM_600_BAUD.o
+ .debug_line    0x0000093a       0x8d INT.o
+ .debug_line    0x000009c7      0x157 TIMER.o
+ .debug_line    0x00000b1e      0x157 ASCII_TO_CHAR.o
+
+.debug_frame    0x00000000      0x260
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x70 main.o
+ .debug_frame   0x00000070       0xd0 USART.o
+ .debug_frame   0x00000140       0x40 COM_600_BAUD.o
+ .debug_frame   0x00000180       0x30 INT.o
+ .debug_frame   0x000001b0       0x80 TIMER.o
+ .debug_frame   0x00000230       0x30 ASCII_TO_CHAR.o
+
+.debug_str      0x00000000      0x423
+ *(.debug_str)
+ .debug_str     0x00000000      0x175 main.o
+                                0x1c7 (size before relaxing)
+ .debug_str     0x00000175      0x16b USART.o
+                                0x269 (size before relaxing)
+ .debug_str     0x000002e0       0x80 COM_600_BAUD.o
+                                0x1cd (size before relaxing)
+ .debug_str     0x00000360       0x1b INT.o
+                                 0xfd (size before relaxing)
+ .debug_str     0x0000037b       0x61 TIMER.o
+                                0x143 (size before relaxing)
+ .debug_str     0x000003dc       0x47 ASCII_TO_CHAR.o
+                                0x129 (size before relaxing)
+
+.debug_loc      0x00000000      0x32f
+ *(.debug_loc)
+ .debug_loc     0x00000000       0xb4 main.o
+ .debug_loc     0x000000b4       0xaa USART.o
+ .debug_loc     0x0000015e      0x1d1 ASCII_TO_CHAR.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(COM_ULTRASON.elf elf32-avr)
+LOAD linker stubs
