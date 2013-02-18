@@ -8,8 +8,8 @@
 				   Programme carte de test bus I2C & capteurs
 * Author 		 : Michaël Brogniaux - Copyright (C) 2011
 * Created		 : 02/03/2012
-* Last revised	 : 05/02/2013
-* Version		 : 1.2.1
+* Last revised	 : 18/02/2013
+* Version		 : 1.2.2
 * Compliler		 : AVR Studio 4.18.716 - WinAVR-20100110
 * MCU			 : Atmel ATmega88
 * Devices		 : Capteurs I2C (DS7505, SHT21)
