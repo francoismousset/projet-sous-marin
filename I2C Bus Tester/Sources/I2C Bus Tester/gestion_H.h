@@ -6,8 +6,8 @@
 * Title 		 : Gestion de la conversion de l'humidité relative
 * Author 		 : Michaël Brogniaux - Copyright (C) 2011
 * Created		 : 07/05/2012
-* Last revised	 : 03/02/2013
-* Version		 : 1.1
+* Last revised	 : 18/02/2013
+* Version		 : 1.2
 * Compliler		 : AVR Studio 4.18.716 - WinAVR-20100110
 * MCU			 : Atmel ATmega88
 *
