@@ -6,8 +6,8 @@
 * Title 		 : Gestion de la conversion de la température
 * Author 		 : Michaël Brogniaux - Copyright (C) 2011
 * Created		 : 07/05/2012
-* Last revised	 : 03/02/2013
-* Version		 : 1.1
+* Last revised	 : 10/03/2013
+* Version		 : 1.1.1
 * Compliler		 : AVR Studio 4.18.716 - WinAVR-20100110
 * MCU			 : Atmel ATmega88
 *
@@ -67,10 +67,10 @@ void convertTemp(char *tempMes, char *tempResult)
 // PURPOSE: Convertir la valeur de T° exploitable en caractères
 void stringTemp(char *tempResult, char *tempStr)
 {
-	tempStr[1] = (tempResult[0]/10)+48;
-	tempStr[2] = (tempResult[0]%10)+48;
+	tempStr[1] = (tempResult[0]/10)+48;	// Garder les décimales
+	tempStr[2] = (tempResult[0]%10)+48;	// Garder les unités
 
-	switch(tempResult[1]& 0b01111111)
+	switch(tempResult[1]& 0b01111111)	// Masquage pour ne garder que les bits de valeur décimale de T°
 	{
 		case 0 :
 			tempStr[3] = '0';
@@ -93,12 +93,12 @@ void stringTemp(char *tempResult, char *tempStr)
 			tempStr[4] = '%';
 	}
 	
-	tempStr[0] = tempResult[1] & 0b10000000;
-	if(tempStr[0] == 0b10000000)
+	tempStr[0] = tempResult[1] & 0b10000000; // Masquage pour ne garder que le bit de T° négative
+	if(tempStr[0] == 0b10000000) // Si température négative, afficher caractère "moins"
 	{
 		tempStr[0] = NEG_CAR;
 	}
-	else
+	else						// Si température positive, affiche le caractère "espace"
 	{
 		tempStr[0] = SPACE_CAR;
 	}
