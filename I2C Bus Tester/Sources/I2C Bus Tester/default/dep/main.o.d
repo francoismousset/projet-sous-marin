@@ -12,8 +12,8 @@ main.o: ../main.c c:/winavr-20100110/lib/gcc/../../avr/include/avr/io.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/avr/interrupt.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h \
-  ../uart.h ../car.h ../main.h ../I2Cmaster.h ../DS7505.h ../SHT21.h \
-  ../gestion_H.h ../gestion_T.h
+  ../main.h ../I2Cmaster.h ../uart.h ../car.h ../devices_all.h \
+  ../DS7505.h ../SHT21.h
 
 c:/winavr-20100110/lib/gcc/../../avr/include/avr/io.h:
 
@@ -43,18 +43,16 @@ c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:
 
 c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h:
 
-../uart.h:
-
-../car.h:
-
 ../main.h:
 
 ../I2Cmaster.h:
 
+../uart.h:
+
+../car.h:
+
+../devices_all.h:
+
 ../DS7505.h:
 
 ../SHT21.h:
-
-../gestion_H.h:
-
-../gestion_T.h:
