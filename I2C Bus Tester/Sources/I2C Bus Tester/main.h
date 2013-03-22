@@ -8,8 +8,8 @@
 				   Programme carte de test bus I2C & capteurs
 * Author 		 : Michaël Brogniaux - Copyright (C) 2011
 * Created		 : 02/03/2012
-* Last revised	 : 10/03/2013
-* Version		 : 1.2.6
+* Last revised	 : 20/03/2013
+* Version		 : 1.2.10
 * Compliler		 : AVR Studio 4.18.716 - WinAVR-20100110
 * MCU			 : Atmel ATmega88
 * Devices		 : Capteurs I2C (DS7505, SHT21)
@@ -42,7 +42,7 @@
 #define T7_CMD '7'
 #define T8_CMD '8'
 #define H1_CMD '9'
-#define DEBUG_CMD 'x'
+
 #define T1_DETECT_CMD 'a'
 #define T2_DETECT_CMD 'b'
 #define T3_DETECT_CMD 'c'
@@ -53,6 +53,11 @@
 #define T8_DETECT_CMD 'h'
 #define H1_DETECT_CMD 'i'
 #define ALL_DETECT_CMD 'j'
+
+//#define SEND_I2C_CMD 'k'
+
+#define DEBUG_CMD 'x'
+#define RX_BUFFER 20
 
 /*********************** Déclaration des fonctions *************************/
 

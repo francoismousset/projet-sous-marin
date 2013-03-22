@@ -6,8 +6,8 @@
 * Title 		 : Gestion de matériel connecté sur le bus I2C
 * Author 		 : Michaël Brogniaux - Copyright (C) 2013
 * Created		 : 10/03/2013
-* Last revised	 : 10/03/2013
-* Version		 : 1.0
+* Last revised	 : 18/03/2013
+* Version		 : 1.0.2
 * Compliler		 : AVR Studio 4.18.716 - WinAVR-20100110
 * MCU			 : Atmel ATmega88
 *
@@ -65,12 +65,12 @@ void debug_cmd();
 /*********************************************************************/
 // FUNCTION: void temp_cmd(unsigned char dev_num, char *listTemp)
 // PURPOSE: Conversion valeur brute T° en valeur décimale/ASCII
-void temp_cmd(unsigned char dev_num, char *listTemp);
+void temp_cmd(unsigned char dev_num, char *listTemp, char command, char dev_access);
 
 /*********************************************************************/
 // FUNCTION: void hum_cmd(char *listHum)
 // PURPOSE: Conversion valeur brute %H en valeur décimale/ASCII
-void hum_cmd(char *listHum);
+void hum_cmd(char *listHum, char command, char dev_access);
 
 /*********************************************************************/
 // FUNCTION: void hexaToAscii(unsigned char n)

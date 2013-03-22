@@ -6,8 +6,8 @@
 * Title 		 : Caractères et messages
 * Author 		 : Michaël Brogniaux - Copyright (C) 2013
 * Created		 : 03/02/2013
-* Last revised	 : 10/03/2013
-* Version		 : 1.1.3
+* Last revised	 : 18/03/2013
+* Version		 : 1.1.4
 * Compliler		 : AVR Studio 4.18.716 - WinAVR-20100110
 * MCU			 : Atmel ATmega88
 *
@@ -30,9 +30,10 @@
 #define	BELL				'\a'	// Sonnerie
 #define CR_NL				""		// Sans caractère (pour CR et NL)
 #define MSG_WELCOME			" /== Welcome in the I2C bus tester software ==\\ "
-#define MSG_YEAR			" \\== MA2EN 2012-2013  Hrd v1.3 - Sft v1.2.6 ==/"
+#define MSG_YEAR			" \\== MA2EN 2012-2013  Hrd v1.3b - Sft v1.2.10 ==/"
 #define ERROR_MSG			" connection error !!!"
 #define	CONN_MSG			" connected."
+#define STX					0x02	// Start of header
 /**********************************************************************/
 
 #endif
