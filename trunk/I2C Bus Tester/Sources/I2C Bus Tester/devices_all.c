@@ -6,8 +6,8 @@
 * Title 		 : Gestion d'un composant connecté sur le bus I2C
 * Author 		 : Michaël Brogniaux - Copyright (C) 2013
 * Created		 : 10/03/2013
-* Last revised	 : 10/03/2013
-* Version		 : 1.0
+* Last revised	 : 18/03/2013
+* Version		 : 1.0.2
 * Compliler		 : AVR Studio 4.18.716 - WinAVR-20100110
 * MCU			 : Atmel ATmega88
 *
@@ -205,7 +205,7 @@ void showDetectedSensor(char address)
 	}
 	else
 	{
-		USART_Transmit(address); // Correspond à un problème d'accès
+		USART_Transmit(address); // Renvoie l'adresse du capteur détecté
 	}
 }
 
@@ -297,7 +297,7 @@ void debug_cmd()
 /*********************************************************************/
 // FUNCTION: void temp_cmd(unsigned char dev_num, char *listTemp)
 // PURPOSE: Conversion valeur brute T° en valeur décimale/ASCII
-void temp_cmd(unsigned char dev_num, char *listTemp)
+void temp_cmd(unsigned char dev_num, char *listTemp, char command, char dev_access)
 {
 	char tempResult[2], tempStr[5];
 
@@ -305,7 +305,7 @@ void temp_cmd(unsigned char dev_num, char *listTemp)
 
 	if(debug_mode) // Afficher msgs si debug mode activé
 	{
-		stringTemp(tempResult, tempStr); // Convertir la T° sous forme d'entiers en caractères
+			stringTemp(tempResult, tempStr); // Convertir la T° sous forme d'entiers en caractères
 
 		USART_Transmit('T');
 		USART_Transmit(DEG_CAR);
@@ -321,7 +321,18 @@ void temp_cmd(unsigned char dev_num, char *listTemp)
 		USART_TX_CRNL();				// Nouvelle ligne, retour chariot
 	}
 	else
-	{
+	{	
+		if(dev_access)
+		{
+			tempResult[0] = 0xFF;
+			tempResult[1] = 0xFF;
+		}
+		else
+		{
+			asm("nop");
+		}
+		USART_Transmit(STX);
+		USART_Transmit(command);
 		USART_Transmit(tempResult[0]);
 		USART_Transmit(tempResult[1]);
 	}
@@ -333,10 +344,20 @@ void temp_cmd(unsigned char dev_num, char *listTemp)
 /*********************************************************************/
 // FUNCTION: void hum_cmd(char *listHum)
 // PURPOSE: Conversion valeur brute %H en valeur décimale/ASCII
-void hum_cmd(char *listHum)
+void hum_cmd(char *listHum, char command, char dev_access)
 {
-	char humResult, humStr[2];
-
+	char humResult, humStr[2], hum2;
+	/*
+	if(!dev_access)
+	{
+		humResult = convertHum(listHum);// Convertir les données brutes en données exploitables
+		hum2 = 0x00;
+	}
+	else
+	{
+		humResult = 0xFF;
+		hum2 = 0xFF;
+	}*/
 	humResult = convertHum(listHum);// Convertir les données brutes en données exploitables
 
 	if(debug_mode) // Afficher msgs si debug mode activé
@@ -351,8 +372,20 @@ void hum_cmd(char *listHum)
 		USART_TX_CRNL();				// Nouvelle ligne, retour chariot
 	}
 	else
-	{
+	{	
+		if(dev_access)
+		{
+			humResult = 0xFF;
+			hum2 = 0xFF;
+		}
+		else
+		{
+			hum2 = 0x00;
+		}
+		USART_Transmit(STX);
+		USART_Transmit(command);
 		USART_Transmit(humResult);
+		USART_Transmit(hum2);
 	}
 			
 	listHum[0] = 0;					// Reset mém %H mesurée
