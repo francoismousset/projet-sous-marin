@@ -6,8 +6,8 @@
 * Title 		 : Caractères et messages
 * Author 		 : Michaël Brogniaux - Copyright (C) 2013
 * Created		 : 03/02/2013
-* Last revised	 : 18/03/2013
-* Version		 : 1.1.4
+* Last revised	 : 06/05/2013
+* Version		 : 1.1.5
 * Compliler		 : AVR Studio 4.18.716 - WinAVR-20100110
 * MCU			 : Atmel ATmega88
 *
@@ -34,6 +34,7 @@
 #define ERROR_MSG			" connection error !!!"
 #define	CONN_MSG			" connected."
 #define STX					0x02	// Start of header
+#define ETX					0x03	// End of header
 /**********************************************************************/
 
 #endif

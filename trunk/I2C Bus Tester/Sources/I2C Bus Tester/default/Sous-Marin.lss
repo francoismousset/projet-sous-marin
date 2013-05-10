@@ -3,29 +3,29 @@ Sous-Marin.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000300  00800100  00000a46  00000ada  2**0
+  0 .data         00000300  00800100  00000a5e  00000af2  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00000a46  00000000  00000000  00000094  2**1
+  1 .text         00000a5e  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          0000001f  00800400  00800400  00000dda  2**0
+  2 .bss          0000001f  00800400  00800400  00000df2  2**0
                   ALLOC
-  3 .debug_aranges 00000100  00000000  00000000  00000dda  2**0
+  3 .debug_aranges 00000100  00000000  00000000  00000df2  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .debug_pubnames 0000038e  00000000  00000000  00000eda  2**0
+  4 .debug_pubnames 0000038e  00000000  00000000  00000ef2  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00000dc1  00000000  00000000  00001268  2**0
+  5 .debug_info   00000dc1  00000000  00000000  00001280  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 00000733  00000000  00000000  00002029  2**0
+  6 .debug_abbrev 00000733  00000000  00000000  00002041  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000010c5  00000000  00000000  0000275c  2**0
+  7 .debug_line   000010f5  00000000  00000000  00002774  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  000002f0  00000000  00000000  00003824  2**2
+  8 .debug_frame  000002f0  00000000  00000000  0000386c  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000431  00000000  00000000  00003b14  2**0
+  9 .debug_str    00000431  00000000  00000000  00003b5c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    0000078d  00000000  00000000  00003f45  2**0
+ 10 .debug_loc    0000078d  00000000  00000000  00003f8d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000048  00000000  00000000  000046d2  2**0
+ 11 .debug_ranges 00000048  00000000  00000000  0000471a  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -70,7 +70,7 @@ Disassembly of section .text:
   40:	14 e0       	ldi	r17, 0x04	; 4
   42:	a0 e0       	ldi	r26, 0x00	; 0
   44:	b1 e0       	ldi	r27, 0x01	; 1
-  46:	e6 e4       	ldi	r30, 0x46	; 70
+  46:	ee e5       	ldi	r30, 0x5E	; 94
   48:	fa e0       	ldi	r31, 0x0A	; 10
   4a:	02 c0       	rjmp	.+4      	; 0x50 <.do_copy_data_start>
 
@@ -97,7 +97,7 @@ Disassembly of section .text:
   62:	b1 07       	cpc	r27, r17
   64:	e1 f7       	brne	.-8      	; 0x5e <.do_clear_bss_loop>
   66:	bd d0       	rcall	.+378    	; 0x1e2 <main>
-  68:	ec c4       	rjmp	.+2520   	; 0xa42 <_exit>
+  68:	f8 c4       	rjmp	.+2544   	; 0xa5a <_exit>
 
 0000006a <__bad_interrupt>:
   6a:	ca cf       	rjmp	.-108    	; 0x0 <__vectors>
@@ -448,15 +448,15 @@ void init()
 	USART_Init(MYUBRR);				// Initialisation de la communication série
  1d4:	83 e3       	ldi	r24, 0x33	; 51
  1d6:	90 e0       	ldi	r25, 0x00	; 0
- 1d8:	0c d1       	rcall	.+536    	; 0x3f2 <USART_Init>
+ 1d8:	0a d1       	rcall	.+532    	; 0x3ee <USART_Init>
 	Enable_Interrupt_On_RX();		// Autoriser les interruption série RX
- 1da:	45 d1       	rcall	.+650    	; 0x466 <Enable_Interrupt_On_RX>
+ 1da:	43 d1       	rcall	.+646    	; 0x462 <Enable_Interrupt_On_RX>
 
 	sei();							// Activer toutes les interruptions	
  1dc:	78 94       	sei
 
 	welcomeMsg();					// Afficher le message de bienvenue
- 1de:	40 d3       	rcall	.+1664   	; 0x860 <welcomeMsg>
+ 1de:	4c d3       	rcall	.+1688   	; 0x878 <welcomeMsg>
 }
  1e0:	08 95       	ret
 
@@ -474,7 +474,7 @@ int main(void)
 	init();						// Initialisations globales
  1e6:	f1 df       	rcall	.-30     	; 0x1ca <init>
 	init_sensors();				// Initialisations des capteurs
- 1e8:	6b d3       	rcall	.+1750   	; 0x8c0 <init_sensors>
+ 1e8:	77 d3       	rcall	.+1774   	; 0x8d8 <init_sensors>
     milliseconds can be achieved.
  */
 void
@@ -630,7 +630,7 @@ _delay_loop_2(uint16_t __count)
  2c4:	80 e9       	ldi	r24, 0x90	; 144
  2c6:	65 e0       	ldi	r22, 0x05	; 5
  2c8:	74 e0       	ldi	r23, 0x04	; 4
- 2ca:	ec d0       	rcall	.+472    	; 0x4a4 <get_DS7505_Devices>
+ 2ca:	ea d0       	rcall	.+468    	; 0x4a0 <get_DS7505_Devices>
  2cc:	28 2f       	mov	r18, r24
  2ce:	80 93 1e 04 	sts	0x041E, r24
 						temp_cmd(1, listTemp, T1_CMD, dev_test_access);
@@ -647,7 +647,7 @@ _delay_loop_2(uint16_t __count)
  2dc:	82 e9       	ldi	r24, 0x92	; 146
  2de:	65 e0       	ldi	r22, 0x05	; 5
  2e0:	74 e0       	ldi	r23, 0x04	; 4
- 2e2:	e0 d0       	rcall	.+448    	; 0x4a4 <get_DS7505_Devices>
+ 2e2:	de d0       	rcall	.+444    	; 0x4a0 <get_DS7505_Devices>
  2e4:	28 2f       	mov	r18, r24
  2e6:	80 93 1e 04 	sts	0x041E, r24
 						temp_cmd(2, listTemp, T2_CMD, dev_test_access);
@@ -655,7 +655,7 @@ _delay_loop_2(uint16_t __count)
  2ec:	65 e0       	ldi	r22, 0x05	; 5
  2ee:	74 e0       	ldi	r23, 0x04	; 4
  2f0:	42 e3       	ldi	r20, 0x32	; 50
- 2f2:	4a d2       	rcall	.+1172   	; 0x788 <temp_cmd>
+ 2f2:	52 d2       	rcall	.+1188   	; 0x798 <temp_cmd>
  2f4:	6f c0       	rjmp	.+222    	; 0x3d4 <main+0x1f2>
 						break;
 					/* Si demande d'envoyer la T° du capteur n°3 */
@@ -664,7 +664,7 @@ _delay_loop_2(uint16_t __count)
  2f6:	84 e9       	ldi	r24, 0x94	; 148
  2f8:	65 e0       	ldi	r22, 0x05	; 5
  2fa:	74 e0       	ldi	r23, 0x04	; 4
- 2fc:	d3 d0       	rcall	.+422    	; 0x4a4 <get_DS7505_Devices>
+ 2fc:	d1 d0       	rcall	.+418    	; 0x4a0 <get_DS7505_Devices>
  2fe:	28 2f       	mov	r18, r24
  300:	80 93 1e 04 	sts	0x041E, r24
 						temp_cmd(3, listTemp, T3_CMD, dev_test_access);
@@ -680,7 +680,7 @@ _delay_loop_2(uint16_t __count)
  30e:	86 e9       	ldi	r24, 0x96	; 150
  310:	65 e0       	ldi	r22, 0x05	; 5
  312:	74 e0       	ldi	r23, 0x04	; 4
- 314:	c7 d0       	rcall	.+398    	; 0x4a4 <get_DS7505_Devices>
+ 314:	c5 d0       	rcall	.+394    	; 0x4a0 <get_DS7505_Devices>
  316:	28 2f       	mov	r18, r24
  318:	80 93 1e 04 	sts	0x041E, r24
 						temp_cmd(4, listTemp, T4_CMD, dev_test_access);
@@ -696,7 +696,7 @@ _delay_loop_2(uint16_t __count)
  326:	88 e9       	ldi	r24, 0x98	; 152
  328:	65 e0       	ldi	r22, 0x05	; 5
  32a:	74 e0       	ldi	r23, 0x04	; 4
- 32c:	bb d0       	rcall	.+374    	; 0x4a4 <get_DS7505_Devices>
+ 32c:	b9 d0       	rcall	.+370    	; 0x4a0 <get_DS7505_Devices>
  32e:	28 2f       	mov	r18, r24
  330:	80 93 1e 04 	sts	0x041E, r24
 						temp_cmd(5, listTemp, T5_CMD, dev_test_access);
@@ -712,7 +712,7 @@ _delay_loop_2(uint16_t __count)
  33e:	8a e9       	ldi	r24, 0x9A	; 154
  340:	65 e0       	ldi	r22, 0x05	; 5
  342:	74 e0       	ldi	r23, 0x04	; 4
- 344:	af d0       	rcall	.+350    	; 0x4a4 <get_DS7505_Devices>
+ 344:	ad d0       	rcall	.+346    	; 0x4a0 <get_DS7505_Devices>
  346:	28 2f       	mov	r18, r24
  348:	80 93 1e 04 	sts	0x041E, r24
 						temp_cmd(6, listTemp, T6_CMD, dev_test_access);
@@ -728,7 +728,7 @@ _delay_loop_2(uint16_t __count)
  356:	8c e9       	ldi	r24, 0x9C	; 156
  358:	65 e0       	ldi	r22, 0x05	; 5
  35a:	74 e0       	ldi	r23, 0x04	; 4
- 35c:	a3 d0       	rcall	.+326    	; 0x4a4 <get_DS7505_Devices>
+ 35c:	a1 d0       	rcall	.+322    	; 0x4a0 <get_DS7505_Devices>
  35e:	28 2f       	mov	r18, r24
  360:	80 93 1e 04 	sts	0x041E, r24
 						temp_cmd(7, listTemp, T7_CMD, dev_test_access);
@@ -744,7 +744,7 @@ _delay_loop_2(uint16_t __count)
  36e:	8e e9       	ldi	r24, 0x9E	; 158
  370:	65 e0       	ldi	r22, 0x05	; 5
  372:	74 e0       	ldi	r23, 0x04	; 4
- 374:	97 d0       	rcall	.+302    	; 0x4a4 <get_DS7505_Devices>
+ 374:	95 d0       	rcall	.+298    	; 0x4a0 <get_DS7505_Devices>
  376:	28 2f       	mov	r18, r24
  378:	80 93 1e 04 	sts	0x041E, r24
 						temp_cmd(8, listTemp, T8_CMD, dev_test_access);
@@ -760,19 +760,19 @@ _delay_loop_2(uint16_t __count)
  386:	80 e8       	ldi	r24, 0x80	; 128
  388:	67 e0       	ldi	r22, 0x07	; 7
  38a:	74 e0       	ldi	r23, 0x04	; 4
- 38c:	d1 d0       	rcall	.+418    	; 0x530 <get_SHT21_Devices>
+ 38c:	cf d0       	rcall	.+414    	; 0x52c <get_SHT21_Devices>
  38e:	48 2f       	mov	r20, r24
  390:	80 93 1e 04 	sts	0x041E, r24
 						hum_cmd(listHum, H1_CMD, dev_test_access);
  394:	87 e0       	ldi	r24, 0x07	; 7
  396:	94 e0       	ldi	r25, 0x04	; 4
  398:	69 e3       	ldi	r22, 0x39	; 57
- 39a:	90 d1       	rcall	.+800    	; 0x6bc <hum_cmd>
+ 39a:	8e d1       	rcall	.+796    	; 0x6b8 <hum_cmd>
  39c:	1b c0       	rjmp	.+54     	; 0x3d4 <main+0x1f2>
 						break;
 					case DEBUG_CMD :
 						debug_cmd();
- 39e:	19 d3       	rcall	.+1586   	; 0x9d2 <debug_cmd>
+ 39e:	25 d3       	rcall	.+1610   	; 0x9ea <debug_cmd>
  3a0:	19 c0       	rjmp	.+50     	; 0x3d4 <main+0x1f2>
 						break;
 					case T1_DETECT_CMD :
@@ -826,20 +826,20 @@ _delay_loop_2(uint16_t __count)
 					case H1_DETECT_CMD :
 						dev_test_access = testDevice(ADD1_SHT21);
  3c2:	80 e8       	ldi	r24, 0x80	; 128
- 3c4:	5b d2       	rcall	.+1206   	; 0x87c <testDevice>
+ 3c4:	67 d2       	rcall	.+1230   	; 0x894 <testDevice>
  3c6:	80 93 1e 04 	sts	0x041E, r24
 						detectSensor_cmd(dev_test_access);
- 3ca:	b7 d1       	rcall	.+878    	; 0x73a <detectSensor_cmd>
+ 3ca:	b9 d1       	rcall	.+882    	; 0x73e <detectSensor_cmd>
  3cc:	03 c0       	rjmp	.+6      	; 0x3d4 <main+0x1f2>
 						break;
 					case ALL_DETECT_CMD :
 						detectAllSensors_cmd();
- 3ce:	5d d2       	rcall	.+1210   	; 0x88a <detectAllSensors_cmd>
+ 3ce:	69 d2       	rcall	.+1234   	; 0x8a2 <detectAllSensors_cmd>
  3d0:	01 c0       	rjmp	.+2      	; 0x3d4 <main+0x1f2>
 						break;
 					default :
 						unknown_cmd(); // Commande inconnue (non assignée)
- 3d2:	3b d2       	rcall	.+1142   	; 0x84a <unknown_cmd>
+ 3d2:	47 d2       	rcall	.+1166   	; 0x862 <unknown_cmd>
 						//asm("nop"); 	// Ne rien faire en cas d'erreur
 				}
 				nbRead--; // Décrémenter le nombre d'éléments restants dans le buffer RX
@@ -863,1567 +863,1586 @@ _delay_loop_2(uint16_t __count)
 			}
 			i = 0;				// Remise à zéro de l'index du buffer RX
  3e8:	10 92 01 04 	sts	0x0401, r1
-			RX_flag = FALSE;	// Mise du flag du RX à zéro
- 3ec:	10 92 00 04 	sts	0x0400, r1
- 3f0:	fe ce       	rjmp	.-516    	; 0x1ee <main+0xc>
+ 3ec:	00 cf       	rjmp	.-512    	; 0x1ee <main+0xc>
 
-000003f2 <USART_Init>:
+000003ee <USART_Init>:
 void USART_Init( unsigned int ubrr)
 {
 	/*Set baud rate */
 	//UBRR0H = (unsigned char)(ubrr>>8);
 	//UBRR0L = (unsigned char)ubrr;
 UBRR0L = 53;
- 3f2:	85 e3       	ldi	r24, 0x35	; 53
- 3f4:	80 93 c4 00 	sts	0x00C4, r24
+ 3ee:	85 e3       	ldi	r24, 0x35	; 53
+ 3f0:	80 93 c4 00 	sts	0x00C4, r24
 	/*Enable receiver and transmitter */
 	UCSR0B |= (1<<TXEN0)|(1<<RXEN0);
- 3f8:	e1 ec       	ldi	r30, 0xC1	; 193
- 3fa:	f0 e0       	ldi	r31, 0x00	; 0
- 3fc:	80 81       	ld	r24, Z
- 3fe:	88 61       	ori	r24, 0x18	; 24
- 400:	80 83       	st	Z, r24
+ 3f4:	e1 ec       	ldi	r30, 0xC1	; 193
+ 3f6:	f0 e0       	ldi	r31, 0x00	; 0
+ 3f8:	80 81       	ld	r24, Z
+ 3fa:	88 61       	ori	r24, 0x18	; 24
+ 3fc:	80 83       	st	Z, r24
 
 	/* Set frame format:  1 bit stop, 8 bits, no parity, asynchronous */
 	UCSR0C |= (3<<UCSZ00);			
- 402:	e2 ec       	ldi	r30, 0xC2	; 194
- 404:	f0 e0       	ldi	r31, 0x00	; 0
- 406:	80 81       	ld	r24, Z
- 408:	86 60       	ori	r24, 0x06	; 6
- 40a:	80 83       	st	Z, r24
+ 3fe:	e2 ec       	ldi	r30, 0xC2	; 194
+ 400:	f0 e0       	ldi	r31, 0x00	; 0
+ 402:	80 81       	ld	r24, Z
+ 404:	86 60       	ori	r24, 0x06	; 6
+ 406:	80 83       	st	Z, r24
 }
- 40c:	08 95       	ret
+ 408:	08 95       	ret
 
-0000040e <USART_Transmit>:
+0000040a <USART_Transmit>:
 
 /*********************************************************************/
 // FUNCTION: USART_Transmit( unsigned char )
 // PURPOSE: Envoyer un caractère
 void USART_Transmit( unsigned char data )
 {
- 40e:	98 2f       	mov	r25, r24
+ 40a:	98 2f       	mov	r25, r24
 	/* Wait for empty transmit buffer to be empty by checking the UDREn Flag */
 	while ( !( UCSR0A & (1<<UDRE0)) );  
- 410:	80 91 c0 00 	lds	r24, 0x00C0
- 414:	85 ff       	sbrs	r24, 5
- 416:	fc cf       	rjmp	.-8      	; 0x410 <USART_Transmit+0x2>
+ 40c:	80 91 c0 00 	lds	r24, 0x00C0
+ 410:	85 ff       	sbrs	r24, 5
+ 412:	fc cf       	rjmp	.-8      	; 0x40c <USART_Transmit+0x2>
 								
 	/* Put data into buffer, sends the data */
 	UDR0 = data;
- 418:	90 93 c6 00 	sts	0x00C6, r25
+ 414:	90 93 c6 00 	sts	0x00C6, r25
 }
- 41c:	08 95       	ret
+ 418:	08 95       	ret
 
-0000041e <USART_Receive>:
+0000041a <USART_Receive>:
 // FUNCTION: USART_Receive( void )
 // PURPOSE: Reçevoir un caractère
 unsigned char USART_Receive( void )
 {
 	/* Wait for data to be received */
 	while ( !(UCSR0A & (1<<RXC0)) );
- 41e:	80 91 c0 00 	lds	r24, 0x00C0
- 422:	87 ff       	sbrs	r24, 7
- 424:	fc cf       	rjmp	.-8      	; 0x41e <USART_Receive>
+ 41a:	80 91 c0 00 	lds	r24, 0x00C0
+ 41e:	87 ff       	sbrs	r24, 7
+ 420:	fc cf       	rjmp	.-8      	; 0x41a <USART_Receive>
 	
 	/* Get and return received data from buffer */
 	return UDR0;
- 426:	80 91 c6 00 	lds	r24, 0x00C6
+ 422:	80 91 c6 00 	lds	r24, 0x00C6
 }
- 42a:	08 95       	ret
+ 426:	08 95       	ret
 
-0000042c <USART_TX_String>:
+00000428 <USART_TX_String>:
 
 /*********************************************************************/
 // FUNCTION: USART_TX_String(char)
 // PURPOSE: Envoyer une chaine de caractère
 void USART_TX_String(char *String)
 {
- 42c:	fc 01       	movw	r30, r24
+ 428:	fc 01       	movw	r30, r24
 	char Continue = TRUE;
 	while (Continue)
 	{
 		if (*String == 0) Continue = FALSE;
- 42e:	91 91       	ld	r25, Z+
+ 42a:	91 91       	ld	r25, Z+
 // FUNCTION: USART_Transmit( unsigned char )
 // PURPOSE: Envoyer un caractère
 void USART_Transmit( unsigned char data )
 {
 	/* Wait for empty transmit buffer to be empty by checking the UDREn Flag */
 	while ( !( UCSR0A & (1<<UDRE0)) );  
- 430:	80 91 c0 00 	lds	r24, 0x00C0
- 434:	85 ff       	sbrs	r24, 5
- 436:	fc cf       	rjmp	.-8      	; 0x430 <USART_TX_String+0x4>
+ 42c:	80 91 c0 00 	lds	r24, 0x00C0
+ 430:	85 ff       	sbrs	r24, 5
+ 432:	fc cf       	rjmp	.-8      	; 0x42c <USART_TX_String+0x4>
 								
 	/* Put data into buffer, sends the data */
 	UDR0 = data;
- 438:	90 93 c6 00 	sts	0x00C6, r25
+ 434:	90 93 c6 00 	sts	0x00C6, r25
 // FUNCTION: USART_TX_String(char)
 // PURPOSE: Envoyer une chaine de caractère
 void USART_TX_String(char *String)
 {
 	char Continue = TRUE;
 	while (Continue)
- 43c:	99 23       	and	r25, r25
- 43e:	b9 f7       	brne	.-18     	; 0x42e <USART_TX_String+0x2>
+ 438:	99 23       	and	r25, r25
+ 43a:	b9 f7       	brne	.-18     	; 0x42a <USART_TX_String+0x2>
 	{
 		if (*String == 0) Continue = FALSE;
 		USART_Transmit(*String++);
 	}
 }
- 440:	08 95       	ret
+ 43c:	08 95       	ret
 
-00000442 <USART_TX_CRNL>:
+0000043e <USART_TX_CRNL>:
 // FUNCTION: USART_Transmit( unsigned char )
 // PURPOSE: Envoyer un caractère
 void USART_Transmit( unsigned char data )
 {
 	/* Wait for empty transmit buffer to be empty by checking the UDREn Flag */
 	while ( !( UCSR0A & (1<<UDRE0)) );  
- 442:	80 91 c0 00 	lds	r24, 0x00C0
- 446:	85 ff       	sbrs	r24, 5
- 448:	fc cf       	rjmp	.-8      	; 0x442 <USART_TX_CRNL>
+ 43e:	80 91 c0 00 	lds	r24, 0x00C0
+ 442:	85 ff       	sbrs	r24, 5
+ 444:	fc cf       	rjmp	.-8      	; 0x43e <USART_TX_CRNL>
 								
 	/* Put data into buffer, sends the data */
 	UDR0 = data;
- 44a:	8d e0       	ldi	r24, 0x0D	; 13
- 44c:	80 93 c6 00 	sts	0x00C6, r24
+ 446:	8d e0       	ldi	r24, 0x0D	; 13
+ 448:	80 93 c6 00 	sts	0x00C6, r24
 // FUNCTION: USART_Transmit( unsigned char )
 // PURPOSE: Envoyer un caractère
 void USART_Transmit( unsigned char data )
 {
 	/* Wait for empty transmit buffer to be empty by checking the UDREn Flag */
 	while ( !( UCSR0A & (1<<UDRE0)) );  
- 450:	80 91 c0 00 	lds	r24, 0x00C0
- 454:	85 ff       	sbrs	r24, 5
- 456:	fc cf       	rjmp	.-8      	; 0x450 <USART_TX_CRNL+0xe>
+ 44c:	80 91 c0 00 	lds	r24, 0x00C0
+ 450:	85 ff       	sbrs	r24, 5
+ 452:	fc cf       	rjmp	.-8      	; 0x44c <USART_TX_CRNL+0xe>
 								
 	/* Put data into buffer, sends the data */
 	UDR0 = data;
- 458:	8a e0       	ldi	r24, 0x0A	; 10
- 45a:	80 93 c6 00 	sts	0x00C6, r24
+ 454:	8a e0       	ldi	r24, 0x0A	; 10
+ 456:	80 93 c6 00 	sts	0x00C6, r24
 //			nouvelle page (NEW_PAGE)
 void USART_TX_CRNL()
 {
 	USART_Transmit(CARRIAGE_RETURN);
 	USART_Transmit(NEW_LINE);
 }
- 45e:	08 95       	ret
+ 45a:	08 95       	ret
 
-00000460 <USART_TX_Msg>:
+0000045c <USART_TX_Msg>:
 // PURPOSE: Envoyer une chaine de caractère avec retour à la ligne
 //			(CARRIAGE_RETURN) et nouvelle page (NEW_PAGE)
 
 void USART_TX_Msg(char *String)
 {
 	USART_TX_String(String);
- 460:	e5 df       	rcall	.-54     	; 0x42c <USART_TX_String>
+ 45c:	e5 df       	rcall	.-54     	; 0x428 <USART_TX_String>
 	USART_TX_CRNL();
- 462:	ef df       	rcall	.-34     	; 0x442 <USART_TX_CRNL>
+ 45e:	ef df       	rcall	.-34     	; 0x43e <USART_TX_CRNL>
 }
- 464:	08 95       	ret
+ 460:	08 95       	ret
 
-00000466 <Enable_Interrupt_On_RX>:
+00000462 <Enable_Interrupt_On_RX>:
 /*********************************************************************/
 // FUNCTION: Enable_Interrupt_On_RX()
 // PURPOSE: Activer l'interruption sur RX
 void Enable_Interrupt_On_RX()
 {
 	sbiBF(UCSR0B,RXCIE0); // Autotriser les interruption sur Rx lorsqu'une donnée est reçue
- 466:	e1 ec       	ldi	r30, 0xC1	; 193
- 468:	f0 e0       	ldi	r31, 0x00	; 0
- 46a:	80 81       	ld	r24, Z
- 46c:	80 68       	ori	r24, 0x80	; 128
- 46e:	80 83       	st	Z, r24
+ 462:	e1 ec       	ldi	r30, 0xC1	; 193
+ 464:	f0 e0       	ldi	r31, 0x00	; 0
+ 466:	80 81       	ld	r24, Z
+ 468:	80 68       	ori	r24, 0x80	; 128
+ 46a:	80 83       	st	Z, r24
 }
- 470:	08 95       	ret
+ 46c:	08 95       	ret
 
-00000472 <Disable_Interrupt_On_RX>:
+0000046e <Disable_Interrupt_On_RX>:
 /*********************************************************************/
 // FUNCTION: Disable_Interrupt_On_RX()
 // PURPOSE: Désactiver l'interruption sur RX
 void Disable_Interrupt_On_RX()
 {
 	cbiBF(UCSR0B,RXCIE0); // Désactiver les interruption sur Rx lorsqu'une donnée est reçue
- 472:	e1 ec       	ldi	r30, 0xC1	; 193
- 474:	f0 e0       	ldi	r31, 0x00	; 0
- 476:	80 81       	ld	r24, Z
- 478:	8f 77       	andi	r24, 0x7F	; 127
- 47a:	80 83       	st	Z, r24
+ 46e:	e1 ec       	ldi	r30, 0xC1	; 193
+ 470:	f0 e0       	ldi	r31, 0x00	; 0
+ 472:	80 81       	ld	r24, Z
+ 474:	8f 77       	andi	r24, 0x7F	; 127
+ 476:	80 83       	st	Z, r24
 }
- 47c:	08 95       	ret
+ 478:	08 95       	ret
 
-0000047e <initDS7505>:
+0000047a <initDS7505>:
 
 /*********************************************************************/
 // FUNCTION: char initDS7505(unsigned char addr_mode)
 // PURPOSE: Initialisation d'un capteur de T° dont l'adresse I2C est spécifiée
 unsigned char initDS7505(unsigned char addr_mode)
 {
- 47e:	1f 93       	push	r17
+ 47a:	1f 93       	push	r17
 	unsigned char ret;
 
     ret = i2c_start(addr_mode+I2C_WRITE);       // Start avec adresse capteur + write bit
- 480:	fb dd       	rcall	.-1034   	; 0x78 <i2c_start>
- 482:	18 2f       	mov	r17, r24
+ 47c:	fd dd       	rcall	.-1030   	; 0x78 <i2c_start>
+ 47e:	18 2f       	mov	r17, r24
 	/* Si le capteur n'est pas présent sur le bus I2C */
     if ( ret ) 
- 484:	88 23       	and	r24, r24
- 486:	11 f0       	breq	.+4      	; 0x48c <initDS7505+0xe>
+ 480:	88 23       	and	r24, r24
+ 482:	11 f0       	breq	.+4      	; 0x488 <initDS7505+0xe>
 	{
         i2c_stop();		// Fin de communication sur le bus I2C
- 488:	47 de       	rcall	.-882    	; 0x118 <i2c_stop>
- 48a:	09 c0       	rjmp	.+18     	; 0x49e <initDS7505+0x20>
+ 484:	49 de       	rcall	.-878    	; 0x118 <i2c_stop>
+ 486:	09 c0       	rjmp	.+18     	; 0x49a <initDS7505+0x20>
     }
 	/* Le capteur est présent sur le bus I2C */
 	else 
 	{
         i2c_write(CONF_REG); 	// Envoyer commande "Configuration register"
- 48c:	81 e0       	ldi	r24, 0x01	; 1
- 48e:	4c de       	rcall	.-872    	; 0x128 <i2c_write>
+ 488:	81 e0       	ldi	r24, 0x01	; 1
+ 48a:	4e de       	rcall	.-868    	; 0x128 <i2c_write>
         i2c_write(RES_10);  	// Conversion 10 bits 
- 490:	80 e2       	ldi	r24, 0x20	; 32
- 492:	4a de       	rcall	.-876    	; 0x128 <i2c_write>
+ 48c:	80 e2       	ldi	r24, 0x20	; 32
+ 48e:	4c de       	rcall	.-872    	; 0x128 <i2c_write>
 		i2c_stop();				// Fin de communication sur le bus I2C
- 494:	41 de       	rcall	.-894    	; 0x118 <i2c_stop>
- 496:	80 e3       	ldi	r24, 0x30	; 48
- 498:	95 e7       	ldi	r25, 0x75	; 117
- 49a:	01 97       	sbiw	r24, 0x01	; 1
- 49c:	f1 f7       	brne	.-4      	; 0x49a <initDS7505+0x1c>
+ 490:	43 de       	rcall	.-890    	; 0x118 <i2c_stop>
+ 492:	80 e3       	ldi	r24, 0x30	; 48
+ 494:	95 e7       	ldi	r25, 0x75	; 117
+ 496:	01 97       	sbiw	r24, 0x01	; 1
+ 498:	f1 f7       	brne	.-4      	; 0x496 <initDS7505+0x1c>
 		_delay_ms(15);			// Délais avant de communiquer à nouveau avec le capteur
 	}
 	return ret;
 }
- 49e:	81 2f       	mov	r24, r17
- 4a0:	1f 91       	pop	r17
- 4a2:	08 95       	ret
+ 49a:	81 2f       	mov	r24, r17
+ 49c:	1f 91       	pop	r17
+ 49e:	08 95       	ret
 
-000004a4 <get_DS7505_Devices>:
+000004a0 <get_DS7505_Devices>:
 
 /*********************************************************************/
 // FUNCTION: get_DS7505_Devices(unsigned char addr_mode, char *listTemp)
 // PURPOSE: Aquérir la T° d'un DS7505 dont l'adresse I2C est spécifiée
 unsigned char get_DS7505_Devices(unsigned char addr_mode, char *listTemp)
 {
- 4a4:	0f 93       	push	r16
- 4a6:	1f 93       	push	r17
- 4a8:	cf 93       	push	r28
- 4aa:	df 93       	push	r29
- 4ac:	18 2f       	mov	r17, r24
- 4ae:	eb 01       	movw	r28, r22
+ 4a0:	0f 93       	push	r16
+ 4a2:	1f 93       	push	r17
+ 4a4:	cf 93       	push	r28
+ 4a6:	df 93       	push	r29
+ 4a8:	18 2f       	mov	r17, r24
+ 4aa:	eb 01       	movw	r28, r22
 	unsigned char ret;
 	ret = i2c_start(addr_mode+I2C_WRITE);       // Start avec adresse capteur + write bit
- 4b0:	e3 dd       	rcall	.-1082   	; 0x78 <i2c_start>
- 4b2:	08 2f       	mov	r16, r24
+ 4ac:	e5 dd       	rcall	.-1078   	; 0x78 <i2c_start>
+ 4ae:	08 2f       	mov	r16, r24
 	i2c_stop();
- 4b4:	31 de       	rcall	.-926    	; 0x118 <i2c_stop>
+ 4b0:	33 de       	rcall	.-922    	; 0x118 <i2c_stop>
 
 	if (!ret)/* Si le capteur est présent sur le bus I2C */
- 4b6:	00 23       	and	r16, r16
- 4b8:	69 f4       	brne	.+26     	; 0x4d4 <get_DS7505_Devices+0x30>
+ 4b2:	00 23       	and	r16, r16
+ 4b4:	69 f4       	brne	.+26     	; 0x4d0 <get_DS7505_Devices+0x30>
 	{
 	    i2c_start_wait(addr_mode+I2C_WRITE);    	// Start avec adresse capteur + write bit
- 4ba:	81 2f       	mov	r24, r17
- 4bc:	03 de       	rcall	.-1018   	; 0xc4 <i2c_start_wait>
+ 4b6:	81 2f       	mov	r24, r17
+ 4b8:	05 de       	rcall	.-1014   	; 0xc4 <i2c_start_wait>
 													// Et attend que le bus soit libéré
 	    i2c_write(TEMP_REG);  						// Envoyer commande "Read Temperature"
- 4be:	80 e0       	ldi	r24, 0x00	; 0
- 4c0:	33 de       	rcall	.-922    	; 0x128 <i2c_write>
+ 4ba:	80 e0       	ldi	r24, 0x00	; 0
+ 4bc:	35 de       	rcall	.-918    	; 0x128 <i2c_write>
 		i2c_rep_start(addr_mode+I2C_READ);        	// Repeated start avec adresse capteur + write bit
- 4c2:	81 2f       	mov	r24, r17
- 4c4:	8f 5f       	subi	r24, 0xFF	; 255
- 4c6:	26 de       	rcall	.-948    	; 0x114 <i2c_rep_start>
+ 4be:	81 2f       	mov	r24, r17
+ 4c0:	8f 5f       	subi	r24, 0xFF	; 255
+ 4c2:	28 de       	rcall	.-944    	; 0x114 <i2c_rep_start>
 
 		listTemp[0] = i2c_readAck();	// Sauvegarder les bits de poids fort + Acknowledge
- 4c8:	41 de       	rcall	.-894    	; 0x14c <i2c_readAck>
- 4ca:	88 83       	st	Y, r24
+ 4c4:	43 de       	rcall	.-890    	; 0x14c <i2c_readAck>
+ 4c6:	88 83       	st	Y, r24
 		listTemp[1] = i2c_readNak();	// Sauvegarder les bits de poids faible + Not acknowledge
- 4cc:	49 de       	rcall	.-878    	; 0x160 <i2c_readNak>
- 4ce:	89 83       	std	Y+1, r24	; 0x01
+ 4c8:	4b de       	rcall	.-874    	; 0x160 <i2c_readNak>
+ 4ca:	89 83       	std	Y+1, r24	; 0x01
 
 	    i2c_stop();						// Fin de communication sur le bus I2C
- 4d0:	23 de       	rcall	.-954    	; 0x118 <i2c_stop>
- 4d2:	02 c0       	rjmp	.+4      	; 0x4d8 <get_DS7505_Devices+0x34>
+ 4cc:	25 de       	rcall	.-950    	; 0x118 <i2c_stop>
+ 4ce:	02 c0       	rjmp	.+4      	; 0x4d4 <get_DS7505_Devices+0x34>
 	}
 	else/* Le capteur n'est pas présent sur le bus I2C */
 	{
 		listTemp[0] = 0;				// Mettre à zéro l'octet de poids fort
- 4d4:	18 82       	st	Y, r1
+ 4d0:	18 82       	st	Y, r1
 		listTemp[1] = 0;				// Mettre à zéro l'octet de poids faible
- 4d6:	19 82       	std	Y+1, r1	; 0x01
+ 4d2:	19 82       	std	Y+1, r1	; 0x01
 	}
 	return ret ;						// Fin de communication sur le bus I2C
 }
- 4d8:	80 2f       	mov	r24, r16
- 4da:	df 91       	pop	r29
- 4dc:	cf 91       	pop	r28
- 4de:	1f 91       	pop	r17
- 4e0:	0f 91       	pop	r16
- 4e2:	08 95       	ret
+ 4d4:	80 2f       	mov	r24, r16
+ 4d6:	df 91       	pop	r29
+ 4d8:	cf 91       	pop	r28
+ 4da:	1f 91       	pop	r17
+ 4dc:	0f 91       	pop	r16
+ 4de:	08 95       	ret
 
-000004e4 <SHT21_SoftReset>:
+000004e0 <SHT21_SoftReset>:
 
 /*********************************************************************/
 // FUNCTION: unsigned char SHT21_SoftReset(unsigned char addr_mode)
 // PURPOSE: Soft reset du capteur d'humité SHT21
 unsigned char SHT21_SoftReset(unsigned char addr_mode)
 {
- 4e4:	1f 93       	push	r17
+ 4e0:	1f 93       	push	r17
 	unsigned char ret;
 	ret = i2c_start(addr_mode+I2C_WRITE);       // Start avec adresse capteur + write bit
- 4e6:	c8 dd       	rcall	.-1136   	; 0x78 <i2c_start>
- 4e8:	18 2f       	mov	r17, r24
+ 4e2:	ca dd       	rcall	.-1132   	; 0x78 <i2c_start>
+ 4e4:	18 2f       	mov	r17, r24
 
 	if ( ret ) 									// Si le capteur n'est pas présent sur le bus I2C
- 4ea:	88 23       	and	r24, r24
- 4ec:	11 f0       	breq	.+4      	; 0x4f2 <SHT21_SoftReset+0xe>
+ 4e6:	88 23       	and	r24, r24
+ 4e8:	11 f0       	breq	.+4      	; 0x4ee <SHT21_SoftReset+0xe>
 	{
         i2c_stop();								// Fin de communication sur le bus I2C
- 4ee:	14 de       	rcall	.-984    	; 0x118 <i2c_stop>
- 4f0:	02 c0       	rjmp	.+4      	; 0x4f6 <SHT21_SoftReset+0x12>
+ 4ea:	16 de       	rcall	.-980    	; 0x118 <i2c_stop>
+ 4ec:	02 c0       	rjmp	.+4      	; 0x4f2 <SHT21_SoftReset+0x12>
     }
 	/* Le capteur est présent sur le bus I2C */
 	else
 	{
 		i2c_write(SOFT_RESET); 					// Envoyer commande "Soft reset"
- 4f2:	8e ef       	ldi	r24, 0xFE	; 254
- 4f4:	19 de       	rcall	.-974    	; 0x128 <i2c_write>
- 4f6:	80 e3       	ldi	r24, 0x30	; 48
- 4f8:	95 e7       	ldi	r25, 0x75	; 117
- 4fa:	01 97       	sbiw	r24, 0x01	; 1
- 4fc:	f1 f7       	brne	.-4      	; 0x4fa <SHT21_SoftReset+0x16>
+ 4ee:	8e ef       	ldi	r24, 0xFE	; 254
+ 4f0:	1b de       	rcall	.-970    	; 0x128 <i2c_write>
+ 4f2:	80 e3       	ldi	r24, 0x30	; 48
+ 4f4:	95 e7       	ldi	r25, 0x75	; 117
+ 4f6:	01 97       	sbiw	r24, 0x01	; 1
+ 4f8:	f1 f7       	brne	.-4      	; 0x4f6 <SHT21_SoftReset+0x16>
 	}
 	_delay_ms(15);								// Délais avant de communiquer à nouveau avec le capteur
 
   	return ret;
 }
- 4fe:	81 2f       	mov	r24, r17
- 500:	1f 91       	pop	r17
- 502:	08 95       	ret
+ 4fa:	81 2f       	mov	r24, r17
+ 4fc:	1f 91       	pop	r17
+ 4fe:	08 95       	ret
 
-00000504 <initSHT21>:
+00000500 <initSHT21>:
 /*********************************************************************/
 // FUNCTION: get_SHT21_Devices(unsigned char addr_mode, char *listHum)
 // PURPOSE: Acquérir l'humidité relative d'un SHT21 dont l'adresse
 // I2C est spécifiée
 unsigned char initSHT21(unsigned char addr_mode)
 {
- 504:	1f 93       	push	r17
- 506:	18 2f       	mov	r17, r24
+ 500:	1f 93       	push	r17
+ 502:	18 2f       	mov	r17, r24
 	unsigned char ret;
 	ret = SHT21_SoftReset(addr_mode);
- 508:	ed df       	rcall	.-38     	; 0x4e4 <SHT21_SoftReset>
+ 504:	ed df       	rcall	.-38     	; 0x4e0 <SHT21_SoftReset>
 
     ret = i2c_start(addr_mode+I2C_WRITE);       // Start avec adresse capteur + write bit
- 50a:	81 2f       	mov	r24, r17
- 50c:	b5 dd       	rcall	.-1174   	; 0x78 <i2c_start>
- 50e:	18 2f       	mov	r17, r24
+ 506:	81 2f       	mov	r24, r17
+ 508:	b7 dd       	rcall	.-1170   	; 0x78 <i2c_start>
+ 50a:	18 2f       	mov	r17, r24
 	/* Si le capteur n'est pas présent sur le bus I2C */
     if ( ret ) // Si le capteur n'est pas présent sur le bus I2C
- 510:	88 23       	and	r24, r24
- 512:	11 f0       	breq	.+4      	; 0x518 <initSHT21+0x14>
+ 50c:	88 23       	and	r24, r24
+ 50e:	11 f0       	breq	.+4      	; 0x514 <initSHT21+0x14>
 	{
         i2c_stop();		// Fin de communication sur le bus I2C
- 514:	01 de       	rcall	.-1022   	; 0x118 <i2c_stop>
- 516:	09 c0       	rjmp	.+18     	; 0x52a <initSHT21+0x26>
+ 510:	03 de       	rcall	.-1018   	; 0x118 <i2c_stop>
+ 512:	09 c0       	rjmp	.+18     	; 0x526 <initSHT21+0x26>
     }
 	/* Le capteur est présent sur le bus I2C */
 	else 
 	{
         i2c_write(W_USER_REG); 	// Envoyer commande "Write user register"
- 518:	86 ee       	ldi	r24, 0xE6	; 230
- 51a:	06 de       	rcall	.-1012   	; 0x128 <i2c_write>
+ 514:	86 ee       	ldi	r24, 0xE6	; 230
+ 516:	08 de       	rcall	.-1008   	; 0x128 <i2c_write>
         i2c_write(RES_RH_8);  	// Conversion 8 bits 
- 51c:	83 e0       	ldi	r24, 0x03	; 3
- 51e:	04 de       	rcall	.-1016   	; 0x128 <i2c_write>
+ 518:	83 e0       	ldi	r24, 0x03	; 3
+ 51a:	06 de       	rcall	.-1012   	; 0x128 <i2c_write>
 		i2c_stop();				// Fin de communication sur le bus I2C
- 520:	fb dd       	rcall	.-1034   	; 0x118 <i2c_stop>
- 522:	80 e3       	ldi	r24, 0x30	; 48
- 524:	95 e7       	ldi	r25, 0x75	; 117
- 526:	01 97       	sbiw	r24, 0x01	; 1
- 528:	f1 f7       	brne	.-4      	; 0x526 <initSHT21+0x22>
+ 51c:	fd dd       	rcall	.-1030   	; 0x118 <i2c_stop>
+ 51e:	80 e3       	ldi	r24, 0x30	; 48
+ 520:	95 e7       	ldi	r25, 0x75	; 117
+ 522:	01 97       	sbiw	r24, 0x01	; 1
+ 524:	f1 f7       	brne	.-4      	; 0x522 <initSHT21+0x22>
 		_delay_ms(15);			// Délais avant de communiquer à nouveau avec le capteur
 	}
 	return ret;
 }
- 52a:	81 2f       	mov	r24, r17
- 52c:	1f 91       	pop	r17
- 52e:	08 95       	ret
+ 526:	81 2f       	mov	r24, r17
+ 528:	1f 91       	pop	r17
+ 52a:	08 95       	ret
 
-00000530 <get_SHT21_Devices>:
+0000052c <get_SHT21_Devices>:
 
 /*********************************************************************/
 // FUNCTION: get_SHT21_Devices(unsigned char addr_mode, char *listHum)
 // PURPOSE: Aquérir la T° d'un SHT21 dont l'adresse I2C est spécifiée
 unsigned char get_SHT21_Devices(unsigned char addr_mode, char *listHum)
 {
- 530:	0f 93       	push	r16
- 532:	1f 93       	push	r17
- 534:	cf 93       	push	r28
- 536:	df 93       	push	r29
- 538:	18 2f       	mov	r17, r24
- 53a:	eb 01       	movw	r28, r22
+ 52c:	0f 93       	push	r16
+ 52e:	1f 93       	push	r17
+ 530:	cf 93       	push	r28
+ 532:	df 93       	push	r29
+ 534:	18 2f       	mov	r17, r24
+ 536:	eb 01       	movw	r28, r22
 	unsigned char ret;
 	ret = i2c_start(addr_mode+I2C_WRITE);       // Start avec adresse capteur + write bit
- 53c:	9d dd       	rcall	.-1222   	; 0x78 <i2c_start>
- 53e:	08 2f       	mov	r16, r24
+ 538:	9f dd       	rcall	.-1218   	; 0x78 <i2c_start>
+ 53a:	08 2f       	mov	r16, r24
 	i2c_stop();
- 540:	eb dd       	rcall	.-1066   	; 0x118 <i2c_stop>
+ 53c:	ed dd       	rcall	.-1062   	; 0x118 <i2c_stop>
 
 	if (!ret)/* Si le capteur est présent sur le bus I2C */
- 542:	00 23       	and	r16, r16
- 544:	79 f4       	brne	.+30     	; 0x564 <get_SHT21_Devices+0x34>
+ 53e:	00 23       	and	r16, r16
+ 540:	79 f4       	brne	.+30     	; 0x560 <get_SHT21_Devices+0x34>
 	{
 		i2c_start_wait(addr_mode+I2C_WRITE);    	// Start avec adresse capteur + write bit
- 546:	81 2f       	mov	r24, r17
- 548:	bd dd       	rcall	.-1158   	; 0xc4 <i2c_start_wait>
+ 542:	81 2f       	mov	r24, r17
+ 544:	bf dd       	rcall	.-1154   	; 0xc4 <i2c_start_wait>
 													// Et attend que le bus soit libéré
 		i2c_write(TRIG_RH);  						// Envoyer commande "Trigger Temperature measurement (hold master)"
- 54a:	85 ee       	ldi	r24, 0xE5	; 229
- 54c:	ed dd       	rcall	.-1062   	; 0x128 <i2c_write>
+ 546:	85 ee       	ldi	r24, 0xE5	; 229
+ 548:	ef dd       	rcall	.-1058   	; 0x128 <i2c_write>
 		i2c_start_wait(addr_mode+I2C_READ);    	// Start avec adresse capteur + write bit
- 54e:	81 2f       	mov	r24, r17
- 550:	8f 5f       	subi	r24, 0xFF	; 255
- 552:	b8 dd       	rcall	.-1168   	; 0xc4 <i2c_start_wait>
+ 54a:	81 2f       	mov	r24, r17
+ 54c:	8f 5f       	subi	r24, 0xFF	; 255
+ 54e:	ba dd       	rcall	.-1164   	; 0xc4 <i2c_start_wait>
 													// Et attend que le bus soit libéré
 		
 		// Attente la fin de la conversion A/D, selon la résolution	
 		//_delay_ms(15);
 
 		listHum[0] = i2c_readAck();	// Sauvegarder les bits de poids fort + Acknowledge
- 554:	fb dd       	rcall	.-1034   	; 0x14c <i2c_readAck>
- 556:	88 83       	st	Y, r24
+ 550:	fd dd       	rcall	.-1030   	; 0x14c <i2c_readAck>
+ 552:	88 83       	st	Y, r24
 		listHum[1] = i2c_readAck();	// Sauvegarder les bits de poids faible + Not acknowledge
- 558:	f9 dd       	rcall	.-1038   	; 0x14c <i2c_readAck>
- 55a:	89 83       	std	Y+1, r24	; 0x01
+ 554:	fb dd       	rcall	.-1034   	; 0x14c <i2c_readAck>
+ 556:	89 83       	std	Y+1, r24	; 0x01
 		listHum[2] = i2c_readNak(); // CRC checksum
- 55c:	01 de       	rcall	.-1022   	; 0x160 <i2c_readNak>
- 55e:	8a 83       	std	Y+2, r24	; 0x02
+ 558:	03 de       	rcall	.-1018   	; 0x160 <i2c_readNak>
+ 55a:	8a 83       	std	Y+2, r24	; 0x02
 
 		i2c_stop();							// Fin de communication sur le bus I2C
- 560:	db dd       	rcall	.-1098   	; 0x118 <i2c_stop>
- 562:	01 c0       	rjmp	.+2      	; 0x566 <get_SHT21_Devices+0x36>
+ 55c:	dd dd       	rcall	.-1094   	; 0x118 <i2c_stop>
+ 55e:	01 c0       	rjmp	.+2      	; 0x562 <get_SHT21_Devices+0x36>
 	}
 	else/* Le capteur n'est pas présent sur le bus I2C */
 	{
 		listHum[0] = 0;				// Mettre à zéro l'octet de poids fort
 		listHum[0] = 0;				// Mettre à zéro l'octet de poids faible
 		listHum[0] = 0;
- 564:	18 82       	st	Y, r1
+ 560:	18 82       	st	Y, r1
 	}
 	return ret ;						// Fin de communication sur le bus I2C
 }                                                                                                                                                      
- 566:	80 2f       	mov	r24, r16
- 568:	df 91       	pop	r29
- 56a:	cf 91       	pop	r28
- 56c:	1f 91       	pop	r17
- 56e:	0f 91       	pop	r16
- 570:	08 95       	ret
+ 562:	80 2f       	mov	r24, r16
+ 564:	df 91       	pop	r29
+ 566:	cf 91       	pop	r28
+ 568:	1f 91       	pop	r17
+ 56a:	0f 91       	pop	r16
+ 56c:	08 95       	ret
 
-00000572 <convertHum>:
+0000056e <convertHum>:
 
 /*********************************************************************/
 // FUNCTION: unsigned char convertHum(char *humMes)	
 // PURPOSE: Convertir la valeur d'humidité brute, en valeur exploitable
 unsigned char convertHum(char *humMes)		
 {
- 572:	fc 01       	movw	r30, r24
+ 56e:	fc 01       	movw	r30, r24
 	unsigned long int hum_whole = 0 ;
 	unsigned char hum_pourc = 0;
 	
 	hum_whole = humMes[0] << RES_SHIFT ;		// Décaler de 8 bits vers la gauche du bit de poid fort
- 574:	70 81       	ld	r23, Z
- 576:	60 e0       	ldi	r22, 0x00	; 0
- 578:	88 27       	eor	r24, r24
- 57a:	77 fd       	sbrc	r23, 7
- 57c:	80 95       	com	r24
- 57e:	98 2f       	mov	r25, r24
+ 570:	70 81       	ld	r23, Z
+ 572:	60 e0       	ldi	r22, 0x00	; 0
+ 574:	88 27       	eor	r24, r24
+ 576:	77 fd       	sbrc	r23, 7
+ 578:	80 95       	com	r24
+ 57a:	98 2f       	mov	r25, r24
 	hum_whole = hum_whole + humMes[1];			// Ajouter le bit de poids faible
- 580:	21 81       	ldd	r18, Z+1	; 0x01
- 582:	62 0f       	add	r22, r18
- 584:	71 1d       	adc	r23, r1
- 586:	81 1d       	adc	r24, r1
- 588:	91 1d       	adc	r25, r1
+ 57c:	21 81       	ldd	r18, Z+1	; 0x01
+ 57e:	62 0f       	add	r22, r18
+ 580:	71 1d       	adc	r23, r1
+ 582:	81 1d       	adc	r24, r1
+ 584:	91 1d       	adc	r25, r1
 	hum_whole &= ~0x0003;         				// clear bits [1..0] (status bits)
- 58a:	6c 7f       	andi	r22, 0xFC	; 252
+ 586:	6c 7f       	andi	r22, 0xFC	; 252
 	
 	/******* Formule pour obtenir l'humidité relative *******/
 	/* relative  humidity  above  liquid  water  according  to  World Meteorological Organization  (WMO) */
 	hum_whole = 125*hum_whole;
- 58c:	2d e7       	ldi	r18, 0x7D	; 125
- 58e:	30 e0       	ldi	r19, 0x00	; 0
- 590:	40 e0       	ldi	r20, 0x00	; 0
- 592:	50 e0       	ldi	r21, 0x00	; 0
- 594:	2b d2       	rcall	.+1110   	; 0x9ec <__mulsi3>
+ 588:	2d e7       	ldi	r18, 0x7D	; 125
+ 58a:	30 e0       	ldi	r19, 0x00	; 0
+ 58c:	40 e0       	ldi	r20, 0x00	; 0
+ 58e:	50 e0       	ldi	r21, 0x00	; 0
+ 590:	39 d2       	rcall	.+1138   	; 0xa04 <__mulsi3>
 
 	hum_whole = hum_whole/65536; 
 	hum_pourc = hum_whole -6;
- 596:	bc 01       	movw	r22, r24
- 598:	88 27       	eor	r24, r24
- 59a:	99 27       	eor	r25, r25
- 59c:	26 2f       	mov	r18, r22
- 59e:	26 50       	subi	r18, 0x06	; 6
+ 592:	bc 01       	movw	r22, r24
+ 594:	88 27       	eor	r24, r24
+ 596:	99 27       	eor	r25, r25
+ 598:	26 2f       	mov	r18, r22
+ 59a:	26 50       	subi	r18, 0x06	; 6
 
 	if (hum_pourc >= 183)
- 5a0:	27 3b       	cpi	r18, 0xB7	; 183
- 5a2:	08 f0       	brcs	.+2      	; 0x5a6 <convertHum+0x34>
+ 59c:	27 3b       	cpi	r18, 0xB7	; 183
+ 59e:	08 f0       	brcs	.+2      	; 0x5a2 <convertHum+0x34>
 	{
 		hum_pourc = hum_pourc - 130;
- 5a4:	22 58       	subi	r18, 0x82	; 130
+ 5a0:	22 58       	subi	r18, 0x82	; 130
 	}
 	
 	return hum_pourc;		// Retourne la valeur de l'humidité relative en %, de 0 à 100
 }
- 5a6:	82 2f       	mov	r24, r18
- 5a8:	08 95       	ret
+ 5a2:	82 2f       	mov	r24, r18
+ 5a4:	08 95       	ret
 
-000005aa <stringHum>:
+000005a6 <stringHum>:
 /*********************************************************************/
 // FUNCTION: stringHum(char humResult, char *humStr)
 // PURPOSE: Convertir la valeur de l'humidité relatives exploitable
 //			en caractères
 void stringHum(char humResult, char *humStr)
 {
- 5aa:	28 2f       	mov	r18, r24
- 5ac:	fb 01       	movw	r30, r22
+ 5a6:	28 2f       	mov	r18, r24
+ 5a8:	fb 01       	movw	r30, r22
 	humStr[0] = (humResult/10)+48;
- 5ae:	6a e0       	ldi	r22, 0x0A	; 10
- 5b0:	3c d2       	rcall	.+1144   	; 0xa2a <__udivmodqi4>
- 5b2:	80 5d       	subi	r24, 0xD0	; 208
- 5b4:	80 83       	st	Z, r24
+ 5aa:	6a e0       	ldi	r22, 0x0A	; 10
+ 5ac:	4a d2       	rcall	.+1172   	; 0xa42 <__udivmodqi4>
+ 5ae:	80 5d       	subi	r24, 0xD0	; 208
+ 5b0:	80 83       	st	Z, r24
 	humStr[1] = (humResult%10)+48;
- 5b6:	82 2f       	mov	r24, r18
- 5b8:	38 d2       	rcall	.+1136   	; 0xa2a <__udivmodqi4>
- 5ba:	90 5d       	subi	r25, 0xD0	; 208
- 5bc:	91 83       	std	Z+1, r25	; 0x01
+ 5b2:	82 2f       	mov	r24, r18
+ 5b4:	46 d2       	rcall	.+1164   	; 0xa42 <__udivmodqi4>
+ 5b6:	90 5d       	subi	r25, 0xD0	; 208
+ 5b8:	91 83       	std	Z+1, r25	; 0x01
 }
- 5be:	08 95       	ret
+ 5ba:	08 95       	ret
 
-000005c0 <convertTemp>:
+000005bc <convertTemp>:
 
 /*********************************************************************/
 // FUNCTION: convertTemp(char *tempMes, char *tempResult)
 // PURPOSE: Convertir la valeur de T° brute, en valeur exploitable
 void convertTemp(char *tempMes, char *tempResult)		
 {
- 5c0:	fc 01       	movw	r30, r24
- 5c2:	db 01       	movw	r26, r22
+ 5bc:	fc 01       	movw	r30, r24
+ 5be:	db 01       	movw	r26, r22
 	//unsigned int tempNeg = 0;
 	unsigned int temp_fraction = 0, temp_Lpol = 0; //tempHLpol = 0;
 	char temp_whole =0 ;
 	/******* Vérifier si la température est négative *******/
     if (tempMes[0] & 0x80) // Si température négative (1000.0000.0000.0000)
- 5c4:	40 81       	ld	r20, Z
- 5c6:	47 fd       	sbrc	r20, 7
- 5c8:	03 c0       	rjmp	.+6      	; 0x5d0 <convertTemp+0x10>
- 5ca:	20 e0       	ldi	r18, 0x00	; 0
- 5cc:	30 e0       	ldi	r19, 0x00	; 0
- 5ce:	03 c0       	rjmp	.+6      	; 0x5d6 <convertTemp+0x16>
+ 5c0:	40 81       	ld	r20, Z
+ 5c2:	47 fd       	sbrc	r20, 7
+ 5c4:	03 c0       	rjmp	.+6      	; 0x5cc <convertTemp+0x10>
+ 5c6:	20 e0       	ldi	r18, 0x00	; 0
+ 5c8:	30 e0       	ldi	r19, 0x00	; 0
+ 5ca:	03 c0       	rjmp	.+6      	; 0x5d2 <convertTemp+0x16>
     {
 		temp_Lpol = 0b10000000; // Bit 8 à 1 pour signaler la température négative
         temp_whole = ~tempMes[0] + 1;                     // Inverser la valeur et incrémenter de 1 (complément à 2
- 5d0:	41 95       	neg	r20
- 5d2:	20 e8       	ldi	r18, 0x80	; 128
- 5d4:	30 e0       	ldi	r19, 0x00	; 0
+ 5cc:	41 95       	neg	r20
+ 5ce:	20 e8       	ldi	r18, 0x80	; 128
+ 5d0:	30 e0       	ldi	r19, 0x00	; 0
 		temp_Lpol = 0b00000000; // Bit 8 à 0 pour signaler la température positive
 	}
 
     /******* Extraire les décimales *******/
     temp_fraction = tempMes[1] & 0xC0;             // Masquage, garder le bit 7 et 6
 	switch (temp_fraction)
- 5d6:	81 81       	ldd	r24, Z+1	; 0x01
- 5d8:	90 e0       	ldi	r25, 0x00	; 0
- 5da:	80 7c       	andi	r24, 0xC0	; 192
- 5dc:	90 70       	andi	r25, 0x00	; 0
- 5de:	80 38       	cpi	r24, 0x80	; 128
- 5e0:	91 05       	cpc	r25, r1
- 5e2:	49 f0       	breq	.+18     	; 0x5f6 <convertTemp+0x36>
- 5e4:	80 3c       	cpi	r24, 0xC0	; 192
- 5e6:	91 05       	cpc	r25, r1
- 5e8:	49 f0       	breq	.+18     	; 0x5fc <convertTemp+0x3c>
- 5ea:	80 34       	cpi	r24, 0x40	; 64
- 5ec:	91 05       	cpc	r25, r1
- 5ee:	41 f4       	brne	.+16     	; 0x600 <convertTemp+0x40>
+ 5d2:	81 81       	ldd	r24, Z+1	; 0x01
+ 5d4:	90 e0       	ldi	r25, 0x00	; 0
+ 5d6:	80 7c       	andi	r24, 0xC0	; 192
+ 5d8:	90 70       	andi	r25, 0x00	; 0
+ 5da:	80 38       	cpi	r24, 0x80	; 128
+ 5dc:	91 05       	cpc	r25, r1
+ 5de:	49 f0       	breq	.+18     	; 0x5f2 <convertTemp+0x36>
+ 5e0:	80 3c       	cpi	r24, 0xC0	; 192
+ 5e2:	91 05       	cpc	r25, r1
+ 5e4:	49 f0       	breq	.+18     	; 0x5f8 <convertTemp+0x3c>
+ 5e6:	80 34       	cpi	r24, 0x40	; 64
+ 5e8:	91 05       	cpc	r25, r1
+ 5ea:	41 f4       	brne	.+16     	; 0x5fc <convertTemp+0x40>
 		case 0b00000000 :
 			temp_Lpol =  temp_Lpol + 0 ;
 			break;
 			
 		case 0b01000000 :
 			temp_Lpol =  temp_Lpol + 25 ;
- 5f0:	27 5e       	subi	r18, 0xE7	; 231
- 5f2:	3f 4f       	sbci	r19, 0xFF	; 255
- 5f4:	05 c0       	rjmp	.+10     	; 0x600 <convertTemp+0x40>
+ 5ec:	27 5e       	subi	r18, 0xE7	; 231
+ 5ee:	3f 4f       	sbci	r19, 0xFF	; 255
+ 5f0:	05 c0       	rjmp	.+10     	; 0x5fc <convertTemp+0x40>
 			break;
 			
 		case 0b10000000 :
 			temp_Lpol = temp_Lpol + 50 ;
- 5f6:	2e 5c       	subi	r18, 0xCE	; 206
- 5f8:	3f 4f       	sbci	r19, 0xFF	; 255
- 5fa:	02 c0       	rjmp	.+4      	; 0x600 <convertTemp+0x40>
+ 5f2:	2e 5c       	subi	r18, 0xCE	; 206
+ 5f4:	3f 4f       	sbci	r19, 0xFF	; 255
+ 5f6:	02 c0       	rjmp	.+4      	; 0x5fc <convertTemp+0x40>
 			break;
 			
 		case 0b11000000 :
 			temp_Lpol =  temp_Lpol + 75 ;
- 5fc:	25 5b       	subi	r18, 0xB5	; 181
- 5fe:	3f 4f       	sbci	r19, 0xFF	; 255
+ 5f8:	25 5b       	subi	r18, 0xB5	; 181
+ 5fa:	3f 4f       	sbci	r19, 0xFF	; 255
 			break;
 	}
 	tempResult[0] = temp_whole;		// Sauver les unités de température
- 600:	4c 93       	st	X, r20
+ 5fc:	4c 93       	st	X, r20
 	tempResult[1] = temp_Lpol;		// Sauver les décimales et le signe (+/-)
- 602:	11 96       	adiw	r26, 0x01	; 1
- 604:	2c 93       	st	X, r18
+ 5fe:	11 96       	adiw	r26, 0x01	; 1
+ 600:	2c 93       	st	X, r18
 }
- 606:	08 95       	ret
+ 602:	08 95       	ret
 
-00000608 <stringTemp>:
+00000604 <stringTemp>:
 
 /*********************************************************************/
 // FUNCTION: stringTemp(char *tempResult, char *tempStr)
 // PURPOSE: Convertir la valeur de T° exploitable en caractères
 void stringTemp(char *tempResult, char *tempStr)
 {
- 608:	dc 01       	movw	r26, r24
- 60a:	fb 01       	movw	r30, r22
+ 604:	dc 01       	movw	r26, r24
+ 606:	fb 01       	movw	r30, r22
 	tempStr[1] = (tempResult[0]/10)+48;	// Garder les décimales
- 60c:	8c 91       	ld	r24, X
- 60e:	6a e0       	ldi	r22, 0x0A	; 10
- 610:	0c d2       	rcall	.+1048   	; 0xa2a <__udivmodqi4>
- 612:	80 5d       	subi	r24, 0xD0	; 208
- 614:	81 83       	std	Z+1, r24	; 0x01
+ 608:	8c 91       	ld	r24, X
+ 60a:	6a e0       	ldi	r22, 0x0A	; 10
+ 60c:	1a d2       	rcall	.+1076   	; 0xa42 <__udivmodqi4>
+ 60e:	80 5d       	subi	r24, 0xD0	; 208
+ 610:	81 83       	std	Z+1, r24	; 0x01
 	tempStr[2] = (tempResult[0]%10)+48;	// Garder les unités
- 616:	8c 91       	ld	r24, X
- 618:	08 d2       	rcall	.+1040   	; 0xa2a <__udivmodqi4>
- 61a:	90 5d       	subi	r25, 0xD0	; 208
- 61c:	92 83       	std	Z+2, r25	; 0x02
+ 612:	8c 91       	ld	r24, X
+ 614:	16 d2       	rcall	.+1068   	; 0xa42 <__udivmodqi4>
+ 616:	90 5d       	subi	r25, 0xD0	; 208
+ 618:	92 83       	std	Z+2, r25	; 0x02
 
 	switch(tempResult[1]& 0b01111111)	// Masquage pour ne garder que les bits de valeur décimale de T°
- 61e:	11 96       	adiw	r26, 0x01	; 1
- 620:	8c 91       	ld	r24, X
- 622:	11 97       	sbiw	r26, 0x01	; 1
- 624:	90 e0       	ldi	r25, 0x00	; 0
- 626:	8f 77       	andi	r24, 0x7F	; 127
- 628:	90 70       	andi	r25, 0x00	; 0
- 62a:	89 31       	cpi	r24, 0x19	; 25
- 62c:	91 05       	cpc	r25, r1
- 62e:	79 f0       	breq	.+30     	; 0x64e <stringTemp+0x46>
- 630:	8a 31       	cpi	r24, 0x1A	; 26
- 632:	91 05       	cpc	r25, r1
- 634:	1c f4       	brge	.+6      	; 0x63c <stringTemp+0x34>
- 636:	89 2b       	or	r24, r25
- 638:	41 f0       	breq	.+16     	; 0x64a <stringTemp+0x42>
- 63a:	13 c0       	rjmp	.+38     	; 0x662 <stringTemp+0x5a>
- 63c:	82 33       	cpi	r24, 0x32	; 50
- 63e:	91 05       	cpc	r25, r1
- 640:	41 f0       	breq	.+16     	; 0x652 <stringTemp+0x4a>
- 642:	8b 34       	cpi	r24, 0x4B	; 75
- 644:	91 05       	cpc	r25, r1
- 646:	69 f4       	brne	.+26     	; 0x662 <stringTemp+0x5a>
- 648:	08 c0       	rjmp	.+16     	; 0x65a <stringTemp+0x52>
+ 61a:	11 96       	adiw	r26, 0x01	; 1
+ 61c:	8c 91       	ld	r24, X
+ 61e:	11 97       	sbiw	r26, 0x01	; 1
+ 620:	90 e0       	ldi	r25, 0x00	; 0
+ 622:	8f 77       	andi	r24, 0x7F	; 127
+ 624:	90 70       	andi	r25, 0x00	; 0
+ 626:	89 31       	cpi	r24, 0x19	; 25
+ 628:	91 05       	cpc	r25, r1
+ 62a:	79 f0       	breq	.+30     	; 0x64a <stringTemp+0x46>
+ 62c:	8a 31       	cpi	r24, 0x1A	; 26
+ 62e:	91 05       	cpc	r25, r1
+ 630:	1c f4       	brge	.+6      	; 0x638 <stringTemp+0x34>
+ 632:	89 2b       	or	r24, r25
+ 634:	41 f0       	breq	.+16     	; 0x646 <stringTemp+0x42>
+ 636:	13 c0       	rjmp	.+38     	; 0x65e <stringTemp+0x5a>
+ 638:	82 33       	cpi	r24, 0x32	; 50
+ 63a:	91 05       	cpc	r25, r1
+ 63c:	41 f0       	breq	.+16     	; 0x64e <stringTemp+0x4a>
+ 63e:	8b 34       	cpi	r24, 0x4B	; 75
+ 640:	91 05       	cpc	r25, r1
+ 642:	69 f4       	brne	.+26     	; 0x65e <stringTemp+0x5a>
+ 644:	08 c0       	rjmp	.+16     	; 0x656 <stringTemp+0x52>
 	{
 		case 0 :
 			tempStr[3] = '0';
- 64a:	80 e3       	ldi	r24, 0x30	; 48
- 64c:	0b c0       	rjmp	.+22     	; 0x664 <stringTemp+0x5c>
+ 646:	80 e3       	ldi	r24, 0x30	; 48
+ 648:	0b c0       	rjmp	.+22     	; 0x660 <stringTemp+0x5c>
 			tempStr[4] = '0';
 			break;
 		case 25 :
 			tempStr[3] = '2';
- 64e:	82 e3       	ldi	r24, 0x32	; 50
- 650:	05 c0       	rjmp	.+10     	; 0x65c <stringTemp+0x54>
+ 64a:	82 e3       	ldi	r24, 0x32	; 50
+ 64c:	05 c0       	rjmp	.+10     	; 0x658 <stringTemp+0x54>
 			tempStr[4] = '5';
 			break;
 		case 50 :
 			tempStr[3] = '5';
- 652:	85 e3       	ldi	r24, 0x35	; 53
- 654:	83 83       	std	Z+3, r24	; 0x03
+ 64e:	85 e3       	ldi	r24, 0x35	; 53
+ 650:	83 83       	std	Z+3, r24	; 0x03
 			tempStr[4] = '0';
- 656:	80 e3       	ldi	r24, 0x30	; 48
- 658:	06 c0       	rjmp	.+12     	; 0x666 <stringTemp+0x5e>
+ 652:	80 e3       	ldi	r24, 0x30	; 48
+ 654:	06 c0       	rjmp	.+12     	; 0x662 <stringTemp+0x5e>
 			break;
 		case 75 :
 			tempStr[3] = '7';
- 65a:	87 e3       	ldi	r24, 0x37	; 55
- 65c:	83 83       	std	Z+3, r24	; 0x03
+ 656:	87 e3       	ldi	r24, 0x37	; 55
+ 658:	83 83       	std	Z+3, r24	; 0x03
 			tempStr[4] = '5';
- 65e:	85 e3       	ldi	r24, 0x35	; 53
- 660:	02 c0       	rjmp	.+4      	; 0x666 <stringTemp+0x5e>
+ 65a:	85 e3       	ldi	r24, 0x35	; 53
+ 65c:	02 c0       	rjmp	.+4      	; 0x662 <stringTemp+0x5e>
 			break;
 		default:
 			tempStr[3] = '%';
- 662:	85 e2       	ldi	r24, 0x25	; 37
- 664:	83 83       	std	Z+3, r24	; 0x03
+ 65e:	85 e2       	ldi	r24, 0x25	; 37
+ 660:	83 83       	std	Z+3, r24	; 0x03
 			tempStr[4] = '%';
- 666:	84 83       	std	Z+4, r24	; 0x04
+ 662:	84 83       	std	Z+4, r24	; 0x04
 	}
 	
 	tempStr[0] = tempResult[1] & 0b10000000; // Masquage pour ne garder que le bit de T° négative
- 668:	11 96       	adiw	r26, 0x01	; 1
- 66a:	8c 91       	ld	r24, X
- 66c:	80 78       	andi	r24, 0x80	; 128
- 66e:	80 83       	st	Z, r24
+ 664:	11 96       	adiw	r26, 0x01	; 1
+ 666:	8c 91       	ld	r24, X
+ 668:	80 78       	andi	r24, 0x80	; 128
+ 66a:	80 83       	st	Z, r24
 	if(tempStr[0] == 0b10000000) // Si température négative, afficher caractère "moins"
- 670:	80 38       	cpi	r24, 0x80	; 128
- 672:	11 f4       	brne	.+4      	; 0x678 <stringTemp+0x70>
+ 66c:	80 38       	cpi	r24, 0x80	; 128
+ 66e:	11 f4       	brne	.+4      	; 0x674 <stringTemp+0x70>
 	{
 		tempStr[0] = NEG_CAR;
- 674:	8d e2       	ldi	r24, 0x2D	; 45
- 676:	01 c0       	rjmp	.+2      	; 0x67a <stringTemp+0x72>
+ 670:	8d e2       	ldi	r24, 0x2D	; 45
+ 672:	01 c0       	rjmp	.+2      	; 0x676 <stringTemp+0x72>
 	}
 	else						// Si température positive, affiche le caractère "espace"
 	{
 		tempStr[0] = SPACE_CAR;
- 678:	80 e2       	ldi	r24, 0x20	; 32
- 67a:	80 83       	st	Z, r24
- 67c:	08 95       	ret
+ 674:	80 e2       	ldi	r24, 0x20	; 32
+ 676:	80 83       	st	Z, r24
+ 678:	08 95       	ret
 
-0000067e <hexaToAscii>:
+0000067a <hexaToAscii>:
 
 /*********************************************************************/
 // FUNCTION: void hexaToAscii(unsigned char n)
 // PURPOSE: Conversion d'une valeur hexa en ASCII et afficher sur terminale
 void hexaToAscii(unsigned char n)
 {
- 67e:	df 93       	push	r29
- 680:	cf 93       	push	r28
- 682:	00 d0       	rcall	.+0      	; 0x684 <hexaToAscii+0x6>
- 684:	0f 92       	push	r0
- 686:	cd b7       	in	r28, 0x3d	; 61
- 688:	de b7       	in	r29, 0x3e	; 62
+ 67a:	df 93       	push	r29
+ 67c:	cf 93       	push	r28
+ 67e:	00 d0       	rcall	.+0      	; 0x680 <hexaToAscii+0x6>
+ 680:	0f 92       	push	r0
+ 682:	cd b7       	in	r28, 0x3d	; 61
+ 684:	de b7       	in	r29, 0x3e	; 62
 	char tmp[3];
 	int i;
 
 	// Convert the given number to an ASCII hexadecimal representation.
 	tmp[2] = '\0';
- 68a:	1b 82       	std	Y+3, r1	; 0x03
+ 686:	1b 82       	std	Y+3, r1	; 0x03
 	for (i = 1; i >= 0; i--)
 	{
 	tmp[i] = HEX_DIGITS[n & 0xF];
- 68c:	98 2f       	mov	r25, r24
- 68e:	9f 70       	andi	r25, 0x0F	; 15
- 690:	af ee       	ldi	r26, 0xEF	; 239
- 692:	b3 e0       	ldi	r27, 0x03	; 3
- 694:	fd 01       	movw	r30, r26
- 696:	e9 0f       	add	r30, r25
- 698:	f1 1d       	adc	r31, r1
- 69a:	90 81       	ld	r25, Z
- 69c:	9a 83       	std	Y+2, r25	; 0x02
- 69e:	82 95       	swap	r24
- 6a0:	8f 70       	andi	r24, 0x0F	; 15
- 6a2:	a8 0f       	add	r26, r24
- 6a4:	b1 1d       	adc	r27, r1
- 6a6:	8c 91       	ld	r24, X
- 6a8:	89 83       	std	Y+1, r24	; 0x01
+ 688:	98 2f       	mov	r25, r24
+ 68a:	9f 70       	andi	r25, 0x0F	; 15
+ 68c:	af ee       	ldi	r26, 0xEF	; 239
+ 68e:	b3 e0       	ldi	r27, 0x03	; 3
+ 690:	fd 01       	movw	r30, r26
+ 692:	e9 0f       	add	r30, r25
+ 694:	f1 1d       	adc	r31, r1
+ 696:	90 81       	ld	r25, Z
+ 698:	9a 83       	std	Y+2, r25	; 0x02
+ 69a:	82 95       	swap	r24
+ 69c:	8f 70       	andi	r24, 0x0F	; 15
+ 69e:	a8 0f       	add	r26, r24
+ 6a0:	b1 1d       	adc	r27, r1
+ 6a2:	8c 91       	ld	r24, X
+ 6a4:	89 83       	std	Y+1, r24	; 0x01
 	n >>= 4;
 	}
 	// Transmit the resulting string with the given USART.
 	USART_TX_String(tmp);
- 6aa:	ce 01       	movw	r24, r28
- 6ac:	01 96       	adiw	r24, 0x01	; 1
- 6ae:	be de       	rcall	.-644    	; 0x42c <USART_TX_String>
+ 6a6:	ce 01       	movw	r24, r28
+ 6a8:	01 96       	adiw	r24, 0x01	; 1
+ 6aa:	be de       	rcall	.-644    	; 0x428 <USART_TX_String>
 }
+ 6ac:	0f 90       	pop	r0
+ 6ae:	0f 90       	pop	r0
  6b0:	0f 90       	pop	r0
- 6b2:	0f 90       	pop	r0
- 6b4:	0f 90       	pop	r0
- 6b6:	cf 91       	pop	r28
- 6b8:	df 91       	pop	r29
- 6ba:	08 95       	ret
+ 6b2:	cf 91       	pop	r28
+ 6b4:	df 91       	pop	r29
+ 6b6:	08 95       	ret
 
-000006bc <hum_cmd>:
+000006b8 <hum_cmd>:
 
 /*********************************************************************/
 // FUNCTION: void hum_cmd(char *listHum)
 // PURPOSE: Conversion valeur brute %H en valeur décimale/ASCII
 void hum_cmd(char *listHum, char command, char dev_access)
 {
- 6bc:	df 92       	push	r13
- 6be:	ef 92       	push	r14
- 6c0:	ff 92       	push	r15
- 6c2:	0f 93       	push	r16
- 6c4:	1f 93       	push	r17
- 6c6:	df 93       	push	r29
- 6c8:	cf 93       	push	r28
- 6ca:	00 d0       	rcall	.+0      	; 0x6cc <hum_cmd+0x10>
- 6cc:	cd b7       	in	r28, 0x3d	; 61
- 6ce:	de b7       	in	r29, 0x3e	; 62
- 6d0:	7c 01       	movw	r14, r24
- 6d2:	d6 2e       	mov	r13, r22
- 6d4:	04 2f       	mov	r16, r20
+ 6b8:	df 92       	push	r13
+ 6ba:	ef 92       	push	r14
+ 6bc:	ff 92       	push	r15
+ 6be:	0f 93       	push	r16
+ 6c0:	1f 93       	push	r17
+ 6c2:	df 93       	push	r29
+ 6c4:	cf 93       	push	r28
+ 6c6:	00 d0       	rcall	.+0      	; 0x6c8 <hum_cmd+0x10>
+ 6c8:	cd b7       	in	r28, 0x3d	; 61
+ 6ca:	de b7       	in	r29, 0x3e	; 62
+ 6cc:	7c 01       	movw	r14, r24
+ 6ce:	d6 2e       	mov	r13, r22
+ 6d0:	04 2f       	mov	r16, r20
 	else
 	{
 		humResult = 0xFF;
 		hum2 = 0xFF;
 	}*/
 	humResult = convertHum(listHum);// Convertir les données brutes en données exploitables
- 6d6:	4d df       	rcall	.-358    	; 0x572 <convertHum>
- 6d8:	18 2f       	mov	r17, r24
+ 6d2:	4d df       	rcall	.-358    	; 0x56e <convertHum>
+ 6d4:	18 2f       	mov	r17, r24
 
 	if(debug_mode) // Afficher msgs si debug mode activé
- 6da:	80 91 04 04 	lds	r24, 0x0404
- 6de:	88 23       	and	r24, r24
- 6e0:	91 f0       	breq	.+36     	; 0x706 <hum_cmd+0x4a>
+ 6d6:	80 91 04 04 	lds	r24, 0x0404
+ 6da:	88 23       	and	r24, r24
+ 6dc:	91 f0       	breq	.+36     	; 0x702 <hum_cmd+0x4a>
 	{
 		stringHum(humResult, humStr);
- 6e2:	81 2f       	mov	r24, r17
- 6e4:	be 01       	movw	r22, r28
- 6e6:	6f 5f       	subi	r22, 0xFF	; 255
- 6e8:	7f 4f       	sbci	r23, 0xFF	; 255
- 6ea:	5f df       	rcall	.-322    	; 0x5aa <stringHum>
+ 6de:	81 2f       	mov	r24, r17
+ 6e0:	be 01       	movw	r22, r28
+ 6e2:	6f 5f       	subi	r22, 0xFF	; 255
+ 6e4:	7f 4f       	sbci	r23, 0xFF	; 255
+ 6e6:	5f df       	rcall	.-322    	; 0x5a6 <stringHum>
 
 		USART_Transmit(PERCENT_CAR);
- 6ec:	85 e2       	ldi	r24, 0x25	; 37
- 6ee:	8f de       	rcall	.-738    	; 0x40e <USART_Transmit>
+ 6e8:	85 e2       	ldi	r24, 0x25	; 37
+ 6ea:	8f de       	rcall	.-738    	; 0x40a <USART_Transmit>
 		USART_Transmit('H');
- 6f0:	88 e4       	ldi	r24, 0x48	; 72
- 6f2:	8d de       	rcall	.-742    	; 0x40e <USART_Transmit>
+ 6ec:	88 e4       	ldi	r24, 0x48	; 72
+ 6ee:	8d de       	rcall	.-742    	; 0x40a <USART_Transmit>
 		USART_TX_String(" Sensor : ");
- 6f4:	80 e0       	ldi	r24, 0x00	; 0
- 6f6:	91 e0       	ldi	r25, 0x01	; 1
- 6f8:	99 de       	rcall	.-718    	; 0x42c <USART_TX_String>
+ 6f0:	80 e0       	ldi	r24, 0x00	; 0
+ 6f2:	91 e0       	ldi	r25, 0x01	; 1
+ 6f4:	99 de       	rcall	.-718    	; 0x428 <USART_TX_String>
 		USART_Transmit(humStr[0]);
- 6fa:	89 81       	ldd	r24, Y+1	; 0x01
- 6fc:	88 de       	rcall	.-752    	; 0x40e <USART_Transmit>
+ 6f6:	89 81       	ldd	r24, Y+1	; 0x01
+ 6f8:	88 de       	rcall	.-752    	; 0x40a <USART_Transmit>
 		USART_Transmit(humStr[1]);	
- 6fe:	8a 81       	ldd	r24, Y+2	; 0x02
- 700:	86 de       	rcall	.-756    	; 0x40e <USART_Transmit>
+ 6fa:	8a 81       	ldd	r24, Y+2	; 0x02
+ 6fc:	86 de       	rcall	.-756    	; 0x40a <USART_Transmit>
 		USART_TX_CRNL();				// Nouvelle ligne, retour chariot
- 702:	9f de       	rcall	.-706    	; 0x442 <USART_TX_CRNL>
- 704:	0c c0       	rjmp	.+24     	; 0x71e <hum_cmd+0x62>
+ 6fe:	9f de       	rcall	.-706    	; 0x43e <USART_TX_CRNL>
+ 700:	10 c0       	rjmp	.+32     	; 0x722 <hum_cmd+0x6a>
 	}
 	else
 	{	
 		if(dev_access)
- 706:	00 23       	and	r16, r16
- 708:	11 f0       	breq	.+4      	; 0x70e <hum_cmd+0x52>
- 70a:	0f ef       	ldi	r16, 0xFF	; 255
- 70c:	1f ef       	ldi	r17, 0xFF	; 255
+ 702:	00 23       	and	r16, r16
+ 704:	11 f0       	breq	.+4      	; 0x70a <hum_cmd+0x52>
+ 706:	0f ef       	ldi	r16, 0xFF	; 255
+ 708:	1f ef       	ldi	r17, 0xFF	; 255
 		}
 		else
 		{
 			hum2 = 0x00;
 		}
 		USART_Transmit(STX);
- 70e:	82 e0       	ldi	r24, 0x02	; 2
- 710:	7e de       	rcall	.-772    	; 0x40e <USART_Transmit>
+ 70a:	82 e0       	ldi	r24, 0x02	; 2
+ 70c:	7e de       	rcall	.-772    	; 0x40a <USART_Transmit>
+		USART_Transmit(3); // Longueur octet données utiles
+ 70e:	83 e0       	ldi	r24, 0x03	; 3
+ 710:	7c de       	rcall	.-776    	; 0x40a <USART_Transmit>
 		USART_Transmit(command);
  712:	8d 2d       	mov	r24, r13
- 714:	7c de       	rcall	.-776    	; 0x40e <USART_Transmit>
+ 714:	7a de       	rcall	.-780    	; 0x40a <USART_Transmit>
 		USART_Transmit(humResult);
  716:	81 2f       	mov	r24, r17
- 718:	7a de       	rcall	.-780    	; 0x40e <USART_Transmit>
+ 718:	78 de       	rcall	.-784    	; 0x40a <USART_Transmit>
 		USART_Transmit(hum2);
  71a:	80 2f       	mov	r24, r16
- 71c:	78 de       	rcall	.-784    	; 0x40e <USART_Transmit>
+ 71c:	76 de       	rcall	.-788    	; 0x40a <USART_Transmit>
+		USART_Transmit(ETX);
+ 71e:	83 e0       	ldi	r24, 0x03	; 3
+ 720:	74 de       	rcall	.-792    	; 0x40a <USART_Transmit>
 	}
 			
 	listHum[0] = 0;					// Reset mém %H mesurée
- 71e:	f7 01       	movw	r30, r14
- 720:	10 82       	st	Z, r1
+ 722:	f7 01       	movw	r30, r14
+ 724:	10 82       	st	Z, r1
 	listHum[1] = 0;
- 722:	11 82       	std	Z+1, r1	; 0x01
+ 726:	11 82       	std	Z+1, r1	; 0x01
 	listHum[2] = 0;		
- 724:	12 82       	std	Z+2, r1	; 0x02
+ 728:	12 82       	std	Z+2, r1	; 0x02
 }
- 726:	0f 90       	pop	r0
- 728:	0f 90       	pop	r0
- 72a:	cf 91       	pop	r28
- 72c:	df 91       	pop	r29
- 72e:	1f 91       	pop	r17
- 730:	0f 91       	pop	r16
- 732:	ff 90       	pop	r15
- 734:	ef 90       	pop	r14
- 736:	df 90       	pop	r13
- 738:	08 95       	ret
+ 72a:	0f 90       	pop	r0
+ 72c:	0f 90       	pop	r0
+ 72e:	cf 91       	pop	r28
+ 730:	df 91       	pop	r29
+ 732:	1f 91       	pop	r17
+ 734:	0f 91       	pop	r16
+ 736:	ff 90       	pop	r15
+ 738:	ef 90       	pop	r14
+ 73a:	df 90       	pop	r13
+ 73c:	08 95       	ret
 
-0000073a <detectSensor_cmd>:
+0000073e <detectSensor_cmd>:
 /*********************************************************************/
 // FUNCTION: void detectSensor_cmd(unsigned char dev_test_access)
 // PURPOSE: Envoie une commande pour afficher la connectivité du
 //			capteurs I2C dont l'adresse est spécifiée
 void detectSensor_cmd(unsigned char dev_test_access)
 {
- 73a:	98 2f       	mov	r25, r24
+ 73e:	98 2f       	mov	r25, r24
 	if(debug_mode) // Afficher msgs si debug mode activé
- 73c:	80 91 04 04 	lds	r24, 0x0404
- 740:	88 23       	and	r24, r24
- 742:	51 f0       	breq	.+20     	; 0x758 <detectSensor_cmd+0x1e>
+ 740:	80 91 04 04 	lds	r24, 0x0404
+ 744:	88 23       	and	r24, r24
+ 746:	51 f0       	breq	.+20     	; 0x75c <detectSensor_cmd+0x1e>
 	{
 		if(dev_test_access)
- 744:	99 23       	and	r25, r25
- 746:	19 f0       	breq	.+6      	; 0x74e <detectSensor_cmd+0x14>
+ 748:	99 23       	and	r25, r25
+ 74a:	19 f0       	breq	.+6      	; 0x752 <detectSensor_cmd+0x14>
 		{
 			USART_TX_String(" Sensor not connected !!! ");	
- 748:	8b e0       	ldi	r24, 0x0B	; 11
- 74a:	91 e0       	ldi	r25, 0x01	; 1
- 74c:	02 c0       	rjmp	.+4      	; 0x752 <detectSensor_cmd+0x18>
+ 74c:	8b e0       	ldi	r24, 0x0B	; 11
+ 74e:	91 e0       	ldi	r25, 0x01	; 1
+ 750:	02 c0       	rjmp	.+4      	; 0x756 <detectSensor_cmd+0x18>
 			USART_TX_CRNL();				// Nouvelle ligne, retour chariot
 		}
 		else
 		{
 			USART_TX_String(" Sensor connected. ");	
- 74e:	86 e2       	ldi	r24, 0x26	; 38
- 750:	91 e0       	ldi	r25, 0x01	; 1
- 752:	6c de       	rcall	.-808    	; 0x42c <USART_TX_String>
+ 752:	86 e2       	ldi	r24, 0x26	; 38
+ 754:	91 e0       	ldi	r25, 0x01	; 1
+ 756:	68 de       	rcall	.-816    	; 0x428 <USART_TX_String>
 			USART_TX_CRNL();				// Nouvelle ligne, retour chariot
- 754:	76 de       	rcall	.-788    	; 0x442 <USART_TX_CRNL>
- 756:	08 95       	ret
+ 758:	72 de       	rcall	.-796    	; 0x43e <USART_TX_CRNL>
+ 75a:	08 95       	ret
 		}
 	}
 	else
 	{
 		if(dev_test_access)
- 758:	99 23       	and	r25, r25
- 75a:	11 f0       	breq	.+4      	; 0x760 <detectSensor_cmd+0x26>
+ 75c:	99 23       	and	r25, r25
+ 75e:	11 f0       	breq	.+4      	; 0x764 <detectSensor_cmd+0x26>
 		{
 			USART_Transmit(0xFF); // Correspond à un problème d'accès
- 75c:	8f ef       	ldi	r24, 0xFF	; 255
- 75e:	01 c0       	rjmp	.+2      	; 0x762 <detectSensor_cmd+0x28>
+ 760:	8f ef       	ldi	r24, 0xFF	; 255
+ 762:	01 c0       	rjmp	.+2      	; 0x766 <detectSensor_cmd+0x28>
 		}
 		else
 		{
 			USART_Transmit(0xFE); // Aucun problème d'accès
- 760:	8e ef       	ldi	r24, 0xFE	; 254
- 762:	55 de       	rcall	.-854    	; 0x40e <USART_Transmit>
- 764:	08 95       	ret
+ 764:	8e ef       	ldi	r24, 0xFE	; 254
+ 766:	51 de       	rcall	.-862    	; 0x40a <USART_Transmit>
+ 768:	08 95       	ret
 
-00000766 <showDetectedSensor>:
+0000076a <showDetectedSensor>:
 }
 /*********************************************************************/
 // FUNCTION: void init_sensors()
 // PURPOSE: Affiche tous les capteurs connecté sur le bus I2C
 void showDetectedSensor(char address)
 {
- 766:	1f 93       	push	r17
- 768:	18 2f       	mov	r17, r24
+ 76a:	1f 93       	push	r17
+ 76c:	18 2f       	mov	r17, r24
 	if(debug_mode) // Afficher msgs si debug mode activé
- 76a:	80 91 04 04 	lds	r24, 0x0404
- 76e:	88 23       	and	r24, r24
- 770:	39 f0       	breq	.+14     	; 0x780 <showDetectedSensor+0x1a>
+ 76e:	80 91 04 04 	lds	r24, 0x0404
+ 772:	88 23       	and	r24, r24
+ 774:	39 f0       	breq	.+14     	; 0x784 <showDetectedSensor+0x1a>
 	{
 		USART_TX_String(" Sensor found at address ");	
- 772:	8a e3       	ldi	r24, 0x3A	; 58
- 774:	91 e0       	ldi	r25, 0x01	; 1
- 776:	5a de       	rcall	.-844    	; 0x42c <USART_TX_String>
+ 776:	8a e3       	ldi	r24, 0x3A	; 58
+ 778:	91 e0       	ldi	r25, 0x01	; 1
+ 77a:	56 de       	rcall	.-852    	; 0x428 <USART_TX_String>
 		hexaToAscii(address);
- 778:	81 2f       	mov	r24, r17
- 77a:	81 df       	rcall	.-254    	; 0x67e <hexaToAscii>
+ 77c:	81 2f       	mov	r24, r17
+ 77e:	7d df       	rcall	.-262    	; 0x67a <hexaToAscii>
 		USART_TX_CRNL();				// Nouvelle ligne, retour chariot
- 77c:	62 de       	rcall	.-828    	; 0x442 <USART_TX_CRNL>
- 77e:	02 c0       	rjmp	.+4      	; 0x784 <showDetectedSensor+0x1e>
+ 780:	5e de       	rcall	.-836    	; 0x43e <USART_TX_CRNL>
+ 782:	08 c0       	rjmp	.+16     	; 0x794 <showDetectedSensor+0x2a>
 	}
 	else
 	{
-		USART_Transmit(address); // Renvoie l'adresse du capteur détecté
- 780:	81 2f       	mov	r24, r17
- 782:	45 de       	rcall	.-886    	; 0x40e <USART_Transmit>
+		USART_Transmit(STX);
+ 784:	82 e0       	ldi	r24, 0x02	; 2
+ 786:	41 de       	rcall	.-894    	; 0x40a <USART_Transmit>
+		USART_Transmit(1); // Longueur octet données utiles
+ 788:	81 e0       	ldi	r24, 0x01	; 1
+ 78a:	3f de       	rcall	.-898    	; 0x40a <USART_Transmit>
+		USART_Transmit(address); // Renvoie l'adresse du capteur détecté				
+ 78c:	81 2f       	mov	r24, r17
+ 78e:	3d de       	rcall	.-902    	; 0x40a <USART_Transmit>
+		USART_Transmit(ETX);
+ 790:	83 e0       	ldi	r24, 0x03	; 3
+ 792:	3b de       	rcall	.-906    	; 0x40a <USART_Transmit>
 	}
 }
- 784:	1f 91       	pop	r17
- 786:	08 95       	ret
+ 794:	1f 91       	pop	r17
+ 796:	08 95       	ret
 
-00000788 <temp_cmd>:
+00000798 <temp_cmd>:
 
 /*********************************************************************/
 // FUNCTION: void temp_cmd(unsigned char dev_num, char *listTemp)
 // PURPOSE: Conversion valeur brute T° en valeur décimale/ASCII
 void temp_cmd(unsigned char dev_num, char *listTemp, char command, char dev_access)
 {
- 788:	bf 92       	push	r11
- 78a:	cf 92       	push	r12
- 78c:	df 92       	push	r13
- 78e:	ef 92       	push	r14
- 790:	ff 92       	push	r15
- 792:	0f 93       	push	r16
- 794:	1f 93       	push	r17
- 796:	df 93       	push	r29
- 798:	cf 93       	push	r28
- 79a:	cd b7       	in	r28, 0x3d	; 61
- 79c:	de b7       	in	r29, 0x3e	; 62
- 79e:	27 97       	sbiw	r28, 0x07	; 7
- 7a0:	0f b6       	in	r0, 0x3f	; 63
- 7a2:	f8 94       	cli
- 7a4:	de bf       	out	0x3e, r29	; 62
- 7a6:	0f be       	out	0x3f, r0	; 63
- 7a8:	cd bf       	out	0x3d, r28	; 61
- 7aa:	b8 2e       	mov	r11, r24
- 7ac:	7b 01       	movw	r14, r22
- 7ae:	c4 2e       	mov	r12, r20
- 7b0:	d2 2e       	mov	r13, r18
+ 798:	bf 92       	push	r11
+ 79a:	cf 92       	push	r12
+ 79c:	df 92       	push	r13
+ 79e:	ef 92       	push	r14
+ 7a0:	ff 92       	push	r15
+ 7a2:	0f 93       	push	r16
+ 7a4:	1f 93       	push	r17
+ 7a6:	df 93       	push	r29
+ 7a8:	cf 93       	push	r28
+ 7aa:	cd b7       	in	r28, 0x3d	; 61
+ 7ac:	de b7       	in	r29, 0x3e	; 62
+ 7ae:	27 97       	sbiw	r28, 0x07	; 7
+ 7b0:	0f b6       	in	r0, 0x3f	; 63
+ 7b2:	f8 94       	cli
+ 7b4:	de bf       	out	0x3e, r29	; 62
+ 7b6:	0f be       	out	0x3f, r0	; 63
+ 7b8:	cd bf       	out	0x3d, r28	; 61
+ 7ba:	b8 2e       	mov	r11, r24
+ 7bc:	7b 01       	movw	r14, r22
+ 7be:	c4 2e       	mov	r12, r20
+ 7c0:	d2 2e       	mov	r13, r18
 	char tempResult[2], tempStr[5];
 
 	convertTemp(listTemp, tempResult); // Convertir les données brutes en données exploitables
- 7b2:	cb 01       	movw	r24, r22
- 7b4:	8e 01       	movw	r16, r28
- 7b6:	0f 5f       	subi	r16, 0xFF	; 255
- 7b8:	1f 4f       	sbci	r17, 0xFF	; 255
- 7ba:	b8 01       	movw	r22, r16
- 7bc:	01 df       	rcall	.-510    	; 0x5c0 <convertTemp>
+ 7c2:	cb 01       	movw	r24, r22
+ 7c4:	8e 01       	movw	r16, r28
+ 7c6:	0f 5f       	subi	r16, 0xFF	; 255
+ 7c8:	1f 4f       	sbci	r17, 0xFF	; 255
+ 7ca:	b8 01       	movw	r22, r16
+ 7cc:	f7 de       	rcall	.-530    	; 0x5bc <convertTemp>
 
 	if(debug_mode) // Afficher msgs si debug mode activé
- 7be:	80 91 04 04 	lds	r24, 0x0404
- 7c2:	88 23       	and	r24, r24
- 7c4:	01 f1       	breq	.+64     	; 0x806 <temp_cmd+0x7e>
+ 7ce:	80 91 04 04 	lds	r24, 0x0404
+ 7d2:	88 23       	and	r24, r24
+ 7d4:	01 f1       	breq	.+64     	; 0x816 <temp_cmd+0x7e>
 	{
 			stringTemp(tempResult, tempStr); // Convertir la T° sous forme d'entiers en caractères
- 7c6:	c8 01       	movw	r24, r16
- 7c8:	be 01       	movw	r22, r28
- 7ca:	6d 5f       	subi	r22, 0xFD	; 253
- 7cc:	7f 4f       	sbci	r23, 0xFF	; 255
- 7ce:	1c df       	rcall	.-456    	; 0x608 <stringTemp>
+ 7d6:	c8 01       	movw	r24, r16
+ 7d8:	be 01       	movw	r22, r28
+ 7da:	6d 5f       	subi	r22, 0xFD	; 253
+ 7dc:	7f 4f       	sbci	r23, 0xFF	; 255
+ 7de:	12 df       	rcall	.-476    	; 0x604 <stringTemp>
 
 		USART_Transmit('T');
- 7d0:	84 e5       	ldi	r24, 0x54	; 84
- 7d2:	1d de       	rcall	.-966    	; 0x40e <USART_Transmit>
+ 7e0:	84 e5       	ldi	r24, 0x54	; 84
+ 7e2:	13 de       	rcall	.-986    	; 0x40a <USART_Transmit>
 		USART_Transmit(DEG_CAR);
- 7d4:	87 ea       	ldi	r24, 0xA7	; 167
- 7d6:	1b de       	rcall	.-970    	; 0x40e <USART_Transmit>
+ 7e4:	87 ea       	ldi	r24, 0xA7	; 167
+ 7e6:	11 de       	rcall	.-990    	; 0x40a <USART_Transmit>
 		USART_TX_String("C Sensor ");
- 7d8:	84 e5       	ldi	r24, 0x54	; 84
- 7da:	91 e0       	ldi	r25, 0x01	; 1
- 7dc:	27 de       	rcall	.-946    	; 0x42c <USART_TX_String>
+ 7e8:	84 e5       	ldi	r24, 0x54	; 84
+ 7ea:	91 e0       	ldi	r25, 0x01	; 1
+ 7ec:	1d de       	rcall	.-966    	; 0x428 <USART_TX_String>
 		USART_Transmit(dev_num+48);
- 7de:	8b 2d       	mov	r24, r11
- 7e0:	80 5d       	subi	r24, 0xD0	; 208
- 7e2:	15 de       	rcall	.-982    	; 0x40e <USART_Transmit>
+ 7ee:	8b 2d       	mov	r24, r11
+ 7f0:	80 5d       	subi	r24, 0xD0	; 208
+ 7f2:	0b de       	rcall	.-1002   	; 0x40a <USART_Transmit>
 		USART_TX_String(" : ");
- 7e4:	8e e5       	ldi	r24, 0x5E	; 94
- 7e6:	91 e0       	ldi	r25, 0x01	; 1
- 7e8:	21 de       	rcall	.-958    	; 0x42c <USART_TX_String>
+ 7f4:	8e e5       	ldi	r24, 0x5E	; 94
+ 7f6:	91 e0       	ldi	r25, 0x01	; 1
+ 7f8:	17 de       	rcall	.-978    	; 0x428 <USART_TX_String>
 		USART_Transmit(tempStr[0]);
- 7ea:	8b 81       	ldd	r24, Y+3	; 0x03
- 7ec:	10 de       	rcall	.-992    	; 0x40e <USART_Transmit>
+ 7fa:	8b 81       	ldd	r24, Y+3	; 0x03
+ 7fc:	06 de       	rcall	.-1012   	; 0x40a <USART_Transmit>
 		USART_Transmit(tempStr[1]);	
- 7ee:	8c 81       	ldd	r24, Y+4	; 0x04
- 7f0:	0e de       	rcall	.-996    	; 0x40e <USART_Transmit>
+ 7fe:	8c 81       	ldd	r24, Y+4	; 0x04
+ 800:	04 de       	rcall	.-1016   	; 0x40a <USART_Transmit>
 		USART_Transmit(tempStr[2]);	
- 7f2:	8d 81       	ldd	r24, Y+5	; 0x05
- 7f4:	0c de       	rcall	.-1000   	; 0x40e <USART_Transmit>
+ 802:	8d 81       	ldd	r24, Y+5	; 0x05
+ 804:	02 de       	rcall	.-1020   	; 0x40a <USART_Transmit>
 		USART_Transmit(DOT_CAR);
- 7f6:	8e e2       	ldi	r24, 0x2E	; 46
- 7f8:	0a de       	rcall	.-1004   	; 0x40e <USART_Transmit>
+ 806:	8e e2       	ldi	r24, 0x2E	; 46
+ 808:	00 de       	rcall	.-1024   	; 0x40a <USART_Transmit>
 		USART_Transmit(tempStr[3]);	
- 7fa:	8e 81       	ldd	r24, Y+6	; 0x06
- 7fc:	08 de       	rcall	.-1008   	; 0x40e <USART_Transmit>
+ 80a:	8e 81       	ldd	r24, Y+6	; 0x06
+ 80c:	fe dd       	rcall	.-1028   	; 0x40a <USART_Transmit>
 		USART_Transmit(tempStr[4]);
- 7fe:	8f 81       	ldd	r24, Y+7	; 0x07
- 800:	06 de       	rcall	.-1012   	; 0x40e <USART_Transmit>
+ 80e:	8f 81       	ldd	r24, Y+7	; 0x07
+ 810:	fc dd       	rcall	.-1032   	; 0x40a <USART_Transmit>
 		USART_TX_CRNL();				// Nouvelle ligne, retour chariot
- 802:	1f de       	rcall	.-962    	; 0x442 <USART_TX_CRNL>
- 804:	0f c0       	rjmp	.+30     	; 0x824 <temp_cmd+0x9c>
+ 812:	15 de       	rcall	.-982    	; 0x43e <USART_TX_CRNL>
+ 814:	13 c0       	rjmp	.+38     	; 0x83c <temp_cmd+0xa4>
 	}
 	else
 	{	
 		if(dev_access)
- 806:	dd 20       	and	r13, r13
- 808:	21 f0       	breq	.+8      	; 0x812 <temp_cmd+0x8a>
+ 816:	dd 20       	and	r13, r13
+ 818:	21 f0       	breq	.+8      	; 0x822 <temp_cmd+0x8a>
 		{
 			tempResult[0] = 0xFF;
- 80a:	8f ef       	ldi	r24, 0xFF	; 255
- 80c:	89 83       	std	Y+1, r24	; 0x01
+ 81a:	8f ef       	ldi	r24, 0xFF	; 255
+ 81c:	89 83       	std	Y+1, r24	; 0x01
 			tempResult[1] = 0xFF;
- 80e:	8a 83       	std	Y+2, r24	; 0x02
- 810:	01 c0       	rjmp	.+2      	; 0x814 <temp_cmd+0x8c>
+ 81e:	8a 83       	std	Y+2, r24	; 0x02
+ 820:	01 c0       	rjmp	.+2      	; 0x824 <temp_cmd+0x8c>
 		}
 		else
 		{
 			asm("nop");
- 812:	00 00       	nop
+ 822:	00 00       	nop
 		}
 		USART_Transmit(STX);
- 814:	82 e0       	ldi	r24, 0x02	; 2
- 816:	fb dd       	rcall	.-1034   	; 0x40e <USART_Transmit>
+ 824:	82 e0       	ldi	r24, 0x02	; 2
+ 826:	f1 dd       	rcall	.-1054   	; 0x40a <USART_Transmit>
+		USART_Transmit(3); // Longueur octet données utiles
+ 828:	83 e0       	ldi	r24, 0x03	; 3
+ 82a:	ef dd       	rcall	.-1058   	; 0x40a <USART_Transmit>
 		USART_Transmit(command);
- 818:	8c 2d       	mov	r24, r12
- 81a:	f9 dd       	rcall	.-1038   	; 0x40e <USART_Transmit>
+ 82c:	8c 2d       	mov	r24, r12
+ 82e:	ed dd       	rcall	.-1062   	; 0x40a <USART_Transmit>
 		USART_Transmit(tempResult[0]);
- 81c:	89 81       	ldd	r24, Y+1	; 0x01
- 81e:	f7 dd       	rcall	.-1042   	; 0x40e <USART_Transmit>
+ 830:	89 81       	ldd	r24, Y+1	; 0x01
+ 832:	eb dd       	rcall	.-1066   	; 0x40a <USART_Transmit>
 		USART_Transmit(tempResult[1]);
- 820:	8a 81       	ldd	r24, Y+2	; 0x02
- 822:	f5 dd       	rcall	.-1046   	; 0x40e <USART_Transmit>
+ 834:	8a 81       	ldd	r24, Y+2	; 0x02
+ 836:	e9 dd       	rcall	.-1070   	; 0x40a <USART_Transmit>
+		USART_Transmit(ETX);
+ 838:	83 e0       	ldi	r24, 0x03	; 3
+ 83a:	e7 dd       	rcall	.-1074   	; 0x40a <USART_Transmit>
 	}
 
 	listTemp[0] = 0;				// Reset mém tampon T° mesurée
- 824:	f7 01       	movw	r30, r14
- 826:	10 82       	st	Z, r1
+ 83c:	f7 01       	movw	r30, r14
+ 83e:	10 82       	st	Z, r1
 	listTemp[1] = 0;
- 828:	11 82       	std	Z+1, r1	; 0x01
+ 840:	11 82       	std	Z+1, r1	; 0x01
 }
- 82a:	27 96       	adiw	r28, 0x07	; 7
- 82c:	0f b6       	in	r0, 0x3f	; 63
- 82e:	f8 94       	cli
- 830:	de bf       	out	0x3e, r29	; 62
- 832:	0f be       	out	0x3f, r0	; 63
- 834:	cd bf       	out	0x3d, r28	; 61
- 836:	cf 91       	pop	r28
- 838:	df 91       	pop	r29
- 83a:	1f 91       	pop	r17
- 83c:	0f 91       	pop	r16
- 83e:	ff 90       	pop	r15
- 840:	ef 90       	pop	r14
- 842:	df 90       	pop	r13
- 844:	cf 90       	pop	r12
- 846:	bf 90       	pop	r11
- 848:	08 95       	ret
+ 842:	27 96       	adiw	r28, 0x07	; 7
+ 844:	0f b6       	in	r0, 0x3f	; 63
+ 846:	f8 94       	cli
+ 848:	de bf       	out	0x3e, r29	; 62
+ 84a:	0f be       	out	0x3f, r0	; 63
+ 84c:	cd bf       	out	0x3d, r28	; 61
+ 84e:	cf 91       	pop	r28
+ 850:	df 91       	pop	r29
+ 852:	1f 91       	pop	r17
+ 854:	0f 91       	pop	r16
+ 856:	ff 90       	pop	r15
+ 858:	ef 90       	pop	r14
+ 85a:	df 90       	pop	r13
+ 85c:	cf 90       	pop	r12
+ 85e:	bf 90       	pop	r11
+ 860:	08 95       	ret
 
-0000084a <unknown_cmd>:
+00000862 <unknown_cmd>:
 /*********************************************************************/
 // FUNCTION: void unknown_cmd()
 // PURPOSE: Affiche/envoie un message/code d'erreur si commande erronée
 void unknown_cmd()
 {
 	if(debug_mode) // Afficher msgs si debug mode activé
- 84a:	80 91 04 04 	lds	r24, 0x0404
- 84e:	88 23       	and	r24, r24
- 850:	21 f0       	breq	.+8      	; 0x85a <unknown_cmd+0x10>
+ 862:	80 91 04 04 	lds	r24, 0x0404
+ 866:	88 23       	and	r24, r24
+ 868:	21 f0       	breq	.+8      	; 0x872 <unknown_cmd+0x10>
 	{
 		// Msg afficher si commade inconnue
 		USART_TX_Msg(" Unknown command ! ");
- 852:	82 e6       	ldi	r24, 0x62	; 98
- 854:	91 e0       	ldi	r25, 0x01	; 1
- 856:	04 de       	rcall	.-1016   	; 0x460 <USART_TX_Msg>
- 858:	08 95       	ret
+ 86a:	82 e6       	ldi	r24, 0x62	; 98
+ 86c:	91 e0       	ldi	r25, 0x01	; 1
+ 86e:	f6 dd       	rcall	.-1044   	; 0x45c <USART_TX_Msg>
+ 870:	08 95       	ret
 	}	
 	else
 	{	
 		USART_Transmit(0x00); // Code retourné si commande inconnue
- 85a:	80 e0       	ldi	r24, 0x00	; 0
- 85c:	d8 dd       	rcall	.-1104   	; 0x40e <USART_Transmit>
- 85e:	08 95       	ret
+ 872:	80 e0       	ldi	r24, 0x00	; 0
+ 874:	ca dd       	rcall	.-1132   	; 0x40a <USART_Transmit>
+ 876:	08 95       	ret
 
-00000860 <welcomeMsg>:
+00000878 <welcomeMsg>:
 /*********************************************************************/
 // FUNCTION: void welcomeMsg()
 // PURPOSE: Affiche un message de bienvenue sur le terminale
 void welcomeMsg()
 {
 	if(debug_mode) // Afficher msgs si debug mode activé
- 860:	80 91 04 04 	lds	r24, 0x0404
- 864:	88 23       	and	r24, r24
- 866:	41 f0       	breq	.+16     	; 0x878 <welcomeMsg+0x18>
+ 878:	80 91 04 04 	lds	r24, 0x0404
+ 87c:	88 23       	and	r24, r24
+ 87e:	41 f0       	breq	.+16     	; 0x890 <welcomeMsg+0x18>
 	{
 		USART_TX_Msg(MSG_WELCOME);
- 868:	86 e7       	ldi	r24, 0x76	; 118
- 86a:	91 e0       	ldi	r25, 0x01	; 1
- 86c:	f9 dd       	rcall	.-1038   	; 0x460 <USART_TX_Msg>
+ 880:	86 e7       	ldi	r24, 0x76	; 118
+ 882:	91 e0       	ldi	r25, 0x01	; 1
+ 884:	eb dd       	rcall	.-1066   	; 0x45c <USART_TX_Msg>
 		USART_TX_Msg(MSG_YEAR);
- 86e:	87 ea       	ldi	r24, 0xA7	; 167
- 870:	91 e0       	ldi	r25, 0x01	; 1
- 872:	f6 dd       	rcall	.-1044   	; 0x460 <USART_TX_Msg>
+ 886:	87 ea       	ldi	r24, 0xA7	; 167
+ 888:	91 e0       	ldi	r25, 0x01	; 1
+ 88a:	e8 dd       	rcall	.-1072   	; 0x45c <USART_TX_Msg>
 		USART_TX_CRNL();				// Nouvelle ligne, retour chariot
- 874:	e6 dd       	rcall	.-1076   	; 0x442 <USART_TX_CRNL>
- 876:	08 95       	ret
+ 88c:	d8 dd       	rcall	.-1104   	; 0x43e <USART_TX_CRNL>
+ 88e:	08 95       	ret
 	}
 	else
 	asm("nop"); 	// Ne rien faire
- 878:	00 00       	nop
- 87a:	08 95       	ret
+ 890:	00 00       	nop
+ 892:	08 95       	ret
 
-0000087c <testDevice>:
+00000894 <testDevice>:
 
 /*********************************************************************/
 // FUNCTION: char testDevice(unsigned char addr_mode)
 // PURPOSE: Teste la connectivité d'un composant sur le bus I2C
 unsigned char testDevice(unsigned char addr_mode)
 {
- 87c:	1f 93       	push	r17
+ 894:	1f 93       	push	r17
 	unsigned char ret;
 
     ret = i2c_start(addr_mode+I2C_WRITE);       // Start avec adresse capteur + write bit
- 87e:	fc db       	rcall	.-2056   	; 0x78 <i2c_start>
- 880:	18 2f       	mov	r17, r24
+ 896:	f0 db       	rcall	.-2080   	; 0x78 <i2c_start>
+ 898:	18 2f       	mov	r17, r24
 	/* Si le capteur n'est pas présent sur le bus I2C */
 	i2c_stop();		// Fin de communication sur le bus I2C
- 882:	4a dc       	rcall	.-1900   	; 0x118 <i2c_stop>
+ 89a:	3e dc       	rcall	.-1924   	; 0x118 <i2c_stop>
  
 	return ret;
 }
- 884:	81 2f       	mov	r24, r17
- 886:	1f 91       	pop	r17
- 888:	08 95       	ret
+ 89c:	81 2f       	mov	r24, r17
+ 89e:	1f 91       	pop	r17
+ 8a0:	08 95       	ret
 
-0000088a <detectAllSensors_cmd>:
+000008a2 <detectAllSensors_cmd>:
 /*********************************************************************/
 // FUNCTION: void detectAllSensors_cmd()
 // PURPOSE: Envoie une commande pour détecter et afficher la connectivité
 //			 de tous les capteurs connectés sur le bus I2C
 void detectAllSensors_cmd()
 {
- 88a:	1f 93       	push	r17
+ 8a2:	1f 93       	push	r17
 	unsigned char dev_test_access;
 	char add;
 	if (debug_mode) USART_TX_Msg(" --- Beginning of sensor detection --- ");
- 88c:	80 91 04 04 	lds	r24, 0x0404
- 890:	88 23       	and	r24, r24
- 892:	19 f0       	breq	.+6      	; 0x89a <detectAllSensors_cmd+0x10>
- 894:	89 ed       	ldi	r24, 0xD9	; 217
- 896:	91 e0       	ldi	r25, 0x01	; 1
- 898:	e3 dd       	rcall	.-1082   	; 0x460 <USART_TX_Msg>
- 89a:	10 e0       	ldi	r17, 0x00	; 0
+ 8a4:	80 91 04 04 	lds	r24, 0x0404
+ 8a8:	88 23       	and	r24, r24
+ 8aa:	19 f0       	breq	.+6      	; 0x8b2 <detectAllSensors_cmd+0x10>
+ 8ac:	89 ed       	ldi	r24, 0xD9	; 217
+ 8ae:	91 e0       	ldi	r25, 0x01	; 1
+ 8b0:	d5 dd       	rcall	.-1110   	; 0x45c <USART_TX_Msg>
+ 8b2:	10 e0       	ldi	r17, 0x00	; 0
 	for (add=ADD_MIN; add<ADD_MAX; add+=2)
 	{		
 		dev_test_access = testDevice(add);
- 89c:	81 2f       	mov	r24, r17
- 89e:	ee df       	rcall	.-36     	; 0x87c <testDevice>
+ 8b4:	81 2f       	mov	r24, r17
+ 8b6:	ee df       	rcall	.-36     	; 0x894 <testDevice>
 		if(!dev_test_access)
- 8a0:	88 23       	and	r24, r24
- 8a2:	11 f4       	brne	.+4      	; 0x8a8 <detectAllSensors_cmd+0x1e>
+ 8b8:	88 23       	and	r24, r24
+ 8ba:	11 f4       	brne	.+4      	; 0x8c0 <detectAllSensors_cmd+0x1e>
 		{
 			showDetectedSensor(add);
- 8a4:	81 2f       	mov	r24, r17
- 8a6:	5f df       	rcall	.-322    	; 0x766 <showDetectedSensor>
+ 8bc:	81 2f       	mov	r24, r17
+ 8be:	55 df       	rcall	.-342    	; 0x76a <showDetectedSensor>
 void detectAllSensors_cmd()
 {
 	unsigned char dev_test_access;
 	char add;
 	if (debug_mode) USART_TX_Msg(" --- Beginning of sensor detection --- ");
 	for (add=ADD_MIN; add<ADD_MAX; add+=2)
- 8a8:	1e 5f       	subi	r17, 0xFE	; 254
- 8aa:	1e 3f       	cpi	r17, 0xFE	; 254
- 8ac:	b9 f7       	brne	.-18     	; 0x89c <detectAllSensors_cmd+0x12>
+ 8c0:	1e 5f       	subi	r17, 0xFE	; 254
+ 8c2:	1e 3f       	cpi	r17, 0xFE	; 254
+ 8c4:	b9 f7       	brne	.-18     	; 0x8b4 <detectAllSensors_cmd+0x12>
 		if(!dev_test_access)
 		{
 			showDetectedSensor(add);
 		}
 	}
 	if (debug_mode) USART_TX_Msg(" --- End of sensor detection --- ");
- 8ae:	80 91 04 04 	lds	r24, 0x0404
- 8b2:	88 23       	and	r24, r24
- 8b4:	19 f0       	breq	.+6      	; 0x8bc <detectAllSensors_cmd+0x32>
- 8b6:	81 e0       	ldi	r24, 0x01	; 1
- 8b8:	92 e0       	ldi	r25, 0x02	; 2
- 8ba:	d2 dd       	rcall	.-1116   	; 0x460 <USART_TX_Msg>
+ 8c6:	80 91 04 04 	lds	r24, 0x0404
+ 8ca:	88 23       	and	r24, r24
+ 8cc:	19 f0       	breq	.+6      	; 0x8d4 <detectAllSensors_cmd+0x32>
+ 8ce:	81 e0       	ldi	r24, 0x01	; 1
+ 8d0:	92 e0       	ldi	r25, 0x02	; 2
+ 8d2:	c4 dd       	rcall	.-1144   	; 0x45c <USART_TX_Msg>
 }
- 8bc:	1f 91       	pop	r17
- 8be:	08 95       	ret
+ 8d4:	1f 91       	pop	r17
+ 8d6:	08 95       	ret
 
-000008c0 <init_sensors>:
+000008d8 <init_sensors>:
 void init_sensors()
 {
 	unsigned char dev_test_access;
 
 	/***** Capteur T° n°1 *****/
 	dev_test_access = initDS7505(ADD1_DS7505);	// Initialiser le capteur de T° n°1
- 8c0:	80 e9       	ldi	r24, 0x90	; 144
- 8c2:	dd dd       	rcall	.-1094   	; 0x47e <initDS7505>
- 8c4:	98 2f       	mov	r25, r24
+ 8d8:	80 e9       	ldi	r24, 0x90	; 144
+ 8da:	cf dd       	rcall	.-1122   	; 0x47a <initDS7505>
+ 8dc:	98 2f       	mov	r25, r24
 	if(debug_mode) // Afficher msgs si debug mode activé
- 8c6:	80 91 04 04 	lds	r24, 0x0404
- 8ca:	88 23       	and	r24, r24
- 8cc:	41 f0       	breq	.+16     	; 0x8de <init_sensors+0x1e>
+ 8de:	80 91 04 04 	lds	r24, 0x0404
+ 8e2:	88 23       	and	r24, r24
+ 8e4:	41 f0       	breq	.+16     	; 0x8f6 <init_sensors+0x1e>
 	{
 		if(dev_test_access)
- 8ce:	99 23       	and	r25, r25
- 8d0:	19 f0       	breq	.+6      	; 0x8d8 <init_sensors+0x18>
+ 8e6:	99 23       	and	r25, r25
+ 8e8:	19 f0       	breq	.+6      	; 0x8f0 <init_sensors+0x18>
 		{
 			USART_TX_Msg("DS7505 n1"ERROR_MSG);
- 8d2:	83 e2       	ldi	r24, 0x23	; 35
- 8d4:	92 e0       	ldi	r25, 0x02	; 2
- 8d6:	02 c0       	rjmp	.+4      	; 0x8dc <init_sensors+0x1c>
+ 8ea:	83 e2       	ldi	r24, 0x23	; 35
+ 8ec:	92 e0       	ldi	r25, 0x02	; 2
+ 8ee:	02 c0       	rjmp	.+4      	; 0x8f4 <init_sensors+0x1c>
 		}
 		else
 		{
 			USART_TX_Msg("DS7505 n1"CONN_MSG);
- 8d8:	82 e4       	ldi	r24, 0x42	; 66
- 8da:	92 e0       	ldi	r25, 0x02	; 2
- 8dc:	c1 dd       	rcall	.-1150   	; 0x460 <USART_TX_Msg>
+ 8f0:	82 e4       	ldi	r24, 0x42	; 66
+ 8f2:	92 e0       	ldi	r25, 0x02	; 2
+ 8f4:	b3 dd       	rcall	.-1178   	; 0x45c <USART_TX_Msg>
 		}
 	}
 	/***** Capteur T° n°2 *****/
 	dev_test_access = initDS7505(ADD2_DS7505);	// Initialiser le capteur de T° n°2
- 8de:	82 e9       	ldi	r24, 0x92	; 146
- 8e0:	ce dd       	rcall	.-1124   	; 0x47e <initDS7505>
- 8e2:	98 2f       	mov	r25, r24
+ 8f6:	82 e9       	ldi	r24, 0x92	; 146
+ 8f8:	c0 dd       	rcall	.-1152   	; 0x47a <initDS7505>
+ 8fa:	98 2f       	mov	r25, r24
 	if(debug_mode) // Afficher msgs si debug mode activé
- 8e4:	80 91 04 04 	lds	r24, 0x0404
- 8e8:	88 23       	and	r24, r24
- 8ea:	41 f0       	breq	.+16     	; 0x8fc <init_sensors+0x3c>
+ 8fc:	80 91 04 04 	lds	r24, 0x0404
+ 900:	88 23       	and	r24, r24
+ 902:	41 f0       	breq	.+16     	; 0x914 <init_sensors+0x3c>
 	{
 		if(dev_test_access)
- 8ec:	99 23       	and	r25, r25
- 8ee:	19 f0       	breq	.+6      	; 0x8f6 <init_sensors+0x36>
+ 904:	99 23       	and	r25, r25
+ 906:	19 f0       	breq	.+6      	; 0x90e <init_sensors+0x36>
 		{
 			USART_TX_Msg("DS7505 n2"ERROR_MSG);
- 8f0:	87 e5       	ldi	r24, 0x57	; 87
- 8f2:	92 e0       	ldi	r25, 0x02	; 2
- 8f4:	02 c0       	rjmp	.+4      	; 0x8fa <init_sensors+0x3a>
+ 908:	87 e5       	ldi	r24, 0x57	; 87
+ 90a:	92 e0       	ldi	r25, 0x02	; 2
+ 90c:	02 c0       	rjmp	.+4      	; 0x912 <init_sensors+0x3a>
 		}
 		else
 		{
 			USART_TX_Msg("DS7505 n2"CONN_MSG);
- 8f6:	86 e7       	ldi	r24, 0x76	; 118
- 8f8:	92 e0       	ldi	r25, 0x02	; 2
- 8fa:	b2 dd       	rcall	.-1180   	; 0x460 <USART_TX_Msg>
+ 90e:	86 e7       	ldi	r24, 0x76	; 118
+ 910:	92 e0       	ldi	r25, 0x02	; 2
+ 912:	a4 dd       	rcall	.-1208   	; 0x45c <USART_TX_Msg>
 		}
 	}
 	/***** Capteur T° n°3 *****/
 	dev_test_access = initDS7505(ADD3_DS7505);	// Initialiser le capteur de T° n°3
- 8fc:	84 e9       	ldi	r24, 0x94	; 148
- 8fe:	bf dd       	rcall	.-1154   	; 0x47e <initDS7505>
- 900:	98 2f       	mov	r25, r24
+ 914:	84 e9       	ldi	r24, 0x94	; 148
+ 916:	b1 dd       	rcall	.-1182   	; 0x47a <initDS7505>
+ 918:	98 2f       	mov	r25, r24
 	if(debug_mode) // Afficher msgs si debug mode activé
- 902:	80 91 04 04 	lds	r24, 0x0404
- 906:	88 23       	and	r24, r24
- 908:	41 f0       	breq	.+16     	; 0x91a <init_sensors+0x5a>
+ 91a:	80 91 04 04 	lds	r24, 0x0404
+ 91e:	88 23       	and	r24, r24
+ 920:	41 f0       	breq	.+16     	; 0x932 <init_sensors+0x5a>
 	{
 		if(dev_test_access)
- 90a:	99 23       	and	r25, r25
- 90c:	19 f0       	breq	.+6      	; 0x914 <init_sensors+0x54>
+ 922:	99 23       	and	r25, r25
+ 924:	19 f0       	breq	.+6      	; 0x92c <init_sensors+0x54>
 		{
 			USART_TX_Msg("DS7505 n3"ERROR_MSG);
- 90e:	8b e8       	ldi	r24, 0x8B	; 139
- 910:	92 e0       	ldi	r25, 0x02	; 2
- 912:	02 c0       	rjmp	.+4      	; 0x918 <init_sensors+0x58>
+ 926:	8b e8       	ldi	r24, 0x8B	; 139
+ 928:	92 e0       	ldi	r25, 0x02	; 2
+ 92a:	02 c0       	rjmp	.+4      	; 0x930 <init_sensors+0x58>
 		}
 		else
 		{
 			USART_TX_Msg("DS7505 n3"CONN_MSG);
- 914:	8a ea       	ldi	r24, 0xAA	; 170
- 916:	92 e0       	ldi	r25, 0x02	; 2
- 918:	a3 dd       	rcall	.-1210   	; 0x460 <USART_TX_Msg>
+ 92c:	8a ea       	ldi	r24, 0xAA	; 170
+ 92e:	92 e0       	ldi	r25, 0x02	; 2
+ 930:	95 dd       	rcall	.-1238   	; 0x45c <USART_TX_Msg>
 		}
 	}
 	/***** Capteur T° n°4 *****/
 	dev_test_access = initDS7505(ADD4_DS7505);	// Initialiser le capteur de T° n°4
- 91a:	86 e9       	ldi	r24, 0x96	; 150
- 91c:	b0 dd       	rcall	.-1184   	; 0x47e <initDS7505>
- 91e:	98 2f       	mov	r25, r24
+ 932:	86 e9       	ldi	r24, 0x96	; 150
+ 934:	a2 dd       	rcall	.-1212   	; 0x47a <initDS7505>
+ 936:	98 2f       	mov	r25, r24
 	if(debug_mode) // Afficher msgs si debug mode activé
- 920:	80 91 04 04 	lds	r24, 0x0404
- 924:	88 23       	and	r24, r24
- 926:	41 f0       	breq	.+16     	; 0x938 <init_sensors+0x78>
+ 938:	80 91 04 04 	lds	r24, 0x0404
+ 93c:	88 23       	and	r24, r24
+ 93e:	41 f0       	breq	.+16     	; 0x950 <init_sensors+0x78>
 	{
 		if(dev_test_access)
- 928:	99 23       	and	r25, r25
- 92a:	19 f0       	breq	.+6      	; 0x932 <init_sensors+0x72>
+ 940:	99 23       	and	r25, r25
+ 942:	19 f0       	breq	.+6      	; 0x94a <init_sensors+0x72>
 		{
 			USART_TX_Msg("DS7505 n4"ERROR_MSG);
- 92c:	8f eb       	ldi	r24, 0xBF	; 191
- 92e:	92 e0       	ldi	r25, 0x02	; 2
- 930:	02 c0       	rjmp	.+4      	; 0x936 <init_sensors+0x76>
+ 944:	8f eb       	ldi	r24, 0xBF	; 191
+ 946:	92 e0       	ldi	r25, 0x02	; 2
+ 948:	02 c0       	rjmp	.+4      	; 0x94e <init_sensors+0x76>
 		}
 		else
 		{
 			USART_TX_Msg("DS7505 n4"CONN_MSG);
- 932:	8e ed       	ldi	r24, 0xDE	; 222
- 934:	92 e0       	ldi	r25, 0x02	; 2
- 936:	94 dd       	rcall	.-1240   	; 0x460 <USART_TX_Msg>
+ 94a:	8e ed       	ldi	r24, 0xDE	; 222
+ 94c:	92 e0       	ldi	r25, 0x02	; 2
+ 94e:	86 dd       	rcall	.-1268   	; 0x45c <USART_TX_Msg>
 		}
 	}
 	/***** Capteur T° n°5 *****/
 	dev_test_access = initDS7505(ADD5_DS7505);	// Initialiser le capteur de T° n°5
- 938:	88 e9       	ldi	r24, 0x98	; 152
- 93a:	a1 dd       	rcall	.-1214   	; 0x47e <initDS7505>
- 93c:	98 2f       	mov	r25, r24
+ 950:	88 e9       	ldi	r24, 0x98	; 152
+ 952:	93 dd       	rcall	.-1242   	; 0x47a <initDS7505>
+ 954:	98 2f       	mov	r25, r24
 	if(debug_mode) // Afficher msgs si debug mode activé
- 93e:	80 91 04 04 	lds	r24, 0x0404
- 942:	88 23       	and	r24, r24
- 944:	41 f0       	breq	.+16     	; 0x956 <init_sensors+0x96>
+ 956:	80 91 04 04 	lds	r24, 0x0404
+ 95a:	88 23       	and	r24, r24
+ 95c:	41 f0       	breq	.+16     	; 0x96e <init_sensors+0x96>
 	{
 		if(dev_test_access)
- 946:	99 23       	and	r25, r25
- 948:	19 f0       	breq	.+6      	; 0x950 <init_sensors+0x90>
+ 95e:	99 23       	and	r25, r25
+ 960:	19 f0       	breq	.+6      	; 0x968 <init_sensors+0x90>
 		{
 			USART_TX_Msg("DS7505 n5"ERROR_MSG);
- 94a:	83 ef       	ldi	r24, 0xF3	; 243
- 94c:	92 e0       	ldi	r25, 0x02	; 2
- 94e:	02 c0       	rjmp	.+4      	; 0x954 <init_sensors+0x94>
+ 962:	83 ef       	ldi	r24, 0xF3	; 243
+ 964:	92 e0       	ldi	r25, 0x02	; 2
+ 966:	02 c0       	rjmp	.+4      	; 0x96c <init_sensors+0x94>
 		}
 		else
 		{
 			USART_TX_Msg("DS7505 n5"CONN_MSG);
- 950:	82 e1       	ldi	r24, 0x12	; 18
- 952:	93 e0       	ldi	r25, 0x03	; 3
- 954:	85 dd       	rcall	.-1270   	; 0x460 <USART_TX_Msg>
+ 968:	82 e1       	ldi	r24, 0x12	; 18
+ 96a:	93 e0       	ldi	r25, 0x03	; 3
+ 96c:	77 dd       	rcall	.-1298   	; 0x45c <USART_TX_Msg>
 		}
 	}
 	/***** Capteur T° n°6 *****/
 	dev_test_access = initDS7505(ADD6_DS7505);	// Initialiser le capteur de T° n°6
- 956:	8a e9       	ldi	r24, 0x9A	; 154
- 958:	92 dd       	rcall	.-1244   	; 0x47e <initDS7505>
- 95a:	98 2f       	mov	r25, r24
+ 96e:	8a e9       	ldi	r24, 0x9A	; 154
+ 970:	84 dd       	rcall	.-1272   	; 0x47a <initDS7505>
+ 972:	98 2f       	mov	r25, r24
 	if(debug_mode) // Afficher msgs si debug mode activé
- 95c:	80 91 04 04 	lds	r24, 0x0404
- 960:	88 23       	and	r24, r24
- 962:	41 f0       	breq	.+16     	; 0x974 <init_sensors+0xb4>
+ 974:	80 91 04 04 	lds	r24, 0x0404
+ 978:	88 23       	and	r24, r24
+ 97a:	41 f0       	breq	.+16     	; 0x98c <init_sensors+0xb4>
 	{
 		if(dev_test_access)
- 964:	99 23       	and	r25, r25
- 966:	19 f0       	breq	.+6      	; 0x96e <init_sensors+0xae>
+ 97c:	99 23       	and	r25, r25
+ 97e:	19 f0       	breq	.+6      	; 0x986 <init_sensors+0xae>
 		{
 			USART_TX_Msg("DS7505 n6"ERROR_MSG);
- 968:	87 e2       	ldi	r24, 0x27	; 39
- 96a:	93 e0       	ldi	r25, 0x03	; 3
- 96c:	02 c0       	rjmp	.+4      	; 0x972 <init_sensors+0xb2>
+ 980:	87 e2       	ldi	r24, 0x27	; 39
+ 982:	93 e0       	ldi	r25, 0x03	; 3
+ 984:	02 c0       	rjmp	.+4      	; 0x98a <init_sensors+0xb2>
 		}
 		else
 		{
 			USART_TX_Msg("DS7505 n6"CONN_MSG);
- 96e:	86 e4       	ldi	r24, 0x46	; 70
- 970:	93 e0       	ldi	r25, 0x03	; 3
- 972:	76 dd       	rcall	.-1300   	; 0x460 <USART_TX_Msg>
+ 986:	86 e4       	ldi	r24, 0x46	; 70
+ 988:	93 e0       	ldi	r25, 0x03	; 3
+ 98a:	68 dd       	rcall	.-1328   	; 0x45c <USART_TX_Msg>
 		}
 	}
 	/***** Capteur T° n°7 *****/
 	dev_test_access = initDS7505(ADD7_DS7505);	// Initialiser le capteur de T° n°7
- 974:	8c e9       	ldi	r24, 0x9C	; 156
- 976:	83 dd       	rcall	.-1274   	; 0x47e <initDS7505>
- 978:	98 2f       	mov	r25, r24
+ 98c:	8c e9       	ldi	r24, 0x9C	; 156
+ 98e:	75 dd       	rcall	.-1302   	; 0x47a <initDS7505>
+ 990:	98 2f       	mov	r25, r24
 	if(debug_mode) // Afficher msgs si debug mode activé
- 97a:	80 91 04 04 	lds	r24, 0x0404
- 97e:	88 23       	and	r24, r24
- 980:	41 f0       	breq	.+16     	; 0x992 <init_sensors+0xd2>
+ 992:	80 91 04 04 	lds	r24, 0x0404
+ 996:	88 23       	and	r24, r24
+ 998:	41 f0       	breq	.+16     	; 0x9aa <init_sensors+0xd2>
 	{
 		if(dev_test_access)
- 982:	99 23       	and	r25, r25
- 984:	19 f0       	breq	.+6      	; 0x98c <init_sensors+0xcc>
+ 99a:	99 23       	and	r25, r25
+ 99c:	19 f0       	breq	.+6      	; 0x9a4 <init_sensors+0xcc>
 		{
 			USART_TX_Msg("DS7505 n7"ERROR_MSG);
- 986:	8b e5       	ldi	r24, 0x5B	; 91
- 988:	93 e0       	ldi	r25, 0x03	; 3
- 98a:	02 c0       	rjmp	.+4      	; 0x990 <init_sensors+0xd0>
+ 99e:	8b e5       	ldi	r24, 0x5B	; 91
+ 9a0:	93 e0       	ldi	r25, 0x03	; 3
+ 9a2:	02 c0       	rjmp	.+4      	; 0x9a8 <init_sensors+0xd0>
 		}
 		else
 		{
 			USART_TX_Msg("DS7505 n7"CONN_MSG);
- 98c:	8a e7       	ldi	r24, 0x7A	; 122
- 98e:	93 e0       	ldi	r25, 0x03	; 3
- 990:	67 dd       	rcall	.-1330   	; 0x460 <USART_TX_Msg>
+ 9a4:	8a e7       	ldi	r24, 0x7A	; 122
+ 9a6:	93 e0       	ldi	r25, 0x03	; 3
+ 9a8:	59 dd       	rcall	.-1358   	; 0x45c <USART_TX_Msg>
 		}
 	}
 	/***** Capteur T° n°8 *****/
 	dev_test_access = initDS7505(ADD8_DS7505);	// Initialiser le capteur de T° n°8
- 992:	8e e9       	ldi	r24, 0x9E	; 158
- 994:	74 dd       	rcall	.-1304   	; 0x47e <initDS7505>
- 996:	98 2f       	mov	r25, r24
+ 9aa:	8e e9       	ldi	r24, 0x9E	; 158
+ 9ac:	66 dd       	rcall	.-1332   	; 0x47a <initDS7505>
+ 9ae:	98 2f       	mov	r25, r24
 	if(debug_mode) // Afficher msgs si debug mode activé
- 998:	80 91 04 04 	lds	r24, 0x0404
- 99c:	88 23       	and	r24, r24
- 99e:	41 f0       	breq	.+16     	; 0x9b0 <init_sensors+0xf0>
+ 9b0:	80 91 04 04 	lds	r24, 0x0404
+ 9b4:	88 23       	and	r24, r24
+ 9b6:	41 f0       	breq	.+16     	; 0x9c8 <init_sensors+0xf0>
 	{
 		if(dev_test_access)
- 9a0:	99 23       	and	r25, r25
- 9a2:	19 f0       	breq	.+6      	; 0x9aa <init_sensors+0xea>
+ 9b8:	99 23       	and	r25, r25
+ 9ba:	19 f0       	breq	.+6      	; 0x9c2 <init_sensors+0xea>
 		{
 			USART_TX_Msg("DS7505 n8"ERROR_MSG);
- 9a4:	8f e8       	ldi	r24, 0x8F	; 143
- 9a6:	93 e0       	ldi	r25, 0x03	; 3
- 9a8:	02 c0       	rjmp	.+4      	; 0x9ae <init_sensors+0xee>
+ 9bc:	8f e8       	ldi	r24, 0x8F	; 143
+ 9be:	93 e0       	ldi	r25, 0x03	; 3
+ 9c0:	02 c0       	rjmp	.+4      	; 0x9c6 <init_sensors+0xee>
 		}
 		else
 		{
 			USART_TX_Msg("DS7505 n8"CONN_MSG);
- 9aa:	8e ea       	ldi	r24, 0xAE	; 174
- 9ac:	93 e0       	ldi	r25, 0x03	; 3
- 9ae:	58 dd       	rcall	.-1360   	; 0x460 <USART_TX_Msg>
+ 9c2:	8e ea       	ldi	r24, 0xAE	; 174
+ 9c4:	93 e0       	ldi	r25, 0x03	; 3
+ 9c6:	4a dd       	rcall	.-1388   	; 0x45c <USART_TX_Msg>
 		}
 	}
 	/***** Capteur %H n°1 *****/
 	dev_test_access = initSHT21(ADD1_SHT21);
- 9b0:	80 e8       	ldi	r24, 0x80	; 128
- 9b2:	a8 dd       	rcall	.-1200   	; 0x504 <initSHT21>
- 9b4:	98 2f       	mov	r25, r24
+ 9c8:	80 e8       	ldi	r24, 0x80	; 128
+ 9ca:	9a dd       	rcall	.-1228   	; 0x500 <initSHT21>
+ 9cc:	98 2f       	mov	r25, r24
 	if(debug_mode) // Afficher msgs si debug mode activé
- 9b6:	80 91 04 04 	lds	r24, 0x0404
- 9ba:	88 23       	and	r24, r24
- 9bc:	49 f0       	breq	.+18     	; 0x9d0 <init_sensors+0x110>
+ 9ce:	80 91 04 04 	lds	r24, 0x0404
+ 9d2:	88 23       	and	r24, r24
+ 9d4:	49 f0       	breq	.+18     	; 0x9e8 <init_sensors+0x110>
 	{
 		if(dev_test_access)
- 9be:	99 23       	and	r25, r25
- 9c0:	21 f0       	breq	.+8      	; 0x9ca <init_sensors+0x10a>
+ 9d6:	99 23       	and	r25, r25
+ 9d8:	21 f0       	breq	.+8      	; 0x9e2 <init_sensors+0x10a>
 		{
 			USART_TX_Msg("SHT21"ERROR_MSG);
- 9c2:	83 ec       	ldi	r24, 0xC3	; 195
- 9c4:	93 e0       	ldi	r25, 0x03	; 3
- 9c6:	4c dd       	rcall	.-1384   	; 0x460 <USART_TX_Msg>
- 9c8:	08 95       	ret
+ 9da:	83 ec       	ldi	r24, 0xC3	; 195
+ 9dc:	93 e0       	ldi	r25, 0x03	; 3
+ 9de:	3e dd       	rcall	.-1412   	; 0x45c <USART_TX_Msg>
+ 9e0:	08 95       	ret
 		}
 		else
 		{
 			USART_TX_Msg("SHT21"CONN_MSG);
- 9ca:	8e ed       	ldi	r24, 0xDE	; 222
- 9cc:	93 e0       	ldi	r25, 0x03	; 3
- 9ce:	48 dd       	rcall	.-1392   	; 0x460 <USART_TX_Msg>
- 9d0:	08 95       	ret
+ 9e2:	8e ed       	ldi	r24, 0xDE	; 222
+ 9e4:	93 e0       	ldi	r25, 0x03	; 3
+ 9e6:	3a dd       	rcall	.-1420   	; 0x45c <USART_TX_Msg>
+ 9e8:	08 95       	ret
 
-000009d2 <debug_cmd>:
+000009ea <debug_cmd>:
 /*********************************************************************/
 // FUNCTION: void debug_cmd()
 // PURPOSE: Permet d'activer/désactiver le mode de débogage(terminale)
 void debug_cmd()
 {
 	if(debug_mode)
- 9d2:	80 91 04 04 	lds	r24, 0x0404
- 9d6:	88 23       	and	r24, r24
- 9d8:	19 f0       	breq	.+6      	; 0x9e0 <debug_cmd+0xe>
+ 9ea:	80 91 04 04 	lds	r24, 0x0404
+ 9ee:	88 23       	and	r24, r24
+ 9f0:	19 f0       	breq	.+6      	; 0x9f8 <debug_cmd+0xe>
 	{
 		debug_mode = FALSE;
- 9da:	10 92 04 04 	sts	0x0404, r1
- 9de:	08 95       	ret
+ 9f2:	10 92 04 04 	sts	0x0404, r1
+ 9f6:	08 95       	ret
 	}
 	else
 	{
 		debug_mode = TRUE;
- 9e0:	81 e0       	ldi	r24, 0x01	; 1
- 9e2:	80 93 04 04 	sts	0x0404, r24
+ 9f8:	81 e0       	ldi	r24, 0x01	; 1
+ 9fa:	80 93 04 04 	sts	0x0404, r24
 		welcomeMsg();					// Afficher le message de bienvenue
- 9e6:	3c df       	rcall	.-392    	; 0x860 <welcomeMsg>
+ 9fe:	3c df       	rcall	.-392    	; 0x878 <welcomeMsg>
 		init_sensors();
- 9e8:	6b df       	rcall	.-298    	; 0x8c0 <init_sensors>
- 9ea:	08 95       	ret
+ a00:	6b df       	rcall	.-298    	; 0x8d8 <init_sensors>
+ a02:	08 95       	ret
 
-000009ec <__mulsi3>:
- 9ec:	62 9f       	mul	r22, r18
- 9ee:	d0 01       	movw	r26, r0
- 9f0:	73 9f       	mul	r23, r19
- 9f2:	f0 01       	movw	r30, r0
- 9f4:	82 9f       	mul	r24, r18
- 9f6:	e0 0d       	add	r30, r0
- 9f8:	f1 1d       	adc	r31, r1
- 9fa:	64 9f       	mul	r22, r20
- 9fc:	e0 0d       	add	r30, r0
- 9fe:	f1 1d       	adc	r31, r1
- a00:	92 9f       	mul	r25, r18
- a02:	f0 0d       	add	r31, r0
- a04:	83 9f       	mul	r24, r19
- a06:	f0 0d       	add	r31, r0
- a08:	74 9f       	mul	r23, r20
- a0a:	f0 0d       	add	r31, r0
- a0c:	65 9f       	mul	r22, r21
- a0e:	f0 0d       	add	r31, r0
- a10:	99 27       	eor	r25, r25
- a12:	72 9f       	mul	r23, r18
- a14:	b0 0d       	add	r27, r0
- a16:	e1 1d       	adc	r30, r1
- a18:	f9 1f       	adc	r31, r25
- a1a:	63 9f       	mul	r22, r19
- a1c:	b0 0d       	add	r27, r0
- a1e:	e1 1d       	adc	r30, r1
- a20:	f9 1f       	adc	r31, r25
- a22:	bd 01       	movw	r22, r26
- a24:	cf 01       	movw	r24, r30
- a26:	11 24       	eor	r1, r1
- a28:	08 95       	ret
-
-00000a2a <__udivmodqi4>:
- a2a:	99 1b       	sub	r25, r25
- a2c:	79 e0       	ldi	r23, 0x09	; 9
- a2e:	04 c0       	rjmp	.+8      	; 0xa38 <__udivmodqi4_ep>
-
-00000a30 <__udivmodqi4_loop>:
- a30:	99 1f       	adc	r25, r25
- a32:	96 17       	cp	r25, r22
- a34:	08 f0       	brcs	.+2      	; 0xa38 <__udivmodqi4_ep>
- a36:	96 1b       	sub	r25, r22
-
-00000a38 <__udivmodqi4_ep>:
- a38:	88 1f       	adc	r24, r24
- a3a:	7a 95       	dec	r23
- a3c:	c9 f7       	brne	.-14     	; 0xa30 <__udivmodqi4_loop>
- a3e:	80 95       	com	r24
+00000a04 <__mulsi3>:
+ a04:	62 9f       	mul	r22, r18
+ a06:	d0 01       	movw	r26, r0
+ a08:	73 9f       	mul	r23, r19
+ a0a:	f0 01       	movw	r30, r0
+ a0c:	82 9f       	mul	r24, r18
+ a0e:	e0 0d       	add	r30, r0
+ a10:	f1 1d       	adc	r31, r1
+ a12:	64 9f       	mul	r22, r20
+ a14:	e0 0d       	add	r30, r0
+ a16:	f1 1d       	adc	r31, r1
+ a18:	92 9f       	mul	r25, r18
+ a1a:	f0 0d       	add	r31, r0
+ a1c:	83 9f       	mul	r24, r19
+ a1e:	f0 0d       	add	r31, r0
+ a20:	74 9f       	mul	r23, r20
+ a22:	f0 0d       	add	r31, r0
+ a24:	65 9f       	mul	r22, r21
+ a26:	f0 0d       	add	r31, r0
+ a28:	99 27       	eor	r25, r25
+ a2a:	72 9f       	mul	r23, r18
+ a2c:	b0 0d       	add	r27, r0
+ a2e:	e1 1d       	adc	r30, r1
+ a30:	f9 1f       	adc	r31, r25
+ a32:	63 9f       	mul	r22, r19
+ a34:	b0 0d       	add	r27, r0
+ a36:	e1 1d       	adc	r30, r1
+ a38:	f9 1f       	adc	r31, r25
+ a3a:	bd 01       	movw	r22, r26
+ a3c:	cf 01       	movw	r24, r30
+ a3e:	11 24       	eor	r1, r1
  a40:	08 95       	ret
 
-00000a42 <_exit>:
- a42:	f8 94       	cli
+00000a42 <__udivmodqi4>:
+ a42:	99 1b       	sub	r25, r25
+ a44:	79 e0       	ldi	r23, 0x09	; 9
+ a46:	04 c0       	rjmp	.+8      	; 0xa50 <__udivmodqi4_ep>
 
-00000a44 <__stop_program>:
- a44:	ff cf       	rjmp	.-2      	; 0xa44 <__stop_program>
+00000a48 <__udivmodqi4_loop>:
+ a48:	99 1f       	adc	r25, r25
+ a4a:	96 17       	cp	r25, r22
+ a4c:	08 f0       	brcs	.+2      	; 0xa50 <__udivmodqi4_ep>
+ a4e:	96 1b       	sub	r25, r22
+
+00000a50 <__udivmodqi4_ep>:
+ a50:	88 1f       	adc	r24, r24
+ a52:	7a 95       	dec	r23
+ a54:	c9 f7       	brne	.-14     	; 0xa48 <__udivmodqi4_loop>
+ a56:	80 95       	com	r24
+ a58:	08 95       	ret
+
+00000a5a <_exit>:
+ a5a:	f8 94       	cli
+
+00000a5c <__stop_program>:
+ a5c:	ff cf       	rjmp	.-2      	; 0xa5c <__stop_program>
