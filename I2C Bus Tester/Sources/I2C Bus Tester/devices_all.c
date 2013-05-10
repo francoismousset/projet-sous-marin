@@ -6,8 +6,8 @@
 * Title 		 : Gestion d'un composant connecté sur le bus I2C
 * Author 		 : Michaël Brogniaux - Copyright (C) 2013
 * Created		 : 10/03/2013
-* Last revised	 : 18/03/2013
-* Version		 : 1.0.2
+* Last revised	 : 06/05/2013
+* Version		 : 1.0.3
 * Compliler		 : AVR Studio 4.18.716 - WinAVR-20100110
 * MCU			 : Atmel ATmega88
 *
@@ -205,7 +205,10 @@ void showDetectedSensor(char address)
 	}
 	else
 	{
-		USART_Transmit(address); // Renvoie l'adresse du capteur détecté
+		USART_Transmit(STX);
+		USART_Transmit(1); // Longueur octet données utiles
+		USART_Transmit(address); // Renvoie l'adresse du capteur détecté				
+		USART_Transmit(ETX);
 	}
 }
 
@@ -332,9 +335,11 @@ void temp_cmd(unsigned char dev_num, char *listTemp, char command, char dev_acce
 			asm("nop");
 		}
 		USART_Transmit(STX);
+		USART_Transmit(3); // Longueur octet données utiles
 		USART_Transmit(command);
 		USART_Transmit(tempResult[0]);
 		USART_Transmit(tempResult[1]);
+		USART_Transmit(ETX);
 	}
 
 	listTemp[0] = 0;				// Reset mém tampon T° mesurée
@@ -383,9 +388,11 @@ void hum_cmd(char *listHum, char command, char dev_access)
 			hum2 = 0x00;
 		}
 		USART_Transmit(STX);
+		USART_Transmit(3); // Longueur octet données utiles
 		USART_Transmit(command);
 		USART_Transmit(humResult);
 		USART_Transmit(hum2);
+		USART_Transmit(ETX);
 	}
 			
 	listHum[0] = 0;					// Reset mém %H mesurée

@@ -8,8 +8,8 @@
 				   Programme carte de test bus I2C & capteurs
 * Author 		 : Michaël Brogniaux - Copyright (C) 2011
 * Created		 : 02/03/2012
-* Last revised	 : 20/03/2013
-* Version		 : 1.2.10
+* Last revised	 : 06/05/2013
+* Version		 : 1.2.11
 * Compliler		 : AVR Studio 4.18.716 - WinAVR-20100110
 * MCU			 : Atmel ATmega88
 * Devices		 : Capteurs I2C (DS7505, SHT21)
@@ -28,6 +28,8 @@
 *		V1.2.8  - Frame format : STX|sensor command|high value|low value
 *		V1.2.9  - Rx buffer added
 *		V1.2.10 - Fix bug for sensor T7
+*		V1.2.11 - Frame format : STX|lenght|sensor address|high value|low value|ETX
+*				- 			   : STX|lenght|sensor address|ETX
 **********************************************************************/
 
 /***** Liste des includes *****/
@@ -178,7 +180,7 @@ int main(void)
 				
 			}
 			i = 0;				// Remise à zéro de l'index du buffer RX
-			RX_flag = FALSE;	// Mise du flag du RX à zéro
+			//RX_flag = FALSE;	// Mise du flag du RX à zéro
 		}
 
 	}
