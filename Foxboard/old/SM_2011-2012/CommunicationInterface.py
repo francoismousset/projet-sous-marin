@@ -48,26 +48,26 @@ else:
     ComPort_US = SerialComPort3964r(port = '/dev/ttyS1',
                                     baudrate = 300,
                                     timeout = Timeout_US,
-                                    debug = False)
+                                    debug = True)
 
-    #ComPort_Bluetooth = SerialComPort3964r(port = '/dev/rfcomm0',
-     #                                   baudrate = 9600,
-      #                                  timeout = Timeout_Bluetooth,
-       #                                 debug = True)
+    ComPort_Bluetooth = SerialComPort3964r(port = '/dev/rfcomm0',
+                                        baudrate = 9600,
+                                        timeout = Timeout_Bluetooth,
+                                        debug = True)
 
-    ComPort_Motor = SerialComPort3964r(port = '/dev/ttyS2',
+    ComPort_Motor = SerialComPort3964r(port = '/dev/ttyS4',
                                        baudrate = 9600,
                                        timeout = Timeout_Motor,
-                                       debug = False)
+                                       debug = True)
 
-    ComPort_Sensor = SerialComPort3964r(port = '/dev/ttyS4',
+    ComPort_Sensor = SerialComPort3964r(port = '/dev/ttyS5',
                                         baudrate = 9600,
                                         timeout = Timeout_Sensor,
-                                        debug = True)
+                                        debug = False)
 
 threadMotor = MotorInterface(ComPort_Motor)
 threadUSWatcher = USCmdWatcher(ComPort_US)
-#threadBluetoothWatcher = BluetoothCmdWatcher(ComPort_Bluetooth)
+threadBluetoothWatcher = BluetoothCmdWatcher(ComPort_Bluetooth)
 threadSensor = SensorInterface(ComPort_Sensor)
 threadPitchRegulation = PitchRegulation()
 threadDivingRegulation = DivingRegulation()
@@ -75,7 +75,7 @@ threadLoggingDB = LoggingDB()
 
 threadMotor.start()
 threadUSWatcher.start()
-#threadBluetoothWatcher.start()
+threadBluetoothWatcher.start()
 threadSensor.start()
 #threadPitchRegulation.start()
 #threadDivingRegulation.start()
