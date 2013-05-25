@@ -141,7 +141,6 @@ class SerialComPort3964r(serial.Serial):
                                 self.write(self.NAK)
                                 if self.debug == True :
                                     print("Error [Byte received is not DLE]")
-                                    print("RX Byte is : "+dle)
                                     print("TX -> NAK")
                                     
                         else:
@@ -259,7 +258,6 @@ class SerialComPort3964r(serial.Serial):
                                             if self.debug == True :
                                                 print("RX <- not DLE")
                                                 print("Error [Byte received is not DLE]")
-                                                print("TX Byte is : "+c)
                                             error = error + 1
                                             flag_error = True
                                     else:
