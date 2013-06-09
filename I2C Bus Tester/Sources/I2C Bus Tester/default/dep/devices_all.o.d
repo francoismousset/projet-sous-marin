@@ -11,7 +11,8 @@ devices_all.o: ../devices_all.c ../I2Cmaster.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/avr/fuse.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/avr/lock.h \
   ../devices_all.h ../uart.h ../car.h ../DS7505.h ../SHT21.h \
-  ../gestion_H.h ../gestion_T.h ../main.h
+  ../gestion_H.h ../gestion_T.h ../gestion_A.h ../gestion_D.h \
+  ../gestion_V.h ../main.h
 
 ../I2Cmaster.h:
 
@@ -50,5 +51,11 @@ c:/winavr-20100110/lib/gcc/../../avr/include/avr/lock.h:
 ../gestion_H.h:
 
 ../gestion_T.h:
+
+../gestion_A.h:
+
+../gestion_D.h:
+
+../gestion_V.h:
 
 ../main.h:

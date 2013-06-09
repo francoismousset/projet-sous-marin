@@ -22,6 +22,9 @@
 #include "SHT21.h"
 #include "gestion_H.h"
 #include "gestion_T.h"
+#include "gestion_A.h"
+#include "gestion_D.h"
+#include "gestion_V.h"
 #include "main.h"
 
 char debug_mode = FALSE;
@@ -308,7 +311,7 @@ void temp_cmd(unsigned char dev_num, char *listTemp, char command, char dev_acce
 
 	if(debug_mode) // Afficher msgs si debug mode activé
 	{
-			stringTemp(tempResult, tempStr); // Convertir la T° sous forme d'entiers en caractères
+		stringTemp(tempResult, tempStr); // Convertir la T° sous forme d'entiers en caractères
 
 		USART_Transmit('T');
 		USART_Transmit(DEG_CAR);
@@ -398,6 +401,95 @@ void hum_cmd(char *listHum, char command, char dev_access)
 	listHum[0] = 0;					// Reset mém %H mesurée
 	listHum[1] = 0;
 	listHum[2] = 0;		
+}
+
+/*********************************************************************/
+// FUNCTION: void ang_cmd(char listAngle, char command)
+// PURPOSE: Conversion valeur brute Angle° en valeur décimale/ASCII
+void ang_cmd(char listAngle, char command)
+{
+	char angResult, AngStr[2];
+	angResult = 5;// Convertir les données brutes en données exploitables
+
+	if(debug_mode) // Afficher msgs si debug mode activé
+	{
+		stringAng(angResult, AngStr);
+
+		USART_TX_String("A1 Sensor : ");
+		USART_Transmit(AngStr[0]);
+		USART_Transmit(AngStr[1]);	
+		USART_TX_CRNL();				// Nouvelle ligne, retour chariot
+	}
+	else
+	{	
+		USART_Transmit(STX);
+		USART_Transmit(3); // Longueur octet données utiles
+		USART_Transmit(command);
+		USART_Transmit(angResult);
+		USART_Transmit(0);
+		USART_Transmit(ETX);
+	}			
+}
+
+/*********************************************************************/
+// FUNCTION: void dep_cmd(char listDepth, char command)
+// PURPOSE: Conversion valeur brute profondeur(cm) en valeur décimale/ASCII
+void dep_cmd(char listDepth, char command)
+{
+	char depResult, DepStr[3];
+	depResult = 125;// Convertir les données brutes en données exploitables
+
+	if(debug_mode) // Afficher msgs si debug mode activé
+	{
+		stringDep(depResult, DepStr);
+	
+		USART_TX_String("D1 Sensor : ");
+		USART_Transmit(DepStr[0]);
+		USART_Transmit(DepStr[1]);
+		USART_Transmit(DepStr[2]);	
+		USART_TX_CRNL();				// Nouvelle ligne, retour chariot
+	}
+	else
+	{	
+		USART_Transmit(STX);
+		USART_Transmit(3); // Longueur octet données utiles
+		USART_Transmit(command);
+		USART_Transmit(depResult);
+		USART_Transmit(0);
+		USART_Transmit(ETX);
+	}			
+}
+
+/*********************************************************************/
+// FUNCTION: void vol_cmd(char listVolt, char command)
+// PURPOSE: Conversion valeur brute tension (V) en valeur décimale/ASCII
+void vol_cmd(char *listVolt, char command)
+{
+	char VoltResult[2], VoltStr[4];
+	VoltResult[0] = 13;
+	VoltResult[1] = 49;// Convertir les données brutes en données exploitables
+
+	if(debug_mode) // Afficher msgs si debug mode activé
+	{
+		stringVolt(VoltResult, VoltStr);
+	
+		USART_TX_String("V1 Sensor : ");
+		USART_Transmit(VoltStr[0]);
+		USART_Transmit(VoltStr[1]);
+		USART_Transmit(DOT_CAR);
+		USART_Transmit(VoltStr[2]);	
+		USART_Transmit(VoltStr[3]);	
+		USART_TX_CRNL();				// Nouvelle ligne, retour chariot
+	}
+	else
+	{	
+		USART_Transmit(STX);
+		USART_Transmit(3); // Longueur octet données utiles
+		USART_Transmit(command);
+		USART_Transmit(VoltResult[0]);
+		USART_Transmit(VoltResult[1]);
+		USART_Transmit(ETX);
+	}			
 }
 
 /*********************************************************************/
