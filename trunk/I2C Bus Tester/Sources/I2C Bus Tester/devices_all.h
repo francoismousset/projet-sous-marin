@@ -72,6 +72,18 @@ void temp_cmd(unsigned char dev_num, char *listTemp, char command, char dev_acce
 // PURPOSE: Conversion valeur brute %H en valeur décimale/ASCII
 void hum_cmd(char *listHum, char command, char dev_access);
 
+// FUNCTION: void ang_cmd(char listAngle, char command)
+// PURPOSE: Conversion valeur brute Angle° en valeur décimale/ASCII
+void ang_cmd(char listAngle, char command);
+
+// FUNCTION: void dep_cmd(char listDepth, char command)
+// PURPOSE: Conversion valeur brute profondeur(cm) en valeur décimale/ASCII
+void dep_cmd(char listDepth, char command);
+
+// FUNCTION: void vol_cmd(char listVolt, char command)
+// PURPOSE: Conversion valeur brute tension (V) en valeur décimale/ASCII
+void vol_cmd(char *listVolt, char command);
+
 /*********************************************************************/
 // FUNCTION: void hexaToAscii(unsigned char n)
 // PURPOSE: Conversion d'une valeur hexa en ASCII et afficher sur terminale

@@ -30,7 +30,7 @@
 #define	BELL				'\a'	// Sonnerie
 #define CR_NL				""		// Sans caractère (pour CR et NL)
 #define MSG_WELCOME			" /== Welcome in the I2C bus tester software ==\\ "
-#define MSG_YEAR			" \\== MA2EN 2012-2013  Hrd v1.3b - Sft v1.2.10 ==/"
+#define MSG_YEAR			" \\== MA2EN 2012-2013  Hrd v1.3b - Sft v1.2.12 ==/"
 #define ERROR_MSG			" connection error !!!"
 #define	CONN_MSG			" connected."
 #define STX					0x02	// Start of header

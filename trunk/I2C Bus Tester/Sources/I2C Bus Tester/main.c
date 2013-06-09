@@ -8,8 +8,8 @@
 				   Programme carte de test bus I2C & capteurs
 * Author 		 : Michaël Brogniaux - Copyright (C) 2011
 * Created		 : 02/03/2012
-* Last revised	 : 06/05/2013
-* Version		 : 1.2.11
+* Last revised	 : 31/05/2013
+* Version		 : 1.2.12
 * Compliler		 : AVR Studio 4.18.716 - WinAVR-20100110
 * MCU			 : Atmel ATmega88
 * Devices		 : Capteurs I2C (DS7505, SHT21)
@@ -30,6 +30,7 @@
 *		V1.2.10 - Fix bug for sensor T7
 *		V1.2.11 - Frame format : STX|lenght|sensor address|high value|low value|ETX
 *				- 			   : STX|lenght|sensor address|ETX
+*		V1.2.12 - Add "gestion_A", Add "gestion_D", Add "gestion_V"
 **********************************************************************/
 
 /***** Liste des includes *****/
@@ -57,7 +58,8 @@ volatile char i = 0;
 char j = 0;
 volatile char nbRead = 0;
 
-char listTemp [2], listHum[3];//, tempResult[2], tempStr[5], humResult, humStr[2];// Tableau des températures
+char listTemp[2], listHum[3], listVolt[2];//, tempResult[2], tempStr[5], humResult, humStr[2];// Tableau des températures
+char listAngle, listDepth;
 
 /*****************************************************************/
 /*********************** Programme principal *********************/
@@ -130,6 +132,15 @@ int main(void)
 						dev_test_access = get_SHT21_Devices(ADD1_SHT21, listHum); // Récuperer %H
 						hum_cmd(listHum, H1_CMD, dev_test_access);
 						break;
+					case A1_CMD :
+						ang_cmd(listAngle, A1_CMD);
+						break;
+					case V1_CMD :
+						vol_cmd(listVolt, V1_CMD);
+						break;
+					case D1_CMD :
+						dep_cmd(listDepth, D1_CMD);
+						break;
 					case DEBUG_CMD :
 						debug_cmd();
 						break;
@@ -171,6 +182,10 @@ int main(void)
 						break;
 					case ALL_DETECT_CMD :
 						detectAllSensors_cmd();
+						break;
+					case SPECIAL_CMD :
+						//testDevice function
+						//special command
 						break;
 					default :
 						unknown_cmd(); // Commande inconnue (non assignée)

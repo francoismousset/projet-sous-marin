@@ -37,7 +37,7 @@ HEX_EEPROM_FLAGS += --change-section-lma .eeprom=0 --no-change-warnings
 
 
 ## Objects that must be built in order to link
-OBJECTS = I2Cmaster.o main.o uart.o DS7505.o SHT21.o gestion_H.o gestion_T.o devices_all.o 
+OBJECTS = I2Cmaster.o main.o uart.o DS7505.o SHT21.o gestion_H.o gestion_T.o devices_all.o UNIVERSAL_SENS.o gestion_A.o gestion_D.o gestion_V.o 
 
 ## Objects explicitly added by the user
 LINKONLYOBJECTS = 
@@ -68,6 +68,18 @@ gestion_T.o: ../gestion_T.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
 devices_all.o: ../devices_all.c
+	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
+
+UNIVERSAL_SENS.o: ../UNIVERSAL_SENS.c
+	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
+
+gestion_A.o: ../gestion_A.c
+	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
+
+gestion_D.o: ../gestion_D.c
+	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
+
+gestion_V.o: ../gestion_V.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
 ##Link
